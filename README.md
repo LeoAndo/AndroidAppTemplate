@@ -13,5 +13,6 @@ template for Android App
 # Usage
 
 # reference
-https://developer.android.com/training/dependency-injection/hilt-multi-module?hl=ja
+https://developer.android.com/training/dependency-injection/hilt-multi-module?hl=ja<br>
+https://github.com/android10/Android-CleanArchitecture<br>
 
