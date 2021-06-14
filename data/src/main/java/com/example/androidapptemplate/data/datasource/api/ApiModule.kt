@@ -1,7 +1,7 @@
-package com.example.androidapptemplate.features.trivia.data.datasource.api
+package com.example.androidapptemplate.data.datasource.api
 
 import android.util.Log
-import com.example.androidapptemplate.BuildConfig
+import com.example.androidapptemplate.data.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

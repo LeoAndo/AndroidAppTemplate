@@ -1,7 +1,7 @@
-package com.example.androidapptemplate.features.trivia.data.datasource.remote
+package com.example.androidapptemplate.data.datasource.remote
 
-import com.example.androidapptemplate.features.trivia.data.apiCall
-import com.example.androidapptemplate.features.trivia.data.datasource.api.TriviaService
+import com.example.androidapptemplate.data.apiCall
+import com.example.androidapptemplate.data.datasource.api.TriviaService
 import javax.inject.Inject
 
 internal class TriviaRemoteDatasource @Inject constructor(

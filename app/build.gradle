@@ -17,8 +17,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        buildConfigField "String", "TRIVIA_API_DOMAIN", "\"http://numbersapi.com\""
     }
 
     buildTypes {
@@ -40,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation project(':data')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.5.0'
@@ -74,5 +73,4 @@ dependencies {
     implementation "androidx.room:room-runtime:2.3.0"
     kapt "androidx.room:room-compiler:2.3.0"
     implementation "androidx.room:room-ktx:2.3.0" // optional - Kotlin Extensions and Coroutines support for Room
-
 }

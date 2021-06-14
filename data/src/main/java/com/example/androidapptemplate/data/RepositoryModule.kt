@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.trivia.data
+package com.example.androidapptemplate.data
 
 import dagger.Binds
 import dagger.Module

@@ -1,10 +1,10 @@
-package com.example.androidapptemplate.features.trivia
+package com.example.androidapptemplate.data
 
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import com.example.androidapptemplate.features.trivia.data.exception.BadRequestErrorException
-import com.example.androidapptemplate.features.trivia.data.exception.NetworkErrorException
+import com.example.androidapptemplate.data.exception.BadRequestErrorException
+import com.example.androidapptemplate.data.exception.NetworkErrorException
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,6 +1,6 @@
 package com.example.androidapptemplate.features.trivia.domain
 
-import com.example.androidapptemplate.features.trivia.data.TriviaRepository
+import com.example.androidapptemplate.data.TriviaRepository
 import javax.inject.Inject
 
 interface TriviaUseCase {

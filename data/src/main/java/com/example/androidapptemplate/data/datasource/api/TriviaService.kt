@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.trivia.data.datasource.api
+package com.example.androidapptemplate.data.datasource.api
 
 import retrofit2.http.GET
 
