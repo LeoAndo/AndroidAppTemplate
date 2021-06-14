@@ -6,7 +6,7 @@ import okhttp3.Response
 
 private const val CONTENT_TYPE = "Content-Type"
 
-class TriviaHeaderInterceptor : Interceptor {
+internal class TriviaHeaderInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
