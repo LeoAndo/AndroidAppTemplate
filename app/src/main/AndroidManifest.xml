@@ -3,7 +3,7 @@
     package="com.example.androidapptemplate">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- android:usesCleartextTraffic="true" はtrivia APIがhttp通信なので追加設定している. -->
+    <!-- TODO android:usesCleartextTraffic="true" はtrivia APIがhttp通信なので追加設定している. -->
     <application
         android:name=".MyApp"
         android:allowBackup="true"

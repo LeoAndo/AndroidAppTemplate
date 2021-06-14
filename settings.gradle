@@ -1,4 +1,0 @@
-rootProject.name = "AndroidAppTemplate"
-include ':app'
-include ':domain'
-include ':data'

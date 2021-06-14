@@ -1,9 +1,1 @@
-plugins {
-    id 'kotlin'
-}
-
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    // javax.inject.Inject 使うために依存追加
-    implementation group: 'javax.inject', name: 'javax.inject', version: '1'
-}
+apply from: "$rootDir/common-kotlin-library.gradle"

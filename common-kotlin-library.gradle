@@ -1,0 +1,7 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation Libs.kotlin_stdlib
+    // javax.inject.Inject 使うために依存追加
+    implementation group: 'javax.inject', name: 'javax.inject', version: '1'
+}
