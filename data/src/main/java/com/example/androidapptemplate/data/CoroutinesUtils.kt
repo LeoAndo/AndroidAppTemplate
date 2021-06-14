@@ -1,8 +1,8 @@
 package com.example.androidapptemplate.data
 
 import android.util.Log
-import com.example.androidapptemplate.data.exception.BadRequestErrorException
-import com.example.androidapptemplate.data.exception.NetworkErrorException
+import com.example.androidapptemplate.domain.exception.BadRequestErrorException
+import com.example.androidapptemplate.domain.exception.NetworkErrorException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

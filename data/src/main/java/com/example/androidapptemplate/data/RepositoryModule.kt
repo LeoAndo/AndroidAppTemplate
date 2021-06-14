@@ -1,5 +1,7 @@
 package com.example.androidapptemplate.data
 
+import com.example.androidapptemplate.data.datasource.repository.TriviaRepositoryImpl
+import com.example.androidapptemplate.domain.repository.TriviaRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
