@@ -1,13 +1,9 @@
-package com.example.androidapptemplate.data
+package com.example.androidapptemplate.data.datasource.repository
 
 import com.example.androidapptemplate.data.datasource.local.TriviaLocalDatasource
 import com.example.androidapptemplate.data.datasource.remote.TriviaRemoteDatasource
+import com.example.androidapptemplate.domain.repository.TriviaRepository
 import javax.inject.Inject
-
-interface TriviaRepository {
-    suspend fun getRandomTrivia(): String
-    suspend fun insertTriviaInfo(text: String)
-}
 
 internal class TriviaRepositoryImpl @Inject constructor(
     private val remoteDatasource: TriviaRemoteDatasource,

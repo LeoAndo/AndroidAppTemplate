@@ -1,13 +1,13 @@
-package com.example.androidapptemplate.features.trivia.domain
+package com.example.androidapptemplate.domain.usecase
 
-import com.example.androidapptemplate.data.TriviaRepository
+import com.example.androidapptemplate.domain.repository.TriviaRepository
 import javax.inject.Inject
 
 interface TriviaUseCase {
     suspend fun getRandomTrivia(): String
 }
 
-internal class TriviaUseCaseImpl @Inject constructor(
+class TriviaUseCaseImpl @Inject constructor(
     private val triviaRepository: TriviaRepository
 ) : TriviaUseCase {
     override suspend fun getRandomTrivia(): String {

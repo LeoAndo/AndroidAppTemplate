@@ -1,10 +1,10 @@
-package com.example.androidapptemplate.data
+package com.example.androidapptemplate.di
 
+import android.accounts.NetworkErrorException
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import com.example.androidapptemplate.data.exception.BadRequestErrorException
-import com.example.androidapptemplate.data.exception.NetworkErrorException
+import com.example.androidapptemplate.domain.exception.BadRequestErrorException
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

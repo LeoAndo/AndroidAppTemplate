@@ -3,7 +3,7 @@ package com.example.androidapptemplate.features.trivia
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.androidapptemplate.features.trivia.domain.TriviaUseCase
+import com.example.androidapptemplate.domain.usecase.TriviaUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
