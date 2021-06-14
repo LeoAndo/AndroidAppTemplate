@@ -1,10 +1,10 @@
 package com.example.androidapptemplate.features.trivia
 
-import android.accounts.NetworkErrorException
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.androidapptemplate.domain.exception.BadRequestErrorException
+import com.example.androidapptemplate.domain.exception.NotFoundException
 import com.example.androidapptemplate.domain.usecase.TriviaUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -25,14 +25,14 @@ class TriviaViewModel @Inject constructor(
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         Log.e("ExceptionHandler", "throwable: $throwable")
         when (throwable) {
-            is NetworkErrorException -> {
-                Log.e("ExceptionHandler", "NetworkErrorException時の処理を行う")
+            is NotFoundException -> {
+                Log.e("ExceptionHandler", "NotFoundException時の処理を行う")
             }
             is BadRequestErrorException -> {
                 Log.e("ExceptionHandler", "BadRequestErrorException時の処理を行う")
             }
             else -> {
-                Log.e("ExceptionHandler", "throwable.localizedMessage ?: \"error\"")
+                Log.e("ExceptionHandler", throwable.localizedMessage ?: "error")
             }
         }
     }
