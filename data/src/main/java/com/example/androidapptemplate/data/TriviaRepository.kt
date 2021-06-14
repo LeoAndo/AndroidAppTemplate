@@ -1,7 +1,7 @@
-package com.example.androidapptemplate.features.trivia.data
+package com.example.androidapptemplate.data
 
-import com.example.androidapptemplate.features.trivia.data.datasource.local.TriviaLocalDatasource
-import com.example.androidapptemplate.features.trivia.data.datasource.remote.TriviaRemoteDatasource
+import com.example.androidapptemplate.data.datasource.local.TriviaLocalDatasource
+import com.example.androidapptemplate.data.datasource.remote.TriviaRemoteDatasource
 import javax.inject.Inject
 
 interface TriviaRepository {

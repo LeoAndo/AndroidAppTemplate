@@ -1,8 +1,8 @@
-package com.example.androidapptemplate.features.trivia.data.datasource.db
+package com.example.androidapptemplate.data.datasource.db
 
 import android.content.Context
 import androidx.room.Room
-import com.example.androidapptemplate.features.trivia.data.datasource.db.dao.TriviaDao
+import com.example.androidapptemplate.data.datasource.db.dao.TriviaDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
