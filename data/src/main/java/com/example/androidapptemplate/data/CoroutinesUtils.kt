@@ -2,7 +2,7 @@ package com.example.androidapptemplate.data
 
 import android.util.Log
 import com.example.androidapptemplate.domain.exception.BadRequestErrorException
-import com.example.androidapptemplate.domain.exception.NetworkErrorException
+import com.example.androidapptemplate.domain.exception.NotFoundException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -21,11 +21,8 @@ internal suspend fun <T> apiCall(
             when (e) {
                 is HttpException -> {
                     when (e.code()) {
-                        HttpURLConnection.HTTP_GATEWAY_TIMEOUT -> throw NetworkErrorException("HTTP_GATEWAY_TIMEOUT")
-                        HttpURLConnection.HTTP_UNAVAILABLE -> throw NetworkErrorException("HTTP_UNAVAILABLE")
-                        HttpURLConnection.HTTP_UNAUTHORIZED -> throw NetworkErrorException("HTTP_UNAUTHORIZED")
                         HttpURLConnection.HTTP_BAD_REQUEST -> throw BadRequestErrorException("HTTP_BAD_REQUEST")
-                        HttpURLConnection.HTTP_NOT_FOUND -> throw NetworkErrorException("HTTP_NOT_FOUND")
+                        HttpURLConnection.HTTP_NOT_FOUND -> throw NotFoundException("HTTP_NOT_FOUND")
                         else -> throw e
                     }
                 }
