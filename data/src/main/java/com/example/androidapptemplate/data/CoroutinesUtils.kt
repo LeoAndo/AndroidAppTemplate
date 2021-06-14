@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import java.net.HttpURLConnection
 
-suspend fun <T> apiCall(
+internal suspend fun <T> apiCall(
     dispatcher: CoroutineDispatcher = Dispatchers.IO,
     apiCall: suspend () -> T
 ): T {
@@ -35,7 +35,7 @@ suspend fun <T> apiCall(
     }
 }
 
-suspend fun <T> dbCall(
+internal suspend fun <T> dbCall(
     dispatcher: CoroutineDispatcher = Dispatchers.IO,
     apiCall: suspend () -> T
 ): T {
