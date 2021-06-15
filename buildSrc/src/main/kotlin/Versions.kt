@@ -66,4 +66,5 @@ object Versions {
     const val okhttp = "4.9.1"
     const val converter_scalars = "2.6.0"
     const val room = "2.3.0"
+    const val auto_fill = "1.0.0"
 }

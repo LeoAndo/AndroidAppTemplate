@@ -17,7 +17,8 @@ object Libs {
     const val retrofit: String = "com.squareup.retrofit2:retrofit:" +
             Versions.com_squareup_retrofit2
 
-    const val converter_scalars = "com.squareup.retrofit2:converter-scalars:"+Versions.converter_scalars
+    const val converter_scalars =
+        "com.squareup.retrofit2:converter-scalars:" + Versions.converter_scalars
 
     /**
      * https://github.com/square/moshi/
@@ -135,12 +136,6 @@ object Libs {
      */
     const val core_ktx: String = "androidx.core:core-ktx:" + Versions.core_ktx
 
-    const val lifecycle_livedata_ktx: String =
-        "androidx.lifecycle:lifecycle-livedata-ktx:" + Versions.lifecycle_livedata_ktx
-    const val lifecycle_viewmodel_ktx =
-        "androidx.lifecycle:lifecycle-viewmodel-ktx:" + Versions.lifecycle_viewmodel_ktx
-    const val activity_ktx: String = "androidx.activity:activity-ktx:" + Versions.activity_ktx
-
     /**
      * https://github.com/material-components/material-components-android
      */
@@ -191,13 +186,23 @@ object Libs {
     const val mavericks: String = "com.airbnb.android:mavericks:" + Versions.mavericks
 
     const val hilt_android: String = "com.google.dagger:hilt-android:" + Versions.dagger_hilt
-    const val hilt_android_compiler = "com.google.dagger:hilt-android-compiler:" + Versions.dagger_hilt
-    const val hilt_lifecycle_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:"+ Versions.hilt_lifecycle_viewmodel
-    const val hilt_common = "androidx.hilt:hilt-common:"+Versions.hilt_common
-    const val hilt_android_testing = "com.google.dagger:hilt-android-testing:" + Versions.dagger_hilt
-    const val hilt_compiler = "androidx.hilt:hilt-compiler:"+Versions.hilt_compiler
+    const val hilt_android_compiler =
+        "com.google.dagger:hilt-android-compiler:" + Versions.dagger_hilt
+    const val hilt_lifecycle_viewmodel =
+        "androidx.hilt:hilt-lifecycle-viewmodel:" + Versions.hilt_lifecycle_viewmodel
+    const val hilt_common = "androidx.hilt:hilt-common:" + Versions.hilt_common
+    const val hilt_android_testing =
+        "com.google.dagger:hilt-android-testing:" + Versions.dagger_hilt
+    const val hilt_compiler = "androidx.hilt:hilt-compiler:" + Versions.hilt_compiler
     const val okhttp = "com.squareup.okhttp3:okhttp:" + Versions.okhttp
     const val room_runtime = "androidx.room:room-runtime:" + Versions.room
     const val room_compiler = "androidx.room:room-compiler:" + Versions.room
-    const val room_ktx = "androidx.room:room-ktx:" + Versions.room // optional - Kotlin Extensions and Coroutines support for Room
+    const val room_ktx =
+        "androidx.room:room-ktx:" + Versions.room // optional - Kotlin Extensions and Coroutines support for Room
+    const val lifecycle_livedata_ktx: String =
+        "androidx.lifecycle:lifecycle-livedata-ktx:" + Versions.lifecycle_livedata_ktx
+    const val lifecycle_viewmodel_ktx =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:" + Versions.lifecycle_viewmodel_ktx
+    const val activity_ktx: String = "androidx.activity:activity-ktx:" + Versions.activity_ktx
+    const val auto_fill = "androidx.autofill:autofill:" + Versions.auto_fill
 }

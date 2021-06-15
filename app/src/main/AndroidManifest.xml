@@ -14,6 +14,9 @@
         android:theme="@style/Theme.AndroidAppTemplate"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".features.login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".features.splash.SplashActivity"
             android:exported="true"
             android:noHistory="true"
