@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.androidapptemplate.domain.exception.BadRequestErrorException
 import com.example.androidapptemplate.domain.exception.NotFoundException
-import com.example.androidapptemplate.domain.usecase.TriviaUseCase
+import com.example.androidapptemplate.domain.features.trivia.usecase.TriviaUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch

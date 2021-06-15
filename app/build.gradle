@@ -34,6 +34,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -50,6 +51,7 @@ dependencies {
     implementation Libs.lifecycle_livedata_ktx
     implementation Libs.lifecycle_viewmodel_ktx
     implementation Libs.activity_ktx
+    implementation Libs.auto_fill
     testImplementation Libs.junit
 
     androidTestImplementation Libs.ext_junit

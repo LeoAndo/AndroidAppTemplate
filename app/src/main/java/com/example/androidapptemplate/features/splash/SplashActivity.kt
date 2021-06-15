@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androidapptemplate.MainActivity
 import com.example.androidapptemplate.R
+import com.example.androidapptemplate.features.login.LoginActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
     private val viewModel by viewModels<SplashViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun startActivityWithAnimation() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 }
