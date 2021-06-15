@@ -8,8 +8,8 @@ import javax.inject.Inject
 internal class TriviaLocalDatasource @Inject constructor(
     private val dao: TriviaDao
 ) {
-    suspend fun insertTriviaInfo(text: String) {
+    suspend fun insertTriviaHistory(text: String) {
         val entity = TriviaEntity(0, text)
-        dbCall { dao.insertTriviaTable(entity) }
+        dbCall { dao.insertTriviaHistory(entity) }
     }
 }

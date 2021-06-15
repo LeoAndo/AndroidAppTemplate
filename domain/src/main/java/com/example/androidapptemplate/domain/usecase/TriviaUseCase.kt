@@ -12,7 +12,7 @@ class TriviaUseCaseImpl @Inject constructor(
 ) : TriviaUseCase {
     override suspend fun getRandomTrivia(): String {
         val result = triviaRepository.getRandomTrivia()
-        triviaRepository.insertTriviaInfo(result)
+        triviaRepository.insertTriviaHistory(result)
         return result
     }
 }

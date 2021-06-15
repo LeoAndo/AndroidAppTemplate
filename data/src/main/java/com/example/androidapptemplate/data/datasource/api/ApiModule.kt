@@ -6,9 +6,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Call
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
@@ -19,9 +17,7 @@ import javax.inject.Singleton
 @Module
 class ApiModule {
 
-    @Singleton
-    @Provides
-    internal fun provideOkHttpClientBuilder(): OkHttpClient.Builder {
+    private fun createOkHttpClientBuilder(): OkHttpClient.Builder {
         val builder = OkHttpClient.Builder()
             .connectTimeout(TIMEOUT_SEC, TimeUnit.SECONDS)
             .readTimeout(TIMEOUT_SEC, TimeUnit.SECONDS)
@@ -33,16 +29,11 @@ class ApiModule {
 
     @Singleton
     @Provides
-    internal fun provideTriviaService(
-        okHttpClientBuilder: OkHttpClient.Builder
-    ): TriviaService {
+    internal fun provideTriviaService(): TriviaService {
+        val okHttpClientBuilder = createOkHttpClientBuilder();
         okHttpClientBuilder.addInterceptor(TriviaHeaderInterceptor())
         return Retrofit.Builder()
-            .callFactory(object : Call.Factory {
-                override fun newCall(request: Request): Call {
-                    return okHttpClientBuilder.build().newCall(request)
-                }
-            })
+            .callFactory { request -> okHttpClientBuilder.build().newCall(request) }
             .baseUrl(BuildConfig.TRIVIA_API_DOMAIN)
             .addConverterFactory(ScalarsConverterFactory.create())
             .build()
@@ -51,11 +42,7 @@ class ApiModule {
 
     // http Log.
     private fun createHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        val loggingInterceptor = HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
-            override fun log(message: String) {
-                Log.d("OkHttp", message)
-            }
-        })
+        val loggingInterceptor = HttpLoggingInterceptor { message -> Log.d("OkHttp", message) }
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         return loggingInterceptor
     }
