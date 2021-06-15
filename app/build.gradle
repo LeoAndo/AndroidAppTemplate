@@ -41,7 +41,7 @@ dependencies {
     implementation project(':data') // TODO 消したい
     implementation project(':domain')
 
-    // implementation Libs.kotlin_stdlib
+    implementation Libs.kotlin_stdlib
     implementation Libs.core_ktx
     implementation Libs.appcompat
     implementation Libs.material
@@ -65,7 +65,4 @@ dependencies {
     androidTestImplementation Libs.hilt_android_testing
     kaptAndroidTest Libs.hilt_android_compiler
     kaptAndroidTest Libs.hilt_compiler
-
-    // Network
-    implementation Libs.okhttp
 }

@@ -8,11 +8,11 @@ import com.example.androidapptemplate.data.datasource.db.entity.TriviaEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-internal abstract class TriviaDao {
+internal interface TriviaDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    abstract suspend fun insertTriviaTable(trivia: TriviaEntity)
+    suspend fun insertTriviaHistory(trivia: TriviaEntity)
 
     // Trivia情報を全件取得する.
-    @Query("SELECT * FROM TriviaTable")
-    abstract fun findAllTriviaList(): Flow<List<TriviaEntity>>
+    @Query("SELECT * FROM trivia_histories")
+    fun findAllTriviaList(): Flow<List<TriviaEntity>>
 }

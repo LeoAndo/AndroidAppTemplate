@@ -11,7 +11,7 @@ internal class TriviaRepositoryImpl @Inject constructor(
 ) : TriviaRepository {
     override suspend fun getRandomTrivia(): String = remoteDatasource.getRandomTrivia()
 
-    override suspend fun insertTriviaInfo(text: String) {
-        localDatasource.insertTriviaInfo(text)
+    override suspend fun insertTriviaHistory(text: String) {
+        localDatasource.insertTriviaHistory(text)
     }
 }
