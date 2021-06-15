@@ -3,7 +3,7 @@
     package="com.example.androidapptemplate">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- TODO android:usesCleartextTraffic="true" はtrivia APIがhttp通信なので追加設定している. -->
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -14,15 +14,21 @@
         android:theme="@style/Theme.AndroidAppTemplate"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".features.trivia.TriviaActivity"
-            android:exported="true" />
-        <activity android:name=".MainActivity">
+            android:name=".features.splash.SplashActivity"
+            android:exported="true"
+            android:noHistory="true"
+            android:theme="@style/Theme.AndroidAppTemplate.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".features.trivia.TriviaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
