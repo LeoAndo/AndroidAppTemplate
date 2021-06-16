@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = host.navController
 
-        setupSupportActionBar()
+        setupToolBar()
         setupBottomBar()
         observeDestination();
     }
@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             setupTheme(destination.id)
             setupBottomBar(destination.id)
-            setupSupportActionBar(destination.id)
+            setupToolBar(destination.id)
         }
     }
 
-    private fun setupSupportActionBar() {
+    private fun setupToolBar() {
         setSupportActionBar(binding.toolbar)
         binding.toolbar.setNavigationOnClickListener { findNavController(R.id.nav_host_fragment).popBackStack() }
     }
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupSupportActionBar(destinationId: Int) {
+    private fun setupToolBar(destinationId: Int) {
         when (destinationId) {
             R.id.splash_dest, R.id.login_dest -> supportActionBar?.hide()
             else -> {
