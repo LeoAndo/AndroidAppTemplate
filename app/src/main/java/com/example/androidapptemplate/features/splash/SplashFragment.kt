@@ -9,7 +9,7 @@ import com.example.androidapptemplate.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SplashFragment : Fragment(R.layout.fragment_splash) {
+internal class SplashFragment : Fragment(R.layout.fragment_splash) {
     private val viewModel by viewModels<SplashViewModel>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

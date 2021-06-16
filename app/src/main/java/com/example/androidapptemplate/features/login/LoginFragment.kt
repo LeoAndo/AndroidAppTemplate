@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class LoginFragment : Fragment(R.layout.fragment_login) {
+internal class LoginFragment : Fragment(R.layout.fragment_login) {
     private val binding by viewBindings(FragmentLoginBinding::bind)
     private val viewModel by viewModels<LoginViewModel>()
 

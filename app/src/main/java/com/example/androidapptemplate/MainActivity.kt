@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = host.navController
 
-        setupToolBar()
+        setupSupportActionBar()
         setupBottomBar()
         observeDestination();
     }
@@ -35,17 +35,18 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             setupTheme(destination.id)
             setupBottomBar(destination.id)
-            setupToolBar(destination.id)
+            setupSupportActionBar(destination.id)
         }
     }
 
-    private fun setupToolBar() {
+    private fun setupSupportActionBar() {
         setSupportActionBar(binding.toolbar)
         binding.toolbar.setNavigationOnClickListener { findNavController(R.id.nav_host_fragment).popBackStack() }
     }
 
     private fun setupBottomBar() {
-        val topLevelDestinationIds = setOf(R.id.home_dest)
+        val topLevelDestinationIds =
+            setOf(R.id.home_dest, R.id.algorithm_top_dest, R.id.web_api_top_dest, R.id.google_api_top_dest)
         val appBarConfiguration = AppBarConfiguration(topLevelDestinationIds)
         binding.navView.inflateMenu(R.menu.menu_main)
 
@@ -68,15 +69,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupBottomBar(destinationId: Int) {
         when (destinationId) {
-            R.id.splash_dest, R.id.login_dest -> binding.navView.setVisibleOrGone(false)
-            else -> binding.navView.setVisibleOrGone(true)
+            R.id.home_dest, R.id.algorithm_top_dest, R.id.web_api_top_dest, R.id.google_api_top_dest -> {
+                binding.navView.setVisibleOrGone(true)
+            }
+            else -> binding.navView.setVisibleOrGone(false)
         }
     }
 
-    private fun setupToolBar(destinationId: Int) {
+    private fun setupSupportActionBar(destinationId: Int) {
         when (destinationId) {
             R.id.splash_dest, R.id.login_dest -> supportActionBar?.hide()
-            else -> supportActionBar?.show()
+            else -> {
+                supportActionBar?.show()
+            }
         }
     }
 }
