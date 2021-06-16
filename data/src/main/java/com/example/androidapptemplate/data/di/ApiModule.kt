@@ -17,7 +17,7 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class ApiModule {
+object ApiModule {
 
     private fun createOkHttpClientBuilder(): OkHttpClient.Builder {
         val builder = OkHttpClient.Builder()
@@ -49,7 +49,5 @@ class ApiModule {
         return loggingInterceptor
     }
 
-    companion object {
-        private const val TIMEOUT_SEC: Long = 15
-    }
+    private const val TIMEOUT_SEC: Long = 15
 }

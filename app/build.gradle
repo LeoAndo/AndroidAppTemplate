@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -21,7 +22,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -52,6 +53,8 @@ dependencies {
     implementation Libs.lifecycle_viewmodel_ktx
     implementation Libs.activity_ktx
     implementation Libs.auto_fill
+    implementation Libs.navigation_fragment_ktx
+    implementation Libs.navigation_ui_ktx
     testImplementation Libs.junit
 
     androidTestImplementation Libs.ext_junit
