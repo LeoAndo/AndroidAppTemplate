@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class TriviaViewModel @Inject constructor(
+internal class TriviaViewModel @Inject constructor(
     private val usecase: TriviaUseCase
 ) : ViewModel() {
     fun getRandomTrivia() {

@@ -5,4 +5,8 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="home">home</string>
+    <string name="algorithm">algorithm</string>
+    <string name="web_api">webAPI</string>
+    <string name="google_api">googleAPI</string>
 </resources>
