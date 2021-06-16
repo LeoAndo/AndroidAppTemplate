@@ -11,7 +11,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DatabaseModule {
+object DatabaseModule {
     @Provides
     internal fun provideTriviaDatabase(@ApplicationContext context: Context): TriviaDatabase =
         TriviaDatabase.getInstance(context)

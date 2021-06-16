@@ -205,4 +205,7 @@ object Libs {
         "androidx.lifecycle:lifecycle-viewmodel-ktx:" + Versions.lifecycle_viewmodel_ktx
     const val activity_ktx: String = "androidx.activity:activity-ktx:" + Versions.activity_ktx
     const val auto_fill = "androidx.autofill:autofill:" + Versions.auto_fill
+    const val navigation_fragment_ktx =
+        "androidx.navigation:navigation-fragment-ktx:" + Versions.navigation_fragment_ktx
+    const val navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:" + Versions.navigation_ui_ktx
 }

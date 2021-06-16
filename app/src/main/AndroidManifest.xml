@@ -14,10 +14,7 @@
         android:theme="@style/Theme.AndroidAppTemplate"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".features.login.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".features.splash.SplashActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:noHistory="true"
             android:theme="@style/Theme.AndroidAppTemplate.NoActionBar">
@@ -29,9 +26,5 @@
         <activity
             android:name=".features.trivia.TriviaActivity"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
     </application>
-
 </manifest>

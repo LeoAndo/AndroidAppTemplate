@@ -1,20 +1,82 @@
 package com.example.androidapptemplate
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androidapptemplate.features.trivia.TriviaActivity
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.example.androidapptemplate.databinding.ActivityMainBinding
+import com.example.androidapptemplate.util.setVisibleOrGone
+import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    private lateinit var navController: NavController
+    private val binding by viewBindings(ActivityMainBinding::inflate)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
+
+        val host: NavHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = host.navController
+
+        setupToolBar()
+        setupBottomBar()
+        observeDestination();
     }
 
-    fun onClickAction(view: View) {
-        startActivity(Intent(this, TriviaActivity::class.java))
+    private fun observeDestination() {
+        // 画面遷移の監視
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            setupTheme(destination.id)
+            setupBottomBar(destination.id)
+            setupToolBar(destination.id)
+        }
+    }
+
+    private fun setupToolBar() {
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.setNavigationOnClickListener { findNavController(R.id.nav_host_fragment).popBackStack() }
+    }
+
+    private fun setupBottomBar() {
+        val topLevelDestinationIds = setOf(R.id.home_dest)
+        val appBarConfiguration = AppBarConfiguration(topLevelDestinationIds)
+        binding.navView.inflateMenu(R.menu.menu_main)
+
+        NavigationUI.setupActionBarWithNavController(
+            this,
+            navController,
+            appBarConfiguration
+        )
+        binding.navView.setupWithNavController(navController)
+    }
+
+    private fun setupTheme(destinationId: Int) {
+        when (destinationId) {
+            R.id.splash_dest, R.id.login_dest -> {
+                setTheme(R.style.Theme_AndroidAppTemplate_NoActionBar)
+            }
+            else -> setTheme(R.style.Theme_AndroidAppTemplate)
+        }
+    }
+
+    private fun setupBottomBar(destinationId: Int) {
+        when (destinationId) {
+            R.id.splash_dest, R.id.login_dest -> binding.navView.setVisibleOrGone(false)
+            else -> binding.navView.setVisibleOrGone(true)
+        }
+    }
+
+    private fun setupToolBar(destinationId: Int) {
+        when (destinationId) {
+            R.id.splash_dest, R.id.login_dest -> supportActionBar?.hide()
+            else -> supportActionBar?.show()
+        }
     }
 }
