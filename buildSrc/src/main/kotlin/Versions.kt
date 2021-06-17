@@ -67,7 +67,7 @@ object Versions {
     const val converter_scalars = "2.6.0"
     const val room = "2.3.0"
     const val auto_fill = "1.0.0"
-    const val navigation_fragment_ktx = "2.3.5"
-    const val navigation_ui_ktx = "2.3.5"
-    const val navigation_safe_args_gradle_plugin = "2.3.5"
+    const val navigation_fragment_ktx = "2.4.0-alpha02"
+    const val navigation_ui_ktx = "2.4.0-alpha02"
+    const val navigation_safe_args_gradle_plugin = "2.4.0-alpha02"
 }

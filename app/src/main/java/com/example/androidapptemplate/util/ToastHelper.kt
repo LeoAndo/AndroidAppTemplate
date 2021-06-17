@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.helper
+package com.example.androidapptemplate.util
 
 import android.content.Context
 import android.widget.Toast

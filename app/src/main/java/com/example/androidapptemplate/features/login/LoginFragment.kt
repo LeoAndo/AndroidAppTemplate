@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.FragmentLoginBinding
-import com.example.androidapptemplate.helper.ToastHelper
+import com.example.androidapptemplate.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
