@@ -1,1 +1,6 @@
 apply from: "$rootDir/common-kotlin-library.gradle"
+// apply plugin: 'kotlinx-serialization'
+
+//dependencies {
+//    implementation Libs.kotlinx_serialization_json
+//}

@@ -207,5 +207,17 @@ object Libs {
     const val auto_fill = "androidx.autofill:autofill:" + Versions.auto_fill
     const val navigation_fragment_ktx =
         "androidx.navigation:navigation-fragment-ktx:" + Versions.navigation_fragment_ktx
-    const val navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:" + Versions.navigation_ui_ktx
+    const val navigation_ui_ktx =
+        "androidx.navigation:navigation-ui-ktx:" + Versions.navigation_ui_ktx
+
+    const val kotlinx_serialization_json =
+        "org.jetbrains.kotlinx:kotlinx-serialization-json:" + Versions.kotlinx_serialization
+    const val kotlinx_serialization_protobuf =
+        "org.jetbrains.kotlinx:kotlinx-serialization-protobuf:" + Versions.kotlinx_serialization
+    const val paging_runtime_ktx =
+        "androidx.paging:paging-runtime-ktx:" + Versions.paging_runtime_ktx
+    const val retrofit_kotlinx_serialization_converter =
+        "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:" + Versions.retrofit_kotlinx_serialization_converter
+    const val moshi_kotlin: String = "com.squareup.moshi:moshi-kotlin:" +
+            Versions.moshi
 }
