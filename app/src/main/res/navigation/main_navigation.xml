@@ -29,31 +29,9 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/go_to_home_action"
-            app:destination="@id/home_dest"
+            app:destination="@id/home_navigation"
             app:popUpTo="@+id/main_navigation"
             app:popUpToInclusive="true" />
     </fragment>
-    <fragment
-        android:id="@+id/home_dest"
-        android:name="com.example.androidapptemplate.features.home.HomeFragment"
-        android:label="@string/home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/algorithm_top_dest"
-        android:name="com.example.androidapptemplate.features.algorithm.AlgorithmTopFragment"
-        android:label="@string/algorithm"
-        tools:layout="@layout/algorithm_top_fragment" />
-
-    <fragment
-        android:id="@+id/web_api_top_dest"
-        android:name="com.example.androidapptemplate.features.webapi.WebApiTopFragment"
-        android:label="@string/web_api"
-        tools:layout="@layout/web_api_top_fragment" />
-
-    <fragment
-        android:id="@+id/google_api_top_dest"
-        android:name="com.example.androidapptemplate.features.googleapi.GoogleApiTopFragment"
-        android:label="@string/google_api"
-        tools:layout="@layout/google_api_top_fragment" />
+    <include app:graph="@navigation/home_navigation" />
 </navigation>
