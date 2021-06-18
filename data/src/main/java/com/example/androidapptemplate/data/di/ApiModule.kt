@@ -23,8 +23,13 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 object ApiModule {
-
-    private fun createOkHttpClientBuilder(): OkHttpClient.Builder {
+    /**
+     * https://square.github.io/okhttp/4.x/okhttp/okhttp3/-ok-http-client/#okhttpclients-should-be-shared
+     * シングルインスタンス化してアプリ内で使いまわした方がパフォーマンスがよくなるらしい。
+     */
+    @Singleton
+    @Provides
+    internal fun provideOkHttpClientBuilder(): OkHttpClient.Builder {
         val builder = OkHttpClient.Builder()
             .connectTimeout(TIMEOUT_SEC, TimeUnit.SECONDS)
             .readTimeout(TIMEOUT_SEC, TimeUnit.SECONDS)
@@ -34,7 +39,9 @@ object ApiModule {
         return builder
     }
 
-    private fun createMoshi(): Moshi {
+    @Singleton
+    @Provides
+    internal fun provideMoshi(): Moshi {
         return Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .build()
@@ -42,8 +49,7 @@ object ApiModule {
 
     @Singleton
     @Provides
-    internal fun provideTriviaService(): TriviaService {
-        val okHttpClientBuilder = createOkHttpClientBuilder()
+    internal fun provideTriviaService(okHttpClientBuilder: OkHttpClient.Builder): TriviaService {
         okHttpClientBuilder.addInterceptor(TriviaHeaderInterceptor())
         return Retrofit.Builder()
             .callFactory { request -> okHttpClientBuilder.build().newCall(request) }
@@ -55,9 +61,10 @@ object ApiModule {
 
     @Singleton
     @Provides
-    internal fun provideUnsplashService(): UnsplashService {
-        val okHttpClientBuilder = createOkHttpClientBuilder()
-        val moshi = createMoshi();
+    internal fun provideUnsplashService(
+        okHttpClientBuilder: OkHttpClient.Builder,
+        moshi: Moshi
+    ): UnsplashService {
         return Retrofit.Builder()
             .callFactory { request -> okHttpClientBuilder.build().newCall(request) }
             .baseUrl(BuildConfig.UNSPLASH_API_DOMAIN)
