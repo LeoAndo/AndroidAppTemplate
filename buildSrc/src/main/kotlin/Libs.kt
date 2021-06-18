@@ -220,4 +220,6 @@ object Libs {
         "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:" + Versions.retrofit_kotlinx_serialization_converter
     const val moshi_kotlin: String = "com.squareup.moshi:moshi-kotlin:" +
             Versions.moshi
+    const val kotlinx_coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:" + Versions.kotlinx_coroutines_core
+    const val kotlinx_coroutines_core_jvm = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:"+Versions.kotlinx_coroutines_core
 }
