@@ -30,7 +30,7 @@
     <string name="button_get_trivia">getTrivia</string>
     <string name="trivia_error_message">Please select month or date.</string>
     <string name="button_get_random_date_trivia">getRandomDateTrivia</string>
-    <string name="button_get_random_month_trivia">getRandomun_splash_un_authorized_dialog_messageMonthTrivia</string>
+    <string name="button_get_random_month_trivia">getRandomMonthTrivia</string>
     <string name="button_get_random_year_trivia">getRandomYearTrivia</string>
     <string name="button_get_random_trivia">getRandomTrivia</string>
     <string name="un_splash_un_authorized_dialog_title">UnSplash api key invalid</string>
