@@ -54,6 +54,19 @@ internal interface UnAuthorizedErrorHandleable {
     }
 }
 
+internal interface UnSplashUnAuthorizedErrorHandleable {
+    val onUnAuthorizedAction: () -> Unit
+    fun handleUnAuthorizedError(fragment: Fragment, throwable: Throwable): Boolean {
+        return when (throwable) {
+            is UnAuthorizedException -> {
+                fragment.openUnSplashUnAuthorizedErrorDialog { onUnAuthorizedAction() }
+                true
+            }
+            else -> false
+        }
+    }
+}
+
 internal fun Fragment.openUnAuthorizedErrorDialog(onPositiveButtonClicked: () -> Unit) {
     MaterialAlertDialogBuilder(requireActivity()).apply {
         setTitle(requireContext().getString(R.string.un_authorized_dialog_title))
@@ -75,6 +88,20 @@ internal fun Fragment.openNetworkErrorDialog(onPositiveButtonClicked: () -> Unit
         setPositiveButton(android.R.string.ok) { _, _ -> onPositiveButtonClicked() }
         setNegativeButton(android.R.string.cancel) { _, _ -> }
     }.create().apply {
+        show()
+    }
+}
+
+internal fun Fragment.openUnSplashUnAuthorizedErrorDialog(onPositiveButtonClicked: () -> Unit) {
+    MaterialAlertDialogBuilder(requireActivity()).apply {
+        setTitle(requireContext().getString(R.string.un_splash_un_authorized_dialog_title))
+        setMessage(requireContext().getString(R.string.un_splash_un_authorized_dialog_message))
+        setPositiveButton(android.R.string.ok) { _, _ ->
+            onPositiveButtonClicked()
+        }
+        setCancelable(false)
+    }.create().apply {
+        setCanceledOnTouchOutside(false)
         show()
     }
 }
