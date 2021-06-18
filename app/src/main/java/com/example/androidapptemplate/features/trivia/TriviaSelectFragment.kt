@@ -54,8 +54,7 @@ internal class TriviaSelectFragment : Fragment(R.layout.fragment_trivia_select) 
                 requireContext(),
                 getString(R.string.trivia_error_message),
                 Toast.LENGTH_SHORT
-            )
-                .show()
+            ).show()
         }
     }
 
