@@ -28,8 +28,10 @@
         android:name="com.example.androidapptemplate.features.login.LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/go_to_home_action"
+            android:id="@+id/go_to_home_navigation"
             app:destination="@id/home_navigation"
+            app:enterAnim="@anim/app_nav_default_enter_anim"
+            app:exitAnim="@anim/app_nav_default_exit_anim"
             app:popUpTo="@+id/main_navigation"
             app:popUpToInclusive="true" />
     </fragment>

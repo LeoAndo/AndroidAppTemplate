@@ -1,13 +1,18 @@
 package com.example.androidapptemplate.data
 
 import android.util.Log
-import com.example.androidapptemplate.domain.exception.BadRequestErrorException
+import com.example.androidapptemplate.domain.exception.BadRequestException
+import com.example.androidapptemplate.domain.exception.NetworkException
 import com.example.androidapptemplate.domain.exception.NotFoundException
+import com.example.androidapptemplate.domain.exception.UnAuthorizedException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
+import java.net.ConnectException
 import java.net.HttpURLConnection
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 
 internal suspend fun <T> apiCall(
     dispatcher: CoroutineDispatcher = Dispatchers.IO,
@@ -21,11 +26,17 @@ internal suspend fun <T> apiCall(
             when (e) {
                 is HttpException -> {
                     when (e.code()) {
-                        HttpURLConnection.HTTP_BAD_REQUEST -> throw BadRequestErrorException("HTTP_BAD_REQUEST")
-                        HttpURLConnection.HTTP_NOT_FOUND -> throw NotFoundException("HTTP_NOT_FOUND")
+                        HttpURLConnection.HTTP_UNAUTHORIZED -> throw UnAuthorizedException()
+                        HttpURLConnection.HTTP_BAD_REQUEST -> throw BadRequestException(
+                            e.localizedMessage ?: "unknown error"
+                        )
+                        HttpURLConnection.HTTP_NOT_FOUND -> throw NotFoundException(
+                            e.localizedMessage ?: "unknown error"
+                        )
                         else -> throw e
                     }
                 }
+                is UnknownHostException, is ConnectException, is SocketTimeoutException -> throw NetworkException()
                 else -> throw e
             }
         }

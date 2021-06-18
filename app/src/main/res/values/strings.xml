@@ -9,9 +9,17 @@
     <string name="algorithm">algorithm</string>
     <string name="web_api">webAPI</string>
     <string name="google_api">googleAPI</string>
-    <string name="image_search_gallery">イメージ検索</string>
-    <string name="image_details">イメージ詳細</string>
-    <string name="clear_search">検索結果をクリア</string>
+    <string name="image_search_gallery">ImageSearchGallery</string>
+    <string name="image_details">Detail</string>
+    <string name="clear_search">clear search results</string>
     <string name="search">Search</string>
     <string name="clear_list">Clear List</string>
+    <string name="invalid_email_address_message">Invalid Email Address</string>
+    <string name="invalid_password_message">invalid password</string>
+    <string name="un_authorized_dialog_title">Authentication error</string>
+    <string name="un_authorized_dialog_message">Delete in-app data and force logout</string>
+    <string name="network_error_dialog_title">network error</string>
+    <string name="network_error_dialog_message">Retry to network communicate again?</string>
+    <string name="random_trivia">getRandomTrivia</string>
+    <string name="trivia">Trivia</string>
 </resources>

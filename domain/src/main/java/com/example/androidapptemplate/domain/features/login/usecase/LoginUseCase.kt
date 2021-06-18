@@ -16,9 +16,9 @@ class LoginUseCaseImpl @Inject constructor(
 
     override suspend fun login(emailAddress: String, password: String): Boolean {
         if (!isEmailAddressValid(emailAddress)) {
-            throw InvalidEmailAddressException("InvalidEmailAddressExceptionだよ！")
+            throw InvalidEmailAddressException("")
         } else if (!isPasswordValid(password)) {
-            throw InvalidPasswordException("InvalidPasswordExceptionだよ！")
+            throw InvalidPasswordException("")
         }
         return repository.login(emailAddress, password)
     }

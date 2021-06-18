@@ -23,7 +23,14 @@
         tools:layout="@layout/web_api_top_fragment">
         <action
             android:id="@+id/go_to_unsplash_navigation"
-            app:destination="@id/unsplash_navigation" />
+            app:destination="@id/unsplash_navigation"
+            app:enterAnim="@anim/app_nav_default_enter_anim"
+            app:exitAnim="@anim/app_nav_default_exit_anim" />
+        <action
+            android:id="@+id/go_to_trivia_navigation"
+            app:destination="@id/trivia_navigation"
+            app:enterAnim="@anim/app_nav_default_enter_anim"
+            app:exitAnim="@anim/app_nav_default_exit_anim" />
     </fragment>
 
     <fragment
@@ -33,4 +40,5 @@
         tools:layout="@layout/google_api_top_fragment" />
 
     <include app:graph="@navigation/unsplash_navigation" />
+    <include app:graph="@navigation/trivia_navigation" />
 </navigation>
