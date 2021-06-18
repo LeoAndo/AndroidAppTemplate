@@ -79,16 +79,13 @@ internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_sea
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_gallery, menu)
-
         val clearItem = menu.findItem(R.id.action_clear)
         clearItem.setOnMenuItemClickListener {
             viewModel.clearList()
             true
         }
-
         val searchItem = menu.findItem(R.id.action_search)
         val searchView = searchItem.actionView as SearchView
-
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query ?: return true

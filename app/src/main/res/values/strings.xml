@@ -11,4 +11,7 @@
     <string name="google_api">googleAPI</string>
     <string name="image_search_gallery">イメージ検索</string>
     <string name="image_details">イメージ詳細</string>
+    <string name="clear_search">検索結果をクリア</string>
+    <string name="search">Search</string>
+    <string name="clear_list">Clear List</string>
 </resources>
