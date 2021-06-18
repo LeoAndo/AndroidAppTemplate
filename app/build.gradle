@@ -49,6 +49,9 @@ dependencies {
     implementation Libs.material
     implementation Libs.constraintlayout
 
+    implementation Libs.swiperefreshlayout
+    implementation Libs.glide
+    implementation Libs.paging_runtime_ktx
     implementation Libs.lifecycle_livedata_ktx
     implementation Libs.lifecycle_viewmodel_ktx
     implementation Libs.activity_ktx

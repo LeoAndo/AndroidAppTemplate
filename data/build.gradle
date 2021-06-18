@@ -1,8 +1,12 @@
 apply from: "$rootDir/common-android-library.gradle"
+// apply plugin: 'kotlinx-serialization'
 
 android {
     defaultConfig {
+        buildConfigField("String", "INVALID_API_KEY", "\"invalid api key\"")
         buildConfigField "String", "TRIVIA_API_DOMAIN", "\"http://numbersapi.com\""
+        buildConfigField "String", "UNSPLASH_API_DOMAIN", "\"https://api.unsplash.com/\""
+        buildConfigField("String", "UNSPLASH_ACCESS_KEY", "INVALID_API_KEY")  // TODO 設定すること!
     }
 }
 dependencies {
@@ -13,9 +17,20 @@ dependencies {
     implementation Libs.logging_interceptor
     implementation Libs.retrofit
     implementation Libs.converter_scalars
+    implementation Libs.converter_moshi
+    implementation Libs.moshi_kotlin
+    // kapt Libs.moshi_codegen
+    // implementation Libs.retrofit_kotlinx_serialization_converter
 
     // Room.
     implementation Libs.room_runtime
     kapt Libs.room_compiler
     implementation Libs.room_ktx
+
+    // Paging3
+    implementation Libs.paging_runtime_ktx
+
+    // kotlinx_serialization
+    // implementation Libs.kotlinx_serialization_json
+    // implementation Libs.kotlinx_serialization_protobuf
 }

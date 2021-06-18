@@ -19,4 +19,12 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="ShapeAppearanceOverlay.AndroidAppTemplate" parent="" />
+    <style name="ShapeAppearanceOverlay.AndroidAppTemplate.CircleImageView">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSizeTopLeft">20%</item>
+        <item name="cornerSizeBottomRight">28%</item>
+    </style>
 </resources>

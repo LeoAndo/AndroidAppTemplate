@@ -9,6 +9,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.org_jetbrains_kotlin}")
         classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.dagger_hilt}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation_safe_args_gradle_plugin}")
+        // classpath("org.jetbrains.kotlin:kotlin-serialization:${Versions.org_jetbrains_kotlin}")
     }
 }
 

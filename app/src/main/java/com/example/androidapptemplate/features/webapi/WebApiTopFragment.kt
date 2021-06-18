@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.WebApiTopFragmentBinding
@@ -19,9 +20,14 @@ internal class WebApiTopFragment : Fragment(R.layout.web_api_top_fragment) {
     private val binding by viewBindings(WebApiTopFragmentBinding::bind)
 
     private val simpleListAdapter =
-        SimpleListAdapter(dataset = listOf("Trivia", "OpenWeatherMap", "CCC"), onItemClicked = {
-            toastHelper.showToast(it)
-        })
+        SimpleListAdapter(
+            dataset = listOf("Trivia", "OpenWeatherMap", "unsplash"),
+            onItemClicked = {
+                toastHelper.showToast(it)
+                if ("unsplash" == it) {
+                    findNavController().navigate(WebApiTopFragmentDirections.goToUnsplashNavigation())
+                }
+            })
 
     @Inject
     lateinit var toastHelper: ToastHelper
