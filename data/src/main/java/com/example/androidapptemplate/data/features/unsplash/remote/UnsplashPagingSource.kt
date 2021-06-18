@@ -3,7 +3,6 @@ package com.example.androidapptemplate.data.features.unsplash.remote
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.androidapptemplate.data.apiCall
 import com.example.androidapptemplate.data.features.unsplash.api.UnsplashService
 import com.example.androidapptemplate.data.features.unsplash.api.response.toModel
 import com.example.androidapptemplate.domain.exception.BadRequestException
@@ -33,7 +32,6 @@ internal class UnsplashPagingSource(
         )
 
         return try {
-            apiCall { }
             val photos =
                 api.searchPhotos(query, position, params.loadSize).results.map { it.toModel() }
             LoadResult.Page(

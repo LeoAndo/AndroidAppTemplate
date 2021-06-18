@@ -95,7 +95,7 @@ internal fun Fragment.openNetworkErrorDialog(onPositiveButtonClicked: () -> Unit
 internal fun Fragment.openUnSplashUnAuthorizedErrorDialog(onPositiveButtonClicked: () -> Unit) {
     MaterialAlertDialogBuilder(requireActivity()).apply {
         setTitle(requireContext().getString(R.string.un_splash_un_authorized_dialog_title))
-        setMessage(requireContext().getString(R.string.un_splash_un_authorized_dialog_message))
+        setMessage(requireContext().getString(R.string.))
         setPositiveButton(android.R.string.ok) { _, _ ->
             onPositiveButtonClicked()
         }

@@ -1,7 +1,6 @@
 package com.example.androidapptemplate.features.unsplash.gallery
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
@@ -15,7 +14,6 @@ import androidx.paging.LoadState
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.FragmentImageSearchGalleryBinding
 import com.example.androidapptemplate.features.core.dialog.OnRetryConnectionListener
-import com.example.androidapptemplate.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -24,23 +22,17 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_search_gallery) {
     private val viewModel by viewModels<ImageSearchGalleryViewModel>()
     private val binding by viewBindings(FragmentImageSearchGalleryBinding::bind)
     private val exceptionHandler =
-        UnsplashGalleryExceptionHandler(fragment = this, onUnAuthorizedAction = {
-            toastHelper.showToast("認証エラー")
-        })
+        UnsplashGalleryExceptionHandler(fragment = this, onUnAuthorizedAction = {})
     private val adapter = UnsplashPhotoAdapter {
         val action = ImageSearchGalleryFragmentDirections.goToDetailsDest(it)
         findNavController().navigate(action)
     }
-
-    @Inject
-    lateinit var toastHelper: ToastHelper
 
     @OptIn(InternalCoroutinesApi::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,7 +54,6 @@ internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_sea
                 }
                 else -> null
             }
-            Log.e("aaa", "errorState: $errorState")
             errorState?.let { it ->
                 exceptionHandler.handleError(it.error)
             }
