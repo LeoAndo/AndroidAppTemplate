@@ -5,13 +5,13 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.trivia.TriviaActivity">
+    tools:context=".features.trivia.TriviaFragment">
 
     <Button
         android:id="@+id/buttonRandomTrivia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="getRandomTrivia"
+        android:text="@string/random_trivia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

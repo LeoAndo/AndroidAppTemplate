@@ -24,8 +24,13 @@ internal class WebApiTopFragment : Fragment(R.layout.web_api_top_fragment) {
             dataset = listOf("Trivia", "OpenWeatherMap", "unsplash"),
             onItemClicked = {
                 toastHelper.showToast(it)
-                if ("unsplash" == it) {
-                    findNavController().navigate(WebApiTopFragmentDirections.goToUnsplashNavigation())
+                when (it) {
+                    "Trivia" -> {
+                        findNavController().navigate(WebApiTopFragmentDirections.goToTriviaNavigation())
+                    }
+                    "unsplash" -> {
+                        findNavController().navigate(WebApiTopFragmentDirections.goToUnsplashNavigation())
+                    }
                 }
             })
 

@@ -2,13 +2,13 @@ package com.example.androidapptemplate
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.androidapptemplate.databinding.ActivityMainBinding
-import com.example.androidapptemplate.util.setVisibleOrGone
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -53,15 +53,15 @@ class MainActivity : AppCompatActivity() {
         when (destinationId) {
             R.id.splash_dest, R.id.login_dest -> {
                 supportActionBar?.hide()
-                binding.navView.setVisibleOrGone(false)
+                binding.navView.isVisible = false
             }
             R.id.home_dest, R.id.algorithm_top_dest, R.id.web_api_top_dest, R.id.google_api_top_dest -> { // topLevelDestinationIds
                 supportActionBar?.hide()
-                binding.navView.setVisibleOrGone(true)
+                binding.navView.isVisible = true
             }
             else -> {
                 supportActionBar?.show()
-                binding.navView.setVisibleOrGone(true)
+                binding.navView.isVisible = false
             }
         }
     }

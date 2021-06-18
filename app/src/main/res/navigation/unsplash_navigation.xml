@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_image_search_gallery">
         <action
             android:id="@+id/go_to_details_dest"
-            app:destination="@id/image_details_dest" />
+            app:destination="@id/image_details_dest"
+            app:enterAnim="@anim/app_nav_default_enter_anim"
+            app:exitAnim="@anim/app_nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/image_details_dest"
