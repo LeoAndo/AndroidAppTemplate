@@ -73,4 +73,10 @@ dependencies {
     androidTestImplementation Libs.hilt_android_testing
     kaptAndroidTest Libs.hilt_android_compiler
     kaptAndroidTest Libs.hilt_compiler
+
+    // TODO 以下の依存設定、消したい
+    // dataモジュールでprovideしているOkHttpClient.Builderの自動生成コードがappモジュールに出力されるので、
+    // 依存設定を追加しないと、ビルドエラーになる.
+    implementation Libs.okhttp
+    implementation Libs.moshi_kotlin
 }
