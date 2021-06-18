@@ -22,4 +22,15 @@
     <string name="network_error_dialog_message">Retry to network communicate again?</string>
     <string name="random_trivia">getRandomTrivia</string>
     <string name="trivia">Trivia</string>
+    <string name="trivia_select">select</string>
+    <string name="trivia_random">random</string>
+    <string name="trivia_history">history</string>
+    <string name="month">month</string>
+    <string name="date">date</string>
+    <string name="button_get_trivia">getTrivia</string>
+    <string name="trivia_error_message">Please select month or date.</string>
+    <string name="button_get_random_date_trivia">getRandomDateTrivia</string>
+    <string name="button_get_random_month_trivia">getRandomMonthTrivia</string>
+    <string name="button_get_random_year_trivia">getRandomYearTrivia</string>
+    <string name="button_get_random_trivia">getRandomTrivia</string>
 </resources>

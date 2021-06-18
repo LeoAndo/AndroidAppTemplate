@@ -13,6 +13,8 @@ internal sealed interface RetryState
 object RetryStateNone : RetryState
 object RetryState1 : RetryState
 object RetryState2 : RetryState
+object RetryState3 : RetryState
+object RetryState4 : RetryState
 
 internal interface OnRetryConnectionListener {
     fun onRetry()

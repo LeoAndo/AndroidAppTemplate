@@ -19,7 +19,6 @@ dependencies {
     implementation Libs.converter_scalars
     implementation Libs.converter_moshi
     implementation Libs.moshi_kotlin
-    // kapt Libs.moshi_codegen
     // implementation Libs.retrofit_kotlinx_serialization_converter
 
     // Room.
@@ -32,5 +31,4 @@ dependencies {
 
     // kotlinx_serialization
     // implementation Libs.kotlinx_serialization_json
-    // implementation Libs.kotlinx_serialization_protobuf
 }

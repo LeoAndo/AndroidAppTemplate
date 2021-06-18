@@ -73,4 +73,5 @@ object Versions {
     const val kotlinx_serialization = "1.2.0"
     const val paging_runtime_ktx = "3.0.0-beta01"
     const val retrofit_kotlinx_serialization_converter = "0.8.0"
+    const val kotlinx_coroutines_core = "1.4.3"
 }
