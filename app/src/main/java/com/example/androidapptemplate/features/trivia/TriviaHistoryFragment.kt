@@ -23,7 +23,10 @@ internal class TriviaHistoryFragment : Fragment(R.layout.fragment_trivia_history
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.apply { recyclerView.adapter = adapter }
+        binding.apply {
+            recyclerView.setHasFixedSize(true)
+            recyclerView.adapter = adapter
+        }
         observeLiveData()
     }
 

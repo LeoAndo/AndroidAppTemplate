@@ -3,11 +3,19 @@ package com.example.androidapptemplate.data.features.unsplash.remote
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.example.androidapptemplate.data.apiCall
 import com.example.androidapptemplate.data.features.unsplash.api.UnsplashService
 import com.example.androidapptemplate.data.features.unsplash.api.response.toModel
+import com.example.androidapptemplate.domain.exception.BadRequestException
+import com.example.androidapptemplate.domain.exception.NetworkException
+import com.example.androidapptemplate.domain.exception.NotFoundException
+import com.example.androidapptemplate.domain.exception.UnAuthorizedException
 import com.example.androidapptemplate.domain.features.unsplash.model.UnSplashPhoto
 import retrofit2.HttpException
-import java.io.IOException
+import java.net.ConnectException
+import java.net.HttpURLConnection
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 
 private const val UNSPLASH_STARTING_PAGE_INDEX = 1
 private const val UNSPLASH_LAST_PAGE_INDEX = 5
@@ -25,6 +33,7 @@ internal class UnsplashPagingSource(
         )
 
         return try {
+            apiCall { }
             val photos =
                 api.searchPhotos(query, position, params.loadSize).results.map { it.toModel() }
             LoadResult.Page(
@@ -32,11 +41,32 @@ internal class UnsplashPagingSource(
                 prevKey = if (position == UNSPLASH_STARTING_PAGE_INDEX) null else position - 1,
                 nextKey = if (photos.isEmpty() || position == UNSPLASH_LAST_PAGE_INDEX) null else position + 1 // paging終了するときは、nullをセット.
             )
-        } catch (ex: IOException) {
-            LoadResult.Error(ex)
-        } catch (ex: HttpException) {
-            Log.d(TAG, "ex: $ex") // なぜかたまに、403になる時ある.
-            LoadResult.Error(ex)
+        } catch (e: Throwable) {
+            Log.d(TAG, "error: $e") // なぜかたまに、403になる時ある.
+            when (e) {
+                is HttpException -> {
+                    when (e.code()) {
+                        HttpURLConnection.HTTP_UNAUTHORIZED -> LoadResult.Error(
+                            UnAuthorizedException()
+                        )
+                        HttpURLConnection.HTTP_BAD_REQUEST -> LoadResult.Error(
+                            BadRequestException(
+                                e.localizedMessage ?: "unknown error"
+                            )
+                        )
+                        HttpURLConnection.HTTP_NOT_FOUND -> LoadResult.Error(
+                            NotFoundException(
+                                e.localizedMessage ?: "unknown error"
+                            )
+                        )
+                        else -> LoadResult.Error(e)
+                    }
+                }
+                is UnknownHostException, is ConnectException, is SocketTimeoutException -> LoadResult.Error(
+                    NetworkException()
+                )
+                else -> LoadResult.Error(e)
+            }
         }
     }
 

@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.androidapptemplate.data.BuildConfig
 import com.example.androidapptemplate.data.features.trivia.api.TriviaHeaderInterceptor
 import com.example.androidapptemplate.data.features.trivia.api.TriviaService
+import com.example.androidapptemplate.data.features.unsplash.api.UnsplashHeaderInterceptor
 import com.example.androidapptemplate.data.features.unsplash.api.UnsplashService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -65,6 +66,7 @@ object ApiModule {
         okHttpClientBuilder: OkHttpClient.Builder,
         moshi: Moshi
     ): UnsplashService {
+        okHttpClientBuilder.addInterceptor(UnsplashHeaderInterceptor())
         return Retrofit.Builder()
             .callFactory { request -> okHttpClientBuilder.build().newCall(request) }
             .baseUrl(BuildConfig.UNSPLASH_API_DOMAIN)

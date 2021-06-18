@@ -34,12 +34,13 @@ internal class ImageSearchGalleryViewModel @Inject constructor(
     private val clearListCh = Channel<Unit>(Channel.CONFLATED)
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
-    val photos = flowOf(
-        clearListCh.receiveAsFlow().map { PagingData.empty() },
-        savedStateHandle.getLiveData(KEY_QUERY, DEFAULT_QUERY).asFlow().flatMapLatest { query ->
-            repository.getSearchResults(query)
-        }.cachedIn(viewModelScope)
-    ).flattenMerge(2)
+    val photos =
+        flowOf(
+            clearListCh.receiveAsFlow().map { PagingData.empty() },
+            savedStateHandle.getLiveData(KEY_QUERY, DEFAULT_QUERY).asFlow().flatMapLatest { query ->
+                repository.getSearchResults(query)
+            }.cachedIn(viewModelScope)
+        ).flattenMerge(2)
 
     fun searchPhotos(query: String) {
         if (query.isNotEmpty() &&

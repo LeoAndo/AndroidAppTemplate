@@ -1,6 +1,7 @@
 package com.example.androidapptemplate.features.unsplash.gallery
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
@@ -13,6 +14,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.FragmentImageSearchGalleryBinding
+import com.example.androidapptemplate.features.core.dialog.OnRetryConnectionListener
+import com.example.androidapptemplate.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -20,25 +23,50 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_search_gallery) {
     private val viewModel by viewModels<ImageSearchGalleryViewModel>()
     private val binding by viewBindings(FragmentImageSearchGalleryBinding::bind)
+    private val exceptionHandler =
+        UnsplashGalleryExceptionHandler(fragment = this, onUnAuthorizedAction = {
+            toastHelper.showToast("認証エラー")
+        })
+    private val adapter = UnsplashPhotoAdapter {
+        val action = ImageSearchGalleryFragmentDirections.goToDetailsDest(it)
+        findNavController().navigate(action)
+    }
+
+    @Inject
+    lateinit var toastHelper: ToastHelper
 
     @OptIn(InternalCoroutinesApi::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = UnsplashPhotoAdapter {
-            val action = ImageSearchGalleryFragmentDirections.goToDetailsDest(it)
-            findNavController().navigate(action)
-        }
         adapter.addLoadStateListener {
             if (it.source.refresh is LoadState.NotLoading && it.source.append.endOfPaginationReached && adapter.itemCount < 1) {
                 Toast.makeText(requireContext(), "empty list.", Toast.LENGTH_SHORT).show()
             }
+            // paging3: error handling
+            val errorState = when {
+                it.source.prepend is LoadState.Error -> {
+                    it.source.prepend as LoadState.Error
+                }
+                it.source.append is LoadState.Error -> {
+                    it.source.append as LoadState.Error
+                }
+                it.source.refresh is LoadState.Error -> {
+                    it.source.refresh as LoadState.Error
+                }
+                else -> null
+            }
+            Log.e("aaa", "errorState: $errorState")
+            errorState?.let { it ->
+                exceptionHandler.handleError(it.error)
+            }
         }
-
 
         binding.apply {
             recyclerView.setHasFixedSize(true)
@@ -48,19 +76,19 @@ internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_sea
             )
         }
 
-        lifecycleScope.launchWhenCreated {
+        viewLifecycleOwner.lifecycleScope.launch {
             adapter.loadStateFlow.collectLatest { loadStates ->
                 binding.swipeRefresh.isRefreshing = loadStates.refresh is LoadState.Loading
             }
         }
 
-        lifecycleScope.launchWhenCreated {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.photos.collectLatest {
                 adapter.submitData(it)
             }
         }
 
-        lifecycleScope.launchWhenCreated {
+        viewLifecycleOwner.lifecycleScope.launch {
             adapter.loadStateFlow
                 // Only emit when REFRESH LoadState for RemoteMediator changes.
                 .distinctUntilChangedBy { it.refresh }
@@ -73,6 +101,11 @@ internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_sea
 
         binding.swipeRefresh.setOnRefreshListener { adapter.refresh() }
 
+        exceptionHandler.setOnRetryConnectionListener(object : OnRetryConnectionListener {
+            override fun onRetry() {
+                adapter.refresh()
+            }
+        })
         setHasOptionsMenu(true)
     }
 
