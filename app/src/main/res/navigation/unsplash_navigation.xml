@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/image_search_gallery_dest"
         android:name="com.example.androidapptemplate.features.unsplash.gallery.ImageSearchGalleryFragment"
-        android:label="@string/image_search_gallery"
+        android:label=""
         tools:layout="@layout/fragment_image_search_gallery">
         <action
             android:id="@+id/go_to_details_dest"
