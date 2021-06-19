@@ -14,7 +14,13 @@
         android:id="@+id/algorithm_top_dest"
         android:name="com.example.androidapptemplate.features.algorithm.AlgorithmTopFragment"
         android:label="@string/algorithm"
-        tools:layout="@layout/algorithm_top_fragment" />
+        tools:layout="@layout/algorithm_top_fragment">
+        <action
+            android:id="@+id/go_to_algorithm_navigation"
+            app:destination="@id/algorithm_navigation"
+            app:enterAnim="@anim/app_nav_default_enter_anim"
+            app:exitAnim="@anim/app_nav_default_exit_anim" />
+    </fragment>
 
     <fragment
         android:id="@+id/web_api_top_dest"
@@ -41,4 +47,5 @@
 
     <include app:graph="@navigation/unsplash_navigation" />
     <include app:graph="@navigation/trivia_navigation" />
+    <include app:graph="@navigation/algorithm_navigation" />
 </navigation>
