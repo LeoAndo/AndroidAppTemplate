@@ -1,41 +1,15 @@
 <resources>
+    <!-- common -->
     <string name="app_name">AndroidAppTemplate</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
     <string name="home">home</string>
+    <string name="play_ground">Play Ground</string>
     <string name="algorithm">algorithm</string>
     <string name="web_api">webAPI</string>
-    <string name="google_api">googleAPI</string>
-    <string name="image_search_gallery">ImageSearchGallery</string>
-    <string name="image_details">Detail</string>
-    <string name="clear_search">clear search results</string>
     <string name="search">Search</string>
-    <string name="clear_list">Clear List</string>
-    <string name="invalid_email_address_message">Invalid Email Address</string>
-    <string name="invalid_password_message">invalid password</string>
     <string name="un_authorized_dialog_title">Authentication error</string>
     <string name="un_authorized_dialog_message">Delete in-app data and force logout</string>
     <string name="network_error_dialog_title">network error</string>
     <string name="network_error_dialog_message">Retry to network communicate again?</string>
-    <string name="random_trivia">getRandomTrivia</string>
-    <string name="trivia">Trivia</string>
-    <string name="trivia_select">select</string>
-    <string name="trivia_random">random</string>
-    <string name="trivia_history">history</string>
     <string name="month">month</string>
     <string name="date">date</string>
-    <string name="button_get_trivia">getTrivia</string>
-    <string name="trivia_error_message">Please select month or date.</string>
-    <string name="button_get_random_date_trivia">getRandomDateTrivia</string>
-    <string name="button_get_random_month_trivia">getRandomMonthTrivia</string>
-    <string name="button_get_random_year_trivia">getRandomYearTrivia</string>
-    <string name="button_get_random_trivia">getRandomTrivia</string>
-    <string name="un_splash_un_authorized_dialog_title">UnSplash api key invalid</string>
-    <string name="un_splash_un_authorized_dialog_message">Please settings api key. (build.gradle)</string>
-    <string name="euclidean_algorithm">Euclidean Algorithm</string>
-    <string name="link">Link</string>
-    <string name="play_ground">Play Ground</string>
 </resources>

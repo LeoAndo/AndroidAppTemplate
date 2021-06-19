@@ -17,29 +17,29 @@
     </style>
 
 
-    <style name="Divider" parent="" />
+    <style name="Widget.AndroidAppTemplate.Divider" parent="" />
 
-    <style name="Divider.Horizontal">
+    <style name="Widget.AndroidAppTemplate.Divider.Horizontal">
         <item name="android:layout_height">0.33dp</item>
         <item name="android:background">?attr/dividerHorizontal</item>
     </style>
 
-    <style name="CircularProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
+    <style name="Widget.AndroidAppTemplate.CircularProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
         <item name="android:indeterminate">true</item>
         <item name="indicatorColor">@array/progress_colors</item>
         <item name="indeterminateAnimationType">contiguous</item>
         <item name="indicatorSize">80dp</item>
     </style>
 
-    <style name="TextInputLayoutDropDown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+    <style name="Widget.AndroidAppTemplate.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
         <item name="android:textColorHint">?attr/colorPrimary</item>
         <item name="hintTextColor">?attr/colorPrimary</item>
         <item name="boxStrokeColor">?attr/colorPrimary</item>
     </style>
 
-    <style name="AutoCompleteTextView" parent="Widget.AppCompat.AutoCompleteTextView" />
+    <style name="Widget.AndroidAppTemplate.AutoCompleteTextView" parent="Widget.AppCompat.AutoCompleteTextView" />
 
-    <style name="AutoCompleteTextView.DropDown">
+    <style name="Widget.AndroidAppTemplate.AutoCompleteTextView.DropDown">
         <item name="android:editable">false</item>
         <item name="android:textSize">12sp</item>
     </style>
