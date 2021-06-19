@@ -23,7 +23,8 @@ MVVM + SingleActivity + Multi Module<br>
   - Specify the Dispatcher.
   - One shot processing throws an Exception individually.
   - Coroutines Flow etc. return the processing result in the form of Sealed interface. (Reference: Paging3)
-
+- Proguard / R8
+  - [Use only stable libraries](https://github.com/LeoAndo/AndroidAppTemplate/issues/40#issue-925121453)
 # Library
 [see this file](https://github.com/LeoAndo/AndroidAppTemplate/blob/main/app/release/outputs/sdk-dependencies/release/sdkDependencies.txt)
 
