@@ -11,6 +11,19 @@ gradle version 4.2.1<br>
 MVVM + SingleActivity + Multi Module<br>
 <img width="1022" alt="スクリーンショット 2021-06-20 1 57 55" src="https://user-images.githubusercontent.com/16476224/122649853-f0b40400-d16a-11eb-8adc-3b47376e84ec.png">
 
+# implementation Rules
+- Presentation layer
+  - Error handling is done by Activity or Fragment.
+  - Fragment does not have Toolbar.
+  - If simple logic, Call Repository (Interface) directly from ViewModel.
+- domain layer
+  - Pure Kotlin.
+  - hold Model(Serialize).
+- data layer
+  - Specify the Dispatcher.
+  - One shot processing throws an Exception individually.
+  - Coroutines Flow etc. return the processing result in the form of Sealed interface. (Reference: Paging3)
+
 # Library
 [see this file](https://github.com/LeoAndo/AndroidAppTemplate/blob/main/app/release/outputs/sdk-dependencies/release/sdkDependencies.txt)
 
