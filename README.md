@@ -16,6 +16,7 @@ MVVM + SingleActivity + Multi Module<br>
   - Error handling is done by Activity or Fragment.
   - Fragment does not have Toolbar.
   - If simple logic, Call Repository (Interface) directly from ViewModel.
+  - Since strings.xml is faster to grow, separate files by features.
 - domain layer
   - Pure Kotlin.
   - hold Model(Serialize).
