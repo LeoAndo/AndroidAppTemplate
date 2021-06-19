@@ -2,7 +2,7 @@ package com.example.androidapptemplate.data.features.trivia.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.androidapptemplate.domain.features.trivia.model.TriviaResult
+import com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult
 
 @Entity(tableName = "trivia_histories")
 internal data class TriviaEntity(

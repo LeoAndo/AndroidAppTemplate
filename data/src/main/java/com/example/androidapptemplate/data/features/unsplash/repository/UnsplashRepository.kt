@@ -5,7 +5,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.example.androidapptemplate.data.features.unsplash.api.UnsplashService
 import com.example.androidapptemplate.data.features.unsplash.remote.UnsplashPagingSource
-import com.example.androidapptemplate.domain.features.unsplash.model.UnSplashPhoto
+import com.example.androidapptemplate.domain.features.webapi.unsplash.model.UnSplashPhoto
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

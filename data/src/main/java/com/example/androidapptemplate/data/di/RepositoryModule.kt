@@ -5,7 +5,7 @@ import com.example.androidapptemplate.data.features.trivia.repository.TriviaRepo
 import com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepository
 import com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepositoryImpl
 import com.example.androidapptemplate.domain.features.auth.repository.AuthRepository
-import com.example.androidapptemplate.domain.features.trivia.repository.TriviaRepository
+import com.example.androidapptemplate.domain.features.webapi.trivia.repository.TriviaRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

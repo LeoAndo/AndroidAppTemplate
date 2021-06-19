@@ -1,6 +1,6 @@
-package com.example.androidapptemplate.domain.features.trivia.repository
+package com.example.androidapptemplate.domain.features.webapi.trivia.repository
 
-import com.example.androidapptemplate.domain.features.trivia.model.TriviaResult
+import com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult
 import kotlinx.coroutines.flow.Flow
 
 interface TriviaRepository {
