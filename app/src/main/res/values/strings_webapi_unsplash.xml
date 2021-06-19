@@ -1,0 +1,8 @@
+<resources>
+    <string name="image_search_gallery">ImageSearchGallery</string>
+    <string name="image_details">Detail</string>
+    <string name="clear_search">clear search results</string>
+    <string name="clear_list">Clear List</string>
+    <string name="un_splash_un_authorized_dialog_title">UnSplash api key invalid</string>
+    <string name="un_splash_un_authorized_dialog_message">Please settings api key. (data/build.gradle)</string>
+</resources>
