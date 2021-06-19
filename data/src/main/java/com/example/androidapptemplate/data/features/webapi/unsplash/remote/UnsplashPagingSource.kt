@@ -1,10 +1,10 @@
-package com.example.androidapptemplate.data.features.unsplash.remote
+package com.example.androidapptemplate.data.features.webapi.unsplash.remote
 
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.androidapptemplate.data.features.unsplash.api.UnsplashService
-import com.example.androidapptemplate.data.features.unsplash.api.response.toModel
+import com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService
+import com.example.androidapptemplate.data.features.webapi.unsplash.api.response.toModel
 import com.example.androidapptemplate.domain.exception.BadRequestException
 import com.example.androidapptemplate.domain.exception.NetworkException
 import com.example.androidapptemplate.domain.exception.NotFoundException

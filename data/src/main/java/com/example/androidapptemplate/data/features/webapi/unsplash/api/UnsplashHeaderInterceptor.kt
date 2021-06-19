@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.data.features.unsplash.api
+package com.example.androidapptemplate.data.features.webapi.unsplash.api
 
 import com.example.androidapptemplate.data.BuildConfig
 import okhttp3.Interceptor

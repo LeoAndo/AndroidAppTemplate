@@ -1,9 +1,9 @@
 package com.example.androidapptemplate.data.di
 
 import com.example.androidapptemplate.data.features.auth.repository.AuthRepositoryImpl
-import com.example.androidapptemplate.data.features.trivia.repository.TriviaRepositoryImpl
-import com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepository
-import com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepositoryImpl
+import com.example.androidapptemplate.data.features.webapi.trivia.repository.TriviaRepositoryImpl
+import com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepository
+import com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepositoryImpl
 import com.example.androidapptemplate.domain.features.auth.repository.AuthRepository
 import com.example.androidapptemplate.domain.features.webapi.trivia.repository.TriviaRepository
 import dagger.Binds
