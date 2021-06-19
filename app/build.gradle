@@ -43,12 +43,12 @@ dependencies {
     implementation project(':data') // TODO 消したい
     implementation project(':domain')
 
+    // UI
     implementation Libs.kotlin_stdlib
     implementation Libs.core_ktx
     implementation Libs.appcompat
     implementation Libs.material
     implementation Libs.constraintlayout
-
     implementation Libs.swiperefreshlayout
     implementation Libs.glide
     implementation Libs.paging_runtime_ktx
@@ -58,18 +58,19 @@ dependencies {
     implementation Libs.auto_fill
     implementation Libs.navigation_fragment_ktx
     implementation Libs.navigation_ui_ktx
-    testImplementation Libs.junit
 
+    // Test
+    testImplementation Libs.junit
     androidTestImplementation Libs.ext_junit
     androidTestImplementation Libs.espresso_core
 
-    // Hilt
+    // DI
     implementation Libs.hilt_android
     kapt Libs.hilt_android_compiler
     implementation Libs.hilt_lifecycle_viewmodel
     implementation Libs.hilt_common
 
-    // Hilt testing
+    // DI Test
     androidTestImplementation Libs.hilt_android_testing
     kaptAndroidTest Libs.hilt_android_compiler
     kaptAndroidTest Libs.hilt_compiler

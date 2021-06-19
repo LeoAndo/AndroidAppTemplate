@@ -2,9 +2,9 @@ package com.example.androidapptemplate.features.trivia
 
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.androidapptemplate.features.core.dialog.NetworkConnectionErrorHandleable
-import com.example.androidapptemplate.features.core.dialog.RetryConnectionHandler
-import com.example.androidapptemplate.features.core.dialog.UnAuthorizedErrorHandleable
+import com.example.androidapptemplate.core.dialog.NetworkConnectionErrorHandleable
+import com.example.androidapptemplate.core.dialog.RetryConnectionHandler
+import com.example.androidapptemplate.core.dialog.UnAuthorizedErrorHandleable
 import kotlinx.coroutines.CoroutineExceptionHandler
 
 internal class TriviaExceptionHandler(

@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.androidapptemplate.R
+import com.example.androidapptemplate.core.dialog.OnRetryConnectionListener
 import com.example.androidapptemplate.databinding.FragmentTriviaSelectBinding
-import com.example.androidapptemplate.features.core.dialog.OnRetryConnectionListener
 import com.example.androidapptemplate.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,6 +47,7 @@ internal class TriviaSelectFragment : Fragment(R.layout.fragment_trivia_select) 
     }
 
     private suspend fun getTrivia() {
+        binding.progressIndicatorLayout.show()
         if (validate()) {
             viewModel.getTrivia()
         } else {
@@ -56,6 +57,7 @@ internal class TriviaSelectFragment : Fragment(R.layout.fragment_trivia_select) 
                 Toast.LENGTH_SHORT
             ).show()
         }
+        binding.progressIndicatorLayout.hide()
     }
 
     private fun validate(): Boolean {

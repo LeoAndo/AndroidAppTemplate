@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.util
+package com.example.androidapptemplate.core
 
 fun getMonthValue(): MutableList<String> {
     val result = mutableListOf<String>()

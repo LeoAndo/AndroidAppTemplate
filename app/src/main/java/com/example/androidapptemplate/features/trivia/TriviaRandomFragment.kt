@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.androidapptemplate.R
+import com.example.androidapptemplate.core.dialog.*
 import com.example.androidapptemplate.databinding.FragmentTriviaRandomBinding
-import com.example.androidapptemplate.features.core.dialog.*
 import com.example.androidapptemplate.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,38 +30,43 @@ internal class TriviaRandomFragment : Fragment(R.layout.fragment_trivia_random) 
         binding.let {
             it.viewModel = viewModel
             it.buttonGetRandomDateTrivia.setOnClickListener {
-                apiCall { viewModel.getRandomDateTrivia() }
+                doAction { viewModel.getRandomDateTrivia() }
             }
             it.buttonGetRandomMonthTrivia.setOnClickListener {
-                apiCall { viewModel.getRandomMonthTrivia() }
+                doAction { viewModel.getRandomMonthTrivia() }
             }
             it.buttonGetRandomTrivia.setOnClickListener {
-                apiCall { viewModel.getRandomTrivia() }
+                doAction { viewModel.getRandomTrivia() }
             }
             it.buttonGetRandomYearTrivia.setOnClickListener {
-                apiCall { viewModel.getRandomYearTrivia() }
+                doAction { viewModel.getRandomYearTrivia() }
             }
         }
         exceptionHandler.setOnRetryConnectionListener(object : OnRetryConnectionListener {
             override fun onRetry() {
-                viewLifecycleOwner.lifecycleScope.launch(exceptionHandler.coroutineExceptionHandler) {
+                doAction {
                     when (viewModel.retryState) {
                         RetryState1 -> viewModel.getRandomMonthTrivia()
                         RetryState2 -> viewModel.getRandomTrivia()
                         RetryState3 -> viewModel.getRandomYearTrivia()
                         RetryState4 -> viewModel.getRandomDateTrivia()
-                        else -> Log.w("TriviaRandomFragment", "unhandled retryState: ${viewModel.retryState}")
+                        else -> Log.w(
+                            "TriviaRandomFragment",
+                            "unhandled retryState: ${viewModel.retryState}"
+                        )
                     }
                 }
             }
         })
     }
 
-    private fun <T> apiCall(apiCall: suspend () -> T) {
+    private fun <T> doAction(action: suspend () -> T) {
         // 特定のスコープの全てのジョブを明示的にキャンセルする場合は、以下で良さそう.
         // viewModelScope.coroutineContext.cancelChildren()
         viewLifecycleOwner.lifecycleScope.launch(exceptionHandler.coroutineExceptionHandler) {
-            apiCall.invoke()
+            binding.progressIndicatorLayout.show()
+            action.invoke()
+            binding.progressIndicatorLayout.hide()
         }
     }
 }

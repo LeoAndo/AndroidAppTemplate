@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.core.dialog
+package com.example.androidapptemplate.core.dialog
 
 internal abstract class RetryConnectionHandler {
     internal var listener: OnRetryConnectionListener? = null

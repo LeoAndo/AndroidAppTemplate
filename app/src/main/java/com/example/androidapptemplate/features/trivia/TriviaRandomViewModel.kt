@@ -3,7 +3,7 @@ package com.example.androidapptemplate.features.trivia
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import com.example.androidapptemplate.domain.features.trivia.usecase.TriviaUseCase
-import com.example.androidapptemplate.features.core.dialog.*
+import com.example.androidapptemplate.core.dialog.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

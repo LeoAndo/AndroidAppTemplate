@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.FragmentImageSearchGalleryBinding
-import com.example.androidapptemplate.features.core.dialog.OnRetryConnectionListener
+import com.example.androidapptemplate.core.dialog.OnRetryConnectionListener
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.InternalCoroutinesApi
