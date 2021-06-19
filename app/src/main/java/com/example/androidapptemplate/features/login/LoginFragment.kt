@@ -11,9 +11,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.core.dialog.OnRetryConnectionListener
 import com.example.androidapptemplate.databinding.FragmentLoginBinding
+import com.example.androidapptemplate.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 internal class LoginFragment : Fragment(R.layout.fragment_login) {
@@ -21,6 +23,8 @@ internal class LoginFragment : Fragment(R.layout.fragment_login) {
     private val viewModel by viewModels<LoginViewModel>()
     private val exceptionHandler =
         LoginExceptionHandler(fragment = this, onUnAuthorizedAction = {})
+    @Inject
+    lateinit var toastHelper: ToastHelper
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,10 +33,20 @@ internal class LoginFragment : Fragment(R.layout.fragment_login) {
             it.emailAddress.setAutofillHints(HintConstants.AUTOFILL_HINT_EMAIL_ADDRESS)
             it.password.setAutofillHints(HintConstants.AUTOFILL_HINT_PASSWORD)
             it.emailAddress.apply {
-                doAfterTextChanged { viewModel.inputTextChanged() }
+                doAfterTextChanged { editable ->
+                    binding.emailAddressLayout.isErrorEnabled = false
+                    if (editable.toString().isEmpty()) binding.emailAddressLayout.error =
+                        requireContext().getString(R.string.invalid_email_address_message)
+                    viewModel.inputTextChanged()
+                }
             }
             it.password.apply {
-                doAfterTextChanged { viewModel.inputTextChanged() }
+                doAfterTextChanged { editable ->
+                    binding.passwordLayout.isErrorEnabled = false
+                    if (editable.toString().isEmpty()) binding.passwordLayout.error =
+                        requireContext().getString(R.string.invalid_password_message)
+                    viewModel.inputTextChanged()
+                }
             }
             it.login.setOnClickListener {
                 doAction { viewModel.login() }
@@ -44,6 +58,11 @@ internal class LoginFragment : Fragment(R.layout.fragment_login) {
             }
         })
         observeLiveData()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        toastHelper.showToast("Please input Email: example@gmail.com & Password: 12345678")
     }
 
     private fun <T> doAction(action: suspend () -> T) {
