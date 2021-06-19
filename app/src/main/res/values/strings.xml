@@ -37,4 +37,5 @@
     <string name="un_splash_un_authorized_dialog_message">Please settings api key. (build.gradle)</string>
     <string name="euclidean_algorithm">Euclidean Algorithm</string>
     <string name="link">Link</string>
+    <string name="play_ground">Play Ground</string>
 </resources>

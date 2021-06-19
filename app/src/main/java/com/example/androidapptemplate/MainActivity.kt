@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.home_dest,
                 R.id.algorithm_top_dest,
                 R.id.web_api_top_dest,
-                R.id.google_api_top_dest
+                R.id.play_ground_top_dest
             ),
             fallbackOnNavigateUpListener = ::onSupportNavigateUp
         )
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 supportActionBar?.hide()
                 binding.navView.isVisible = false
             }
-            R.id.home_dest, R.id.algorithm_top_dest, R.id.web_api_top_dest, R.id.google_api_top_dest -> { // topLevelDestinationIds
+            R.id.home_dest, R.id.algorithm_top_dest, R.id.web_api_top_dest, R.id.play_ground_top_dest -> { // topLevelDestinationIds
                 supportActionBar?.hide()
                 binding.navView.isVisible = true
             }

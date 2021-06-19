@@ -20,8 +20,13 @@ internal class AlgorithmTopFragment : Fragment(R.layout.algorithm_top_fragment) 
     private val simpleListAdapter = SimpleListAdapter(
         dataset = listOf("Euclidean Algorithm"),
         onItemClicked = {
-            if (it == "Euclidean Algorithm") {
-                findNavController().navigate(AlgorithmTopFragmentDirections.goToAlgorithmNavigation())
+            when (it) {
+                "Euclidean Algorithm" -> {
+                    findNavController().navigate(AlgorithmTopFragmentDirections.goToAlgorithmNavigation())
+                }
+                else -> {
+                    toastHelper.showToast("does not implementation.. coming implementation soon.")
+                }
             }
         })
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/google_api_navigation"
+    app:startDestination="@id/google_api_top_dest">
+    <fragment
+        android:id="@+id/google_api_top_dest"
+        android:name="com.example.androidapptemplate.features.webapi.googleapi.GoogleApiTopFragment"
+        android:label="@string/google_api"
+        tools:layout="@layout/google_api_top_fragment" />
+</navigation>

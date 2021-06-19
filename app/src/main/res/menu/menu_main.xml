@@ -12,7 +12,7 @@
         android:icon="@drawable/menu_item_web_api"
         android:title="@string/web_api" />
     <item
-        android:id="@+id/google_api_top_dest"
+        android:id="@+id/play_ground_top_dest"
         android:icon="@drawable/menu_item_google_api"
-        android:title="@string/google_api" />
+        android:title="@string/play_ground" />
 </menu>
