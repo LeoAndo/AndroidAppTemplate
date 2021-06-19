@@ -1,6 +1,6 @@
 package com.example.androidapptemplate.data.features.unsplash.api.response
 
-import com.example.androidapptemplate.domain.features.unsplash.model.UnSplashPhoto
+import com.example.androidapptemplate.domain.features.webapi.unsplash.model.UnSplashPhoto
 import com.squareup.moshi.Json
 
 internal data class UnsplashResponse(

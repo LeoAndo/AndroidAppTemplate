@@ -3,8 +3,8 @@ package com.example.androidapptemplate.data.features.trivia.repository
 import com.example.androidapptemplate.data.features.trivia.db.entity.toModel
 import com.example.androidapptemplate.data.features.trivia.local.TriviaLocalDatasource
 import com.example.androidapptemplate.data.features.trivia.remote.TriviaRemoteDatasource
-import com.example.androidapptemplate.domain.features.trivia.model.TriviaResult
-import com.example.androidapptemplate.domain.features.trivia.repository.TriviaRepository
+import com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult
+import com.example.androidapptemplate.domain.features.webapi.trivia.repository.TriviaRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

@@ -23,6 +23,6 @@
         tools:layout="@layout/fragment_image_details">
         <argument
             android:name="photo"
-            app:argType="com.example.androidapptemplate.domain.features.unsplash.model.UnSplashPhoto" />
+            app:argType="com.example.androidapptemplate.domain.features.webapi.unsplash.model.UnSplashPhoto" />
     </fragment>
 </navigation>

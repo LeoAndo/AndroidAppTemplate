@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.ItemUnsplashPhotoBinding
-import com.example.androidapptemplate.domain.features.unsplash.model.UnSplashPhoto
+import com.example.androidapptemplate.domain.features.webapi.unsplash.model.UnSplashPhoto
 
 internal class UnsplashPhotoAdapter(private val onItemClick: (UnSplashPhoto) -> Unit) :
     PagingDataAdapter<UnSplashPhoto, UnsplashPhotoAdapter.PhotoViewHolder>(PHOTO_COMPARATOR) {

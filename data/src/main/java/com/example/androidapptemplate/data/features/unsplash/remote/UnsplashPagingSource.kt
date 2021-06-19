@@ -9,7 +9,7 @@ import com.example.androidapptemplate.domain.exception.BadRequestException
 import com.example.androidapptemplate.domain.exception.NetworkException
 import com.example.androidapptemplate.domain.exception.NotFoundException
 import com.example.androidapptemplate.domain.exception.UnAuthorizedException
-import com.example.androidapptemplate.domain.features.unsplash.model.UnSplashPhoto
+import com.example.androidapptemplate.domain.features.webapi.unsplash.model.UnSplashPhoto
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.HttpURLConnection

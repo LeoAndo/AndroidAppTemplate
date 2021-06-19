@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidapptemplate.databinding.SimpleListItemBinding
-import com.example.androidapptemplate.domain.features.trivia.model.TriviaResult
+import com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult
 
 internal class TriviaHistoryListAdapter :
     ListAdapter<TriviaResult, TriviaHistoryListAdapter.TriviaHistoryVH>(ITEM_COMPARATOR) {

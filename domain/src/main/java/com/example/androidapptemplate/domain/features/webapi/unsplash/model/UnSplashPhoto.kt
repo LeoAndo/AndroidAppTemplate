@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.domain.features.unsplash.model
+package com.example.androidapptemplate.domain.features.webapi.unsplash.model
 
 import java.io.Serializable
 

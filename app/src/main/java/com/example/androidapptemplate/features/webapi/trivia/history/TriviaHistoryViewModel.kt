@@ -1,8 +1,8 @@
 package com.example.androidapptemplate.features.webapi.trivia.history
 
 import androidx.lifecycle.*
-import com.example.androidapptemplate.domain.features.trivia.model.TriviaResult
-import com.example.androidapptemplate.domain.features.trivia.usecase.TriviaUseCase
+import com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult
+import com.example.androidapptemplate.domain.features.webapi.trivia.usecase.TriviaUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect

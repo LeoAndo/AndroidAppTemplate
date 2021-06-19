@@ -1,7 +1,7 @@
-package com.example.androidapptemplate.domain.features.trivia.usecase
+package com.example.androidapptemplate.domain.features.webapi.trivia.usecase
 
-import com.example.androidapptemplate.domain.features.trivia.model.TriviaResult
-import com.example.androidapptemplate.domain.features.trivia.repository.TriviaRepository
+import com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult
+import com.example.androidapptemplate.domain.features.webapi.trivia.repository.TriviaRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

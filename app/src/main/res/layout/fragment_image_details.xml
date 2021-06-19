@@ -7,7 +7,7 @@
 
         <variable
             name="photo"
-            type="com.example.androidapptemplate.domain.features.unsplash.model.UnSplashPhoto" />
+            type="com.example.androidapptemplate.domain.features.webapi.unsplash.model.UnSplashPhoto" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
