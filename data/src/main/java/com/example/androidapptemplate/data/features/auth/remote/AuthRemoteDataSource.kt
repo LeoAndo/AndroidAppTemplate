@@ -12,13 +12,13 @@ internal class AuthRemoteDataSource @Inject constructor(
 ) {
 
     suspend fun login(emailAddress: String, password: String): LoginUser {
-        // api call
+        // dummy api call
         delay(2000L)
         return LoginResponse(
             id = UUID.randomUUID().toString(),
             userName = "Leo",
             age = 20,
-            emailAddress = "dummy@gmail.com"
+            emailAddress = emailAddress
         ).toModel()
     }
 }

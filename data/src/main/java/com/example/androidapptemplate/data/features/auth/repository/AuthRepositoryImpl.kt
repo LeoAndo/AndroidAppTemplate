@@ -1,12 +1,10 @@
 package com.example.androidapptemplate.data.features.auth.repository
 
-import com.example.androidapptemplate.data.features.auth.local.AuthLocalDataSource
 import com.example.androidapptemplate.data.features.auth.remote.AuthRemoteDataSource
 import com.example.androidapptemplate.domain.features.auth.repository.AuthRepository
 import javax.inject.Inject
 
 internal class AuthRepositoryImpl @Inject constructor(
-    private val loginLocalDataSource: AuthLocalDataSource,
     private val loginRemoteDataSource: AuthRemoteDataSource
 ) : AuthRepository {
     override suspend fun login(emailAddress: String, password: String): Boolean {

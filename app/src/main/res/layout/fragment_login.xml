@@ -19,38 +19,50 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/emailAddress"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailAddressLayout"
+                style="@style/Widget.AndroidAppTemplate.TextInputLayout.OutlinedBox.EditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginBottom="24dp"
                 android:hint="@string/prompt_email"
-                android:inputType="textEmailAddress"
-                android:selectAllOnFocus="true"
-                android:text="@={viewModel.emailAddress}"
-                app:layout_constraintBottom_toTopOf="@+id/password"
+                app:layout_constraintBottom_toTopOf="@+id/passwordLayout"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="Autofill" />
+                app:layout_constraintStart_toStartOf="parent">
 
-            <EditText
-                android:id="@+id/password"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:selectAllOnFocus="true"
+                    android:text="@={viewModel.emailAddress}"
+                    tools:text="example@gmail.com" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordLayout"
+                style="@style/Widget.AndroidAppTemplate.TextInputLayout.OutlinedBox.EditText.Password"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="24dp"
                 android:hint="@string/prompt_password"
-                android:imeActionLabel="@string/action_sign_in_short"
-                android:imeOptions="actionDone"
-                android:inputType="textPassword"
-                android:selectAllOnFocus="true"
-                android:text="@={viewModel.password}"
                 app:layout_constraintBottom_toTopOf="@+id/login"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="Autofill" />
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.password}"
+                    tools:text="12345678" />
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
                 android:id="@+id/login"

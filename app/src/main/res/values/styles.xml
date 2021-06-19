@@ -37,8 +37,6 @@
         <item name="boxStrokeColor">?attr/colorPrimary</item>
     </style>
 
-    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
-
     <style name="AutoCompleteTextView" parent="Widget.AppCompat.AutoCompleteTextView" />
 
     <style name="AutoCompleteTextView.DropDown">
@@ -55,5 +53,19 @@
     <style name="Widget.AndroidAppTemplate.BottomSheet.Contents" parent="">
         <item name="android:minHeight">200dp</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="Widget.AndroidAppTemplate.TextInputLayout.OutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+    <style name="Widget.AndroidAppTemplate.TextInputLayout.OutlinedBox.EditText">
+        <!--        <item name="boxCornerRadiusBottomEnd">8dp</item>-->
+        <!--        <item name="boxCornerRadiusBottomStart">8dp</item>-->
+        <!--        <item name="boxCornerRadiusTopEnd">8dp</item>-->
+        <!--        <item name="boxCornerRadiusTopStart">8dp</item>-->
+    </style>
+
+    <style name="Widget.AndroidAppTemplate.TextInputLayout.OutlinedBox.EditText.Password">
+        <item name="passwordToggleEnabled">true</item>
     </style>
 </resources>
