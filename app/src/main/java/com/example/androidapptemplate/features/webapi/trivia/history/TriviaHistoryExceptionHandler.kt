@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.trivia
+package com.example.androidapptemplate.features.webapi.trivia.history
 
 import android.widget.Toast
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.trivia
+package com.example.androidapptemplate.features.webapi.trivia.history
 
 import androidx.lifecycle.*
 import com.example.androidapptemplate.domain.features.trivia.model.TriviaResult

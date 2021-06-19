@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.trivia
+package com.example.androidapptemplate.features.webapi.trivia
 
 import android.os.Bundle
 import android.view.View

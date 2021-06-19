@@ -43,7 +43,7 @@ dependencies {
     implementation project(':data') // TODO 消したい
     implementation project(':domain')
 
-    // UI
+    // Base
     implementation Libs.kotlin_stdlib
     implementation Libs.core_ktx
     implementation Libs.appcompat

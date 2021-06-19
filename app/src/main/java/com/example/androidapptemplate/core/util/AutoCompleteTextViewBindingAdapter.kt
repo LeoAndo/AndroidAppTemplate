@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.core
+package com.example.androidapptemplate.core.util
 
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView

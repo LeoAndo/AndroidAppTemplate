@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.trivia
+package com.example.androidapptemplate.features.webapi.trivia.select
 
 import android.os.Bundle
 import android.view.View
@@ -10,7 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.core.dialog.OnRetryConnectionListener
 import com.example.androidapptemplate.databinding.FragmentTriviaSelectBinding
-import com.example.androidapptemplate.util.ToastHelper
+import com.example.androidapptemplate.features.webapi.trivia.TriviaExceptionHandler
+import com.example.androidapptemplate.core.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch

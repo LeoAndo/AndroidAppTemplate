@@ -1,9 +1,12 @@
-package com.example.androidapptemplate.features.trivia
+package com.example.androidapptemplate.features.webapi.trivia
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.androidapptemplate.R
+import com.example.androidapptemplate.features.webapi.trivia.history.TriviaHistoryFragment
+import com.example.androidapptemplate.features.webapi.trivia.random.TriviaRandomFragment
+import com.example.androidapptemplate.features.webapi.trivia.select.TriviaSelectFragment
 
 class TriviaPagerAdapter(fragment: Fragment, private val context: Context) :
     FragmentStateAdapter(fragment) {

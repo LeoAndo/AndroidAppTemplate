@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.trivia
+package com.example.androidapptemplate.features.webapi.trivia.select
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel

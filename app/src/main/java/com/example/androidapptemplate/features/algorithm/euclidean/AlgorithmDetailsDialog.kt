@@ -9,9 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.navArgs
-import com.example.androidapptemplate.core.dialog.AppBottomSheetDialogFragment
+import com.example.androidapptemplate.core.app.AppBottomSheetDialogFragment
 import com.example.androidapptemplate.databinding.DialogAlgorithmDetailsBinding
-import com.example.androidapptemplate.util.ToastHelper
+import com.example.androidapptemplate.core.util.ToastHelper
 import javax.inject.Inject
 
 internal class AlgorithmDetailsDialog : AppBottomSheetDialogFragment() {

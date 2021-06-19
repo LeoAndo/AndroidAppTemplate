@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.common
+package com.example.androidapptemplate.core.widget
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

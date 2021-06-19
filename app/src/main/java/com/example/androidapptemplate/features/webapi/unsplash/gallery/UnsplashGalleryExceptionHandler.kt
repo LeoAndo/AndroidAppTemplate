@@ -1,9 +1,9 @@
-package com.example.androidapptemplate.features.unsplash.gallery
+package com.example.androidapptemplate.features.webapi.unsplash.gallery
 
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.androidapptemplate.core.dialog.NetworkConnectionErrorHandleable
-import com.example.androidapptemplate.core.dialog.RetryConnectionHandler
+import com.example.androidapptemplate.core.util.RetryConnectionHandler
 import com.example.androidapptemplate.core.dialog.UnSplashUnAuthorizedErrorHandleable
 
 internal class UnsplashGalleryExceptionHandler(

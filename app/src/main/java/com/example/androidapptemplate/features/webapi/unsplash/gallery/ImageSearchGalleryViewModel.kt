@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.unsplash.gallery
+package com.example.androidapptemplate.features.webapi.unsplash.gallery
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
