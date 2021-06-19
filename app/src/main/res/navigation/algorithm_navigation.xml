@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/algorithm_navigation"
+    app:startDestination="@id/euclidean_algorithm_dest">
+
+    <dialog
+        android:id="@+id/euclidean_algorithm_dialog_dest"
+        android:name="com.example.androidapptemplate.features.algorithm.euclidean.AlgorithmDetailsDialog"
+        android:label=""
+        tools:layout="@layout/dialog_algorithm_details" >
+        <argument
+            android:name="message"
+            app:argType="com.example.androidapptemplate.domain.features.algorithm.model.AlgorithmDetailsMessage" />
+    </dialog>
+    <fragment
+        android:id="@+id/euclidean_algorithm_dest"
+        android:name="com.example.androidapptemplate.features.algorithm.euclidean.EuclideanAlgorithmFragment"
+        android:label="@string/euclidean_algorithm"
+        tools:layout="@layout/fragment_euclidean_algorithm" >
+        <action
+            android:id="@+id/go_to_euclidean_algorithm_dialog_dest"
+            app:destination="@id/euclidean_algorithm_dialog_dest"
+            app:enterAnim="@anim/app_nav_default_enter_anim"
+            app:exitAnim="@anim/app_nav_default_exit_anim" />
+    </fragment>
+</navigation>

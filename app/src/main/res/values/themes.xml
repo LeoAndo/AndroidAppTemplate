@@ -19,4 +19,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="ThemeOverlay.AndroidAppTemplate.BottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.AndroidAppTemplate.BottomSheet</item>
+    </style>
 </resources>

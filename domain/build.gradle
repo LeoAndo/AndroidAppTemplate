@@ -1,5 +1,9 @@
 apply from: "$rootDir/common-kotlin-library.gradle"
-
+// apply plugin: 'kotlin-parcelize' // kotlinのparcelizeアノテーションを使うために必要.
+// 以下２つのプラグインは、
+// android.os.Parcelableを使うのに必要. このプラグインを入れてしまうとdomainレイヤーがandroid FWに依存してしまうので導入をやめる
+// apply plugin: 'com.android.library'
+// apply plugin: 'kotlin-android'
 dependencies {
     // Kotlin Coroutines
     implementation Libs.kotlinx_coroutines_core_jvm
