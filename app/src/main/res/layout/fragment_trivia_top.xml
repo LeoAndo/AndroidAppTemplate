@@ -15,7 +15,7 @@
 
     <View
         android:id="@+id/divider"
-        style="@style/Divider.Horizontal"
+        style="@style/Widget.AndroidAppTemplate.Divider.Horizontal"
         android:layout_width="0dp"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"

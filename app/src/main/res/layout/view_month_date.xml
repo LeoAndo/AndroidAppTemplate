@@ -19,7 +19,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/filled_month_field"
-            style="@style/TextInputLayoutDropDown"
+            style="@style/Widget.AndroidAppTemplate.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -27,7 +27,7 @@
 
             <AutoCompleteTextView
                 android:id="@+id/filled_month_dropdown"
-                style="@style/AutoCompleteTextView.DropDown"
+                style="@style/Widget.AndroidAppTemplate.AutoCompleteTextView.DropDown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@={viewModel.selectedMonthValue}"
@@ -38,7 +38,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/filled_date_field"
-            style="@style/TextInputLayoutDropDown"
+            style="@style/Widget.AndroidAppTemplate.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -46,7 +46,7 @@
 
             <AutoCompleteTextView
                 android:id="@+id/filled_date_dropdown"
-                style="@style/AutoCompleteTextView.DropDown"
+                style="@style/Widget.AndroidAppTemplate.AutoCompleteTextView.DropDown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@={viewModel.selectedDateValue}"
