@@ -3,7 +3,6 @@ package com.example.androidapptemplate.features.webapi
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidapptemplate.R
@@ -16,14 +15,14 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 internal class WebApiTopFragment : Fragment(R.layout.web_api_top_fragment) {
-    private val viewModel by viewModels<WebApiTopViewModel>()
     private val binding by viewBindings(WebApiTopFragmentBinding::bind)
 
+    @Inject
+    lateinit var toastHelper: ToastHelper
     private val simpleListAdapter =
         SimpleListAdapter(
-            dataset = listOf("Trivia", "OpenWeatherMap", "unsplash"),
+            dataset = listOf("Trivia", "OpenWeatherMap", "unsplash", "Directions", "Place", "Map"),
             onItemClicked = {
-                toastHelper.showToast(it)
                 when (it) {
                     "Trivia" -> {
                         findNavController().navigate(WebApiTopFragmentDirections.goToTriviaNavigation())
@@ -31,11 +30,11 @@ internal class WebApiTopFragment : Fragment(R.layout.web_api_top_fragment) {
                     "unsplash" -> {
                         findNavController().navigate(WebApiTopFragmentDirections.goToUnsplashNavigation())
                     }
+                    else -> {
+                        toastHelper.showToast("does not implementation.. coming implementation soon.")
+                    }
                 }
             })
-
-    @Inject
-    lateinit var toastHelper: ToastHelper
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

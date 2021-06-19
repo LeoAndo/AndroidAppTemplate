@@ -37,15 +37,19 @@
             app:destination="@id/trivia_navigation"
             app:enterAnim="@anim/app_nav_default_enter_anim"
             app:exitAnim="@anim/app_nav_default_exit_anim" />
+        <action
+            android:id="@+id/go_to_google_api_navigation"
+            app:destination="@id/google_api_navigation"
+            app:enterAnim="@anim/app_nav_default_enter_anim"
+            app:exitAnim="@anim/app_nav_default_exit_anim" />
     </fragment>
-
     <fragment
-        android:id="@+id/google_api_top_dest"
-        android:name="com.example.androidapptemplate.features.googleapi.GoogleApiTopFragment"
-        android:label="@string/google_api"
-        tools:layout="@layout/google_api_top_fragment" />
-
+        android:id="@+id/play_ground_top_dest"
+        android:name="com.example.androidapptemplate.features.playground.PlayGroundTopFragment"
+        android:label="@string/play_ground"
+        tools:layout="@layout/fragment_play_ground_top" />
     <include app:graph="@navigation/unsplash_navigation" />
     <include app:graph="@navigation/trivia_navigation" />
     <include app:graph="@navigation/algorithm_navigation" />
+    <include app:graph="@navigation/google_api_navigation" />
 </navigation>
