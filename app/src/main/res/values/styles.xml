@@ -17,6 +17,13 @@
         <item name="android:background">?attr/dividerHorizontal</item>
     </style>
 
+    <style name="CircularProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="android:indeterminate">true</item>
+        <item name="indicatorColor">@array/progress_colors</item>
+        <item name="indeterminateAnimationType">contiguous</item>
+        <item name="indicatorSize">80dp</item>
+    </style>
+
     <style name="TextInputLayoutDropDown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
         <item name="android:textColorHint">?attr/colorPrimary</item>
         <item name="hintTextColor">?attr/colorPrimary</item>

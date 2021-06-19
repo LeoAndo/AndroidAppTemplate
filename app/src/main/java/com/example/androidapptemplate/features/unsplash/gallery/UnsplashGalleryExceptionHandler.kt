@@ -2,9 +2,9 @@ package com.example.androidapptemplate.features.unsplash.gallery
 
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.androidapptemplate.features.core.dialog.NetworkConnectionErrorHandleable
-import com.example.androidapptemplate.features.core.dialog.RetryConnectionHandler
-import com.example.androidapptemplate.features.core.dialog.UnSplashUnAuthorizedErrorHandleable
+import com.example.androidapptemplate.core.dialog.NetworkConnectionErrorHandleable
+import com.example.androidapptemplate.core.dialog.RetryConnectionHandler
+import com.example.androidapptemplate.core.dialog.UnSplashUnAuthorizedErrorHandleable
 
 internal class UnsplashGalleryExceptionHandler(
     private val fragment: Fragment,

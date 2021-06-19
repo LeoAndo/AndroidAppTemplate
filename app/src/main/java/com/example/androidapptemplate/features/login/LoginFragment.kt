@@ -9,8 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.androidapptemplate.R
+import com.example.androidapptemplate.core.dialog.OnRetryConnectionListener
 import com.example.androidapptemplate.databinding.FragmentLoginBinding
-import com.example.androidapptemplate.features.core.dialog.OnRetryConnectionListener
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -35,15 +35,23 @@ internal class LoginFragment : Fragment(R.layout.fragment_login) {
                 doAfterTextChanged { viewModel.inputTextChanged() }
             }
             it.login.setOnClickListener {
-                viewLifecycleOwner.lifecycleScope.launch(exceptionHandler.coroutineExceptionHandler) { viewModel.login() }
+                doAction { viewModel.login() }
             }
         }
         exceptionHandler.setOnRetryConnectionListener(object : OnRetryConnectionListener {
             override fun onRetry() {
-                viewLifecycleOwner.lifecycleScope.launch(exceptionHandler.coroutineExceptionHandler) { viewModel.login() }
+                doAction { viewModel.login() }
             }
         })
         observeLiveData()
+    }
+
+    private fun <T> doAction(action: suspend () -> T) {
+        viewLifecycleOwner.lifecycleScope.launch(exceptionHandler.coroutineExceptionHandler) {
+            binding.progressIndicatorLayout.show()
+            action.invoke()
+            binding.progressIndicatorLayout.hide()
+        }
     }
 
     private fun observeLiveData() {
