@@ -2,11 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="viewModel"
-            type="com.example.androidapptemplate.features.trivia.TriviaSelectViewModel" />
+            type="com.example.androidapptemplate.features.webapi.trivia.select.TriviaSelectViewModel" />
     </data>
+
     <LinearLayout
         android:id="@+id/dateArea"
         android:layout_width="match_parent"

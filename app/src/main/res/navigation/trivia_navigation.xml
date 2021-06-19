@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/trivia_top_dest"
-        android:name="com.example.androidapptemplate.features.trivia.TriviaTopFragment"
+        android:name="com.example.androidapptemplate.features.webapi.trivia.TriviaTopFragment"
         android:label="@string/trivia"
         tools:layout="@layout/fragment_trivia_top" />
 </navigation>

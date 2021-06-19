@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.trivia
+package com.example.androidapptemplate.features.webapi.trivia.history
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -21,9 +21,7 @@ internal class TriviaHistoryListAdapter :
         holder.binding.textTitle.text = data.text
     }
 
-    inner class TriviaHistoryVH(val binding: SimpleListItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-    }
+    inner class TriviaHistoryVH(val binding: SimpleListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     companion object {
         private val ITEM_COMPARATOR = object : DiffUtil.ItemCallback<TriviaResult>() {

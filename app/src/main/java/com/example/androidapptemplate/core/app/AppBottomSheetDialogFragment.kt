@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.core.dialog
+package com.example.androidapptemplate.core.app
 
 import android.os.Bundle
 import androidx.annotation.CallSuper

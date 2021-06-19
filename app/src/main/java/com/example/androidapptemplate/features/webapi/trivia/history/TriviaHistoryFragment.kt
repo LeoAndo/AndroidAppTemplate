@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.trivia
+package com.example.androidapptemplate.features.webapi.trivia.history
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.FragmentTriviaHistoryBinding
-import com.example.androidapptemplate.util.ToastHelper
+import com.example.androidapptemplate.core.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

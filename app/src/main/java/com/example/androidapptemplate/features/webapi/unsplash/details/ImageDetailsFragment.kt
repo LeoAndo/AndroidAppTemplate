@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.features.unsplash.details
+package com.example.androidapptemplate.features.webapi.unsplash.details
 
 import android.os.Bundle
 import android.view.View

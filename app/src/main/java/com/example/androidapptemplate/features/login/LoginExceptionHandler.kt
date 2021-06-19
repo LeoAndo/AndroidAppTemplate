@@ -6,7 +6,7 @@ import com.example.androidapptemplate.R
 import com.example.androidapptemplate.domain.exception.InvalidEmailAddressException
 import com.example.androidapptemplate.domain.exception.InvalidPasswordException
 import com.example.androidapptemplate.core.dialog.NetworkConnectionErrorHandleable
-import com.example.androidapptemplate.core.dialog.RetryConnectionHandler
+import com.example.androidapptemplate.core.util.RetryConnectionHandler
 import com.example.androidapptemplate.core.dialog.UnAuthorizedErrorHandleable
 import kotlinx.coroutines.CoroutineExceptionHandler
 

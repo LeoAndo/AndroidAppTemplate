@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.androidapptemplate.features.trivia.TriviaSelectViewModel" />
+            type="com.example.androidapptemplate.features.webapi.trivia.select.TriviaSelectViewModel" />
     </data>
 
     <FrameLayout
