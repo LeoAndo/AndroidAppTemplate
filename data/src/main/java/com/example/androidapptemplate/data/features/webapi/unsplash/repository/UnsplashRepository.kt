@@ -1,10 +1,10 @@
-package com.example.androidapptemplate.data.features.unsplash.repository
+package com.example.androidapptemplate.data.features.webapi.unsplash.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.example.androidapptemplate.data.features.unsplash.api.UnsplashService
-import com.example.androidapptemplate.data.features.unsplash.remote.UnsplashPagingSource
+import com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService
+import com.example.androidapptemplate.data.features.webapi.unsplash.remote.UnsplashPagingSource
 import com.example.androidapptemplate.domain.features.webapi.unsplash.model.UnSplashPhoto
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

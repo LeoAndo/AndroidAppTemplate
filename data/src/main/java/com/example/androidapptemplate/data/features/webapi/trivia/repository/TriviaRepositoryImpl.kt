@@ -1,8 +1,8 @@
-package com.example.androidapptemplate.data.features.trivia.repository
+package com.example.androidapptemplate.data.features.webapi.trivia.repository
 
-import com.example.androidapptemplate.data.features.trivia.db.entity.toModel
-import com.example.androidapptemplate.data.features.trivia.local.TriviaLocalDatasource
-import com.example.androidapptemplate.data.features.trivia.remote.TriviaRemoteDatasource
+import com.example.androidapptemplate.data.features.webapi.trivia.db.entity.toModel
+import com.example.androidapptemplate.data.features.webapi.trivia.local.TriviaLocalDatasource
+import com.example.androidapptemplate.data.features.webapi.trivia.remote.TriviaRemoteDatasource
 import com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult
 import com.example.androidapptemplate.domain.features.webapi.trivia.repository.TriviaRepository
 import kotlinx.coroutines.flow.Flow

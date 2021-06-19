@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.data.features.unsplash.api.response
+package com.example.androidapptemplate.data.features.webapi.unsplash.api.response
 
 import com.example.androidapptemplate.domain.features.webapi.unsplash.model.UnSplashPhoto
 import com.squareup.moshi.Json

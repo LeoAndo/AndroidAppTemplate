@@ -2,10 +2,10 @@ package com.example.androidapptemplate.data.di
 
 import android.util.Log
 import com.example.androidapptemplate.data.BuildConfig
-import com.example.androidapptemplate.data.features.trivia.api.TriviaHeaderInterceptor
-import com.example.androidapptemplate.data.features.trivia.api.TriviaService
-import com.example.androidapptemplate.data.features.unsplash.api.UnsplashHeaderInterceptor
-import com.example.androidapptemplate.data.features.unsplash.api.UnsplashService
+import com.example.androidapptemplate.data.features.webapi.trivia.api.TriviaHeaderInterceptor
+import com.example.androidapptemplate.data.features.webapi.trivia.api.TriviaService
+import com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashHeaderInterceptor
+import com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module

@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.data
+package com.example.androidapptemplate.data.core.util
 
 import android.util.Log
 import com.example.androidapptemplate.domain.exception.BadRequestException

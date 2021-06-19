@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.data.features.trivia.api
+package com.example.androidapptemplate.data.features.webapi.trivia.api
 
 import retrofit2.http.GET
 import retrofit2.http.Path

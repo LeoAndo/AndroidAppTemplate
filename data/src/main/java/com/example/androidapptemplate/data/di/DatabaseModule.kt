@@ -1,8 +1,8 @@
 package com.example.androidapptemplate.data.di
 
 import android.content.Context
-import com.example.androidapptemplate.data.features.trivia.db.TriviaDatabase
-import com.example.androidapptemplate.data.features.trivia.db.dao.TriviaDao
+import com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase
+import com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
