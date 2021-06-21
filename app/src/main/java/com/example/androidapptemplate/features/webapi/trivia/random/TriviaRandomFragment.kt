@@ -8,9 +8,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.core.dialog.*
+import com.example.androidapptemplate.core.util.ToastHelper
 import com.example.androidapptemplate.databinding.FragmentTriviaRandomBinding
 import com.example.androidapptemplate.features.webapi.trivia.TriviaExceptionHandler
-import com.example.androidapptemplate.core.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -20,8 +20,7 @@ import javax.inject.Inject
 internal class TriviaRandomFragment : Fragment(R.layout.fragment_trivia_random) {
     private val binding by viewBindings(FragmentTriviaRandomBinding::bind)
     private val viewModel by viewModels<TriviaRandomViewModel>()
-    private val exceptionHandler =
-        TriviaExceptionHandler(fragment = this, onUnAuthorizedAction = {})
+    private val exceptionHandler = TriviaExceptionHandler(fragment = this)
 
     @Inject
     lateinit var toastHelper: ToastHelper
