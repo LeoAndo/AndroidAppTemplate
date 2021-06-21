@@ -1,6 +1,6 @@
-package com.example.androidapptemplate.data.auth.di
+package com.example.androidapptemplate.data.features.auth.di
 
-import com.example.androidapptemplate.data.auth.repository.AuthRepositoryImpl
+import com.example.androidapptemplate.data.features.auth.repository.AuthRepositoryImpl
 import com.example.androidapptemplate.domain.features.auth.repository.AuthRepository
 import dagger.Binds
 import dagger.Module

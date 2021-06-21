@@ -1,7 +1,7 @@
-package com.example.androidapptemplate.data.auth.datasource
+package com.example.androidapptemplate.data.features.auth.datasource
 
-import com.example.androidapptemplate.data.auth.response.LoginResponse
-import com.example.androidapptemplate.data.auth.response.toModel
+import com.example.androidapptemplate.data.features.auth.response.LoginResponse
+import com.example.androidapptemplate.data.features.auth.response.toModel
 import com.example.androidapptemplate.domain.features.login.model.LoginUser
 import kotlinx.coroutines.delay
 import java.util.*

@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.data.auth.response
+package com.example.androidapptemplate.data.features.auth.response
 
 import com.example.androidapptemplate.domain.features.login.model.LoginUser
 

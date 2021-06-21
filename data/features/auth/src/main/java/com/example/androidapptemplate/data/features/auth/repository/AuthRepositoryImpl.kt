@@ -1,6 +1,6 @@
-package com.example.androidapptemplate.data.auth.repository
+package com.example.androidapptemplate.data.features.auth.repository
 
-import com.example.androidapptemplate.data.auth.datasource.AuthRemoteDataSource
+import com.example.androidapptemplate.data.features.auth.datasource.AuthRemoteDataSource
 import com.example.androidapptemplate.domain.features.auth.repository.AuthRepository
 import javax.inject.Inject
 
