@@ -1,7 +1,7 @@
-package com.example.androidapptemplate.data.webapi.unsplash.di
+package com.example.androidapptemplate.data.features.unsplash.di
 
-import com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepository
-import com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl
+import com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepository
+import com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

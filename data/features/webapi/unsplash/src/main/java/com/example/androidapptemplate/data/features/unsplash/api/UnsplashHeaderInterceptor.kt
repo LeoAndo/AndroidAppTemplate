@@ -1,6 +1,6 @@
-package com.example.androidapptemplate.data.webapi.unsplash.api
+package com.example.androidapptemplate.data.features.unsplash.api
 
-import com.example.androidapptemplate.data.webapi.unsplash.BuildConfig
+import com.example.androidapptemplate.data.features.webapi.unsplash.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 

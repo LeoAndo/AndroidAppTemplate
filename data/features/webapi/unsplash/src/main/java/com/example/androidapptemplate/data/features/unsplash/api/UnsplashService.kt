@@ -1,7 +1,7 @@
-package com.example.androidapptemplate.data.webapi.unsplash.api
+package com.example.androidapptemplate.data.features.unsplash.api
 
-import com.example.androidapptemplate.data.webapi.unsplash.BuildConfig
-import com.example.androidapptemplate.data.webapi.unsplash.api.response.UnsplashResponse
+import com.example.androidapptemplate.data.features.unsplash.api.response.UnsplashResponse
+import com.example.androidapptemplate.data.features.webapi.unsplash.BuildConfig
 import retrofit2.http.GET
 import retrofit2.http.Query
 

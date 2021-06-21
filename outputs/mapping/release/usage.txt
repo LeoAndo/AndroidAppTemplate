@@ -1003,7 +1003,7 @@ com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$ActivityRet
     public dagger.hilt.android.internal.builders.ViewComponentBuilder viewComponentBuilder()
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder:
     public com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder apiModule(com.example.androidapptemplate.data.features.trivia.di.ApiModule)
-    public com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder apiModule(com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule)
+    public com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder apiModule(com.example.androidapptemplate.data.features.unsplash.di.ApiModule)
     public com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder databaseModule(com.example.androidapptemplate.data.features.trivia.di.DatabaseModule)
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$ServiceCBuilder
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$ServiceCImpl
@@ -1128,36 +1128,36 @@ com.example.androidapptemplate.data.features.trivia.di.DatabaseModule_ProvideTri
     public synthetic bridge java.lang.Object get()
 com.example.androidapptemplate.data.features.trivia.di.RepositoryModule
 com.example.androidapptemplate.data.features.trivia.repository.TriviaRepositoryImpl_Factory
-com.example.androidapptemplate.data.webapi.unsplash.BuildConfig
-com.example.androidapptemplate.data.webapi.unsplash.R$anim
-com.example.androidapptemplate.data.webapi.unsplash.R$animator
-com.example.androidapptemplate.data.webapi.unsplash.R$attr
-com.example.androidapptemplate.data.webapi.unsplash.R$color
-com.example.androidapptemplate.data.webapi.unsplash.R$dimen
-com.example.androidapptemplate.data.webapi.unsplash.R$drawable
-com.example.androidapptemplate.data.webapi.unsplash.R$id
-com.example.androidapptemplate.data.webapi.unsplash.R$integer
-com.example.androidapptemplate.data.webapi.unsplash.R$layout
-com.example.androidapptemplate.data.webapi.unsplash.R$string
-com.example.androidapptemplate.data.webapi.unsplash.R$style
-com.example.androidapptemplate.data.webapi.unsplash.R$styleable
-com.example.androidapptemplate.data.webapi.unsplash.R
-com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService$Companion
-com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService:
+com.example.androidapptemplate.data.features.unsplash.BuildConfig
+com.example.androidapptemplate.data.features.unsplash.R$anim
+com.example.androidapptemplate.data.features.unsplash.R$animator
+com.example.androidapptemplate.data.features.unsplash.R$attr
+com.example.androidapptemplate.data.features.unsplash.R$color
+com.example.androidapptemplate.data.features.unsplash.R$dimen
+com.example.androidapptemplate.data.features.unsplash.R$drawable
+com.example.androidapptemplate.data.features.unsplash.R$id
+com.example.androidapptemplate.data.features.unsplash.R$integer
+com.example.androidapptemplate.data.features.unsplash.R$layout
+com.example.androidapptemplate.data.features.unsplash.R$string
+com.example.androidapptemplate.data.features.unsplash.R$style
+com.example.androidapptemplate.data.features.unsplash.R$styleable
+com.example.androidapptemplate.data.features.unsplash.R
+com.example.androidapptemplate.data.features.unsplash.api.UnsplashService$Companion
+com.example.androidapptemplate.data.features.unsplash.api.UnsplashService:
     public static final java.lang.String CLIENT_ID
-    public static final com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService$Companion Companion
+    public static final com.example.androidapptemplate.data.features.unsplash.api.UnsplashService$Companion Companion
     static void <clinit>()
-com.example.androidapptemplate.data.webapi.unsplash.datasource.UnsplashPagingSourceKt:
+com.example.androidapptemplate.data.features.unsplash.datasource.UnsplashPagingSourceKt:
     private static final int UNSPLASH_LAST_PAGE_INDEX
     private static final int UNSPLASH_STARTING_PAGE_INDEX
-com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory$InstanceHolder
-com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory:
+com.example.androidapptemplate.data.features.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory$InstanceHolder
+com.example.androidapptemplate.data.features.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory:
     public void <init>()
-    public static com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory create()
-    public com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService get()
+    public static com.example.androidapptemplate.data.features.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory create()
+    public com.example.androidapptemplate.data.features.unsplash.api.UnsplashService get()
     public synthetic bridge java.lang.Object get()
-com.example.androidapptemplate.data.webapi.unsplash.di.RepositoryModule
-com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl_Factory
+com.example.androidapptemplate.data.features.unsplash.di.RepositoryModule
+com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepositoryImpl_Factory
 com.example.androidapptemplate.databinding.AlgorithmTopFragmentBinding:
     public static com.example.androidapptemplate.databinding.AlgorithmTopFragmentBinding inflate(android.view.LayoutInflater)
     public static com.example.androidapptemplate.databinding.AlgorithmTopFragmentBinding inflate(android.view.LayoutInflater,android.view.ViewGroup,boolean)
@@ -16226,7 +16226,7 @@ com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$ActivityRet
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC:
     public void <init>(dagger.hilt.android.internal.modules.ApplicationContextModule)
-    public static com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl access$1600(com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC)
+    public static com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepositoryImpl access$1600(com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC)
     public static com.example.androidapptemplate.domain.features.login.usecase.LoginUseCaseImpl access$1700(com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC)
     public static synthetic dagger.hilt.android.internal.modules.ApplicationContextModule access$700(com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC)
     public final com.example.androidapptemplate.data.features.auth.repository.AuthRepositoryImpl authRepositoryImpl()
@@ -16239,8 +16239,8 @@ com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC:
     public final com.example.androidapptemplate.data.features.trivia.repository.TriviaRepositoryImpl triviaRepositoryImpl()
     public final com.example.androidapptemplate.data.features.trivia.api.TriviaService triviaService()
     public final com.example.androidapptemplate.domain.features.webapi.trivia.usecase.TriviaUseCaseImpl triviaUseCaseImpl()
-    public final com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl unsplashRepositoryImpl()
-    public final com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService unsplashService()
+    public final com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepositoryImpl unsplashRepositoryImpl()
+    public final com.example.androidapptemplate.data.features.unsplash.api.UnsplashService unsplashService()
 com.example.androidapptemplate.Hilt_MainActivity:
     public final void _initHiltInternal()
     public final dagger.hilt.android.internal.managers.ActivityComponentManager componentManager()
@@ -16369,22 +16369,22 @@ com.example.androidapptemplate.data.features.trivia.repository.TriviaRepositoryI
     public java.lang.Object getRandomTrivia(kotlin.coroutines.Continuation)
     public java.lang.Object getRandomYear(kotlin.coroutines.Continuation)
     public java.lang.Object getTrivia(java.lang.String,java.lang.String,kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.webapi.unsplash.datasource.UnsplashPagingSource:
+com.example.androidapptemplate.data.features.unsplash.datasource.UnsplashPagingSource:
     public java.lang.Integer getRefreshKey(androidx.paging.PagingState)
-com.example.androidapptemplate.data.webapi.unsplash.datasource.UnsplashPagingSourceKt:
+com.example.androidapptemplate.data.features.unsplash.datasource.UnsplashPagingSourceKt:
     public static final synthetic java.lang.String access$getTAG$p()
-com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule:
+com.example.androidapptemplate.data.features.unsplash.di.ApiModule:
     public static final okhttp3.MediaType CONTENT_TYPE
     public static okhttp3.Call lambda$QQ4tV9vYlD6Qj7VNiBcFnkW1wbw(okhttp3.OkHttpClient$Builder,okhttp3.Request)
     public static final okhttp3.Call provideUnsplashService$lambda-1(okhttp3.OkHttpClient$Builder,okhttp3.Request)
-    public static final com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService provideUnsplashService$unsplash_release()
-com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory
-com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepository:
+    public static final com.example.androidapptemplate.data.features.unsplash.api.UnsplashService provideUnsplashService$unsplash_release()
+com.example.androidapptemplate.data.features.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory
+com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepository:
     public abstract kotlinx.coroutines.flow.Flow getSearchResults(java.lang.String)
-com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl$getSearchResults$1:
+com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepositoryImpl$getSearchResults$1:
     public final androidx.paging.PagingSource invoke()
-com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl:
-    public static final synthetic com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService access$getApi$p(com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl)
+com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepositoryImpl:
+    public static final synthetic com.example.androidapptemplate.data.features.unsplash.api.UnsplashService access$getApi$p(com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepositoryImpl)
     public kotlinx.coroutines.flow.Flow getSearchResults(java.lang.String)
 com.example.androidapptemplate.databinding.ActivityMainBinding:
     public final androidx.fragment.app.FragmentContainerView navHostFragment
@@ -16853,7 +16853,7 @@ com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalle
 com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalleryViewModel:
     public static final com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalleryViewModel$Companion Companion
     public static void <clinit>()
-    public static final synthetic com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepository access$getRepository$p(com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalleryViewModel)
+    public static final synthetic com.example.androidapptemplate.data.features.unsplash.repository.UnsplashRepository access$getRepository$p(com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalleryViewModel)
     public final void clearList()
     public final kotlinx.coroutines.flow.Flow getPhotos()
     public final void searchPhotos(java.lang.String)
