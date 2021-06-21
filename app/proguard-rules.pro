@@ -1,6 +1,6 @@
 # My Application-START
 
-# スタック トレースを確実に再構成するための設定
+# retrace setting.
 -keepattributes LineNumberTable,SourceFile
 
 # remove log
@@ -14,13 +14,13 @@
 -keep class com.example.androidapptemplate.R$* { *; }
 -keep class com.example.androidapptemplate.data.R$* { *; }
 
-# jsonパースで使うobjectやプリファレンスのモデルなどは暗号化対象外にする
+# TODO jsonパースで使うobjectやプリファレンスのモデルなどは暗号化対象外にする
 #noinspection ShrinkerUnresolvedReference
 -keep class com.example.androidapptemplate.domain.features.algorithm.model.** { *; }
 -keep class com.example.androidapptemplate.domain.features.login.model.** { *; }
 -keep class com.example.androidapptemplate.domain.features.webapi.trivia.model.** { *; }
 -keep class com.example.androidapptemplate.domain.features.webapi.unsplash.model.** { *; }
--keep class com.example.androidapptemplate.data.features.webapi.unsplash.api.response.** { *; }
+-keep class com.example.androidapptemplate.data.webapi.unsplash.api.response.** { *; }
 
 # enum
 # https://stackoverflow.com/questions/46102906/kotlin-proguard-rule-for-enum
