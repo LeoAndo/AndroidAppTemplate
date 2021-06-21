@@ -9,9 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.core.dialog.OnRetryConnectionListener
+import com.example.androidapptemplate.core.util.ToastHelper
 import com.example.androidapptemplate.databinding.FragmentTriviaSelectBinding
 import com.example.androidapptemplate.features.webapi.trivia.TriviaExceptionHandler
-import com.example.androidapptemplate.core.util.ToastHelper
 import com.example.androidapptemplate.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -21,8 +21,7 @@ import javax.inject.Inject
 internal class TriviaSelectFragment : Fragment(R.layout.fragment_trivia_select) {
     private val binding by viewBindings(FragmentTriviaSelectBinding::bind)
     private val viewModel by viewModels<TriviaSelectViewModel>()
-    private val exceptionHandler =
-        TriviaExceptionHandler(fragment = this, onUnAuthorizedAction = {})
+    private val exceptionHandler = TriviaExceptionHandler(fragment = this)
 
     @Inject
     lateinit var toastHelper: ToastHelper
