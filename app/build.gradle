@@ -43,8 +43,10 @@ android {
 }
 
 dependencies {
-    implementation project(':data') // TODO 消したい
-    implementation project(':domain')
+    implementation project(Modules.domain)
+    implementation project(Modules.data_features_auth)
+    implementation project(Modules.data_features_webapi_trivia)
+    implementation project(Modules.data_features_webapi_unsplash)
 
     // Base
     implementation Libs.kotlin_stdlib
@@ -72,15 +74,4 @@ dependencies {
     kapt Libs.hilt_android_compiler
     implementation Libs.hilt_lifecycle_viewmodel
     implementation Libs.hilt_common
-
-    // DI Test
-    androidTestImplementation Libs.hilt_android_testing
-    kaptAndroidTest Libs.hilt_android_compiler
-    kaptAndroidTest Libs.hilt_compiler
-
-    // TODO 以下の依存設定、消したい
-    // dataモジュールでprovideしているOkHttpClient.Builderの自動生成コードがappモジュールに出力されるので、
-    // 依存設定を追加しないと、ビルドエラーになる.
-    implementation Libs.okhttp
-    implementation Libs.moshi_kotlin
 }

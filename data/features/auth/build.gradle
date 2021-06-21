@@ -1,0 +1,7 @@
+apply from: "$rootDir/common-android-library.gradle"
+
+dependencies {
+    implementation project(Modules.domain)
+    implementation project(Modules.data_core)
+    implementation Libs.kotlinx_coroutines_core_jvm
+}

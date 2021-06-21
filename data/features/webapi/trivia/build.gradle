@@ -1,0 +1,18 @@
+apply from: "$rootDir/common-android-library.gradle"
+
+android {
+    defaultConfig {
+        buildConfigField "String", "TRIVIA_API_DOMAIN", "\"http://numbersapi.com\""
+    }
+}
+dependencies {
+    implementation project(Modules.domain)
+    implementation project(Modules.data_core)
+
+    implementation Libs.retrofit
+    implementation Libs.converter_scalars
+
+    implementation Libs.room_runtime
+    kapt Libs.room_compiler
+    implementation Libs.room_ktx
+}

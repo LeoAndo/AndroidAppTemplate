@@ -1002,8 +1002,9 @@ com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$ActivityRet
     public dagger.hilt.android.internal.builders.ViewModelComponentBuilder getViewModelComponentBuilder()
     public dagger.hilt.android.internal.builders.ViewComponentBuilder viewComponentBuilder()
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder:
-    public com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder apiModule(com.example.androidapptemplate.data.di.ApiModule)
-    public com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder databaseModule(com.example.androidapptemplate.data.di.DatabaseModule)
+    public com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder apiModule(com.example.androidapptemplate.data.webapi.trivia.di.ApiModule)
+    public com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder apiModule(com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule)
+    public com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder databaseModule(com.example.androidapptemplate.data.webapi.trivia.di.DatabaseModule)
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$ServiceCBuilder
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$ServiceCImpl
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC:
@@ -1057,81 +1058,106 @@ com.example.androidapptemplate.core.util.ToastHelper_Factory
 com.example.androidapptemplate.core.widget.ProgressIndicatorLayout:
     public void <init>(android.content.Context)
 com.example.androidapptemplate.core.widget.SimpleListAdapterKt
-com.example.androidapptemplate.data.BuildConfig
-com.example.androidapptemplate.data.R
-com.example.androidapptemplate.data.di.ApiModule:
-    private static final long TIMEOUT_SEC
-    private final okhttp3.logging.HttpLoggingInterceptor createHttpLoggingInterceptor()
-    private static final void createHttpLoggingInterceptor$lambda-2(java.lang.String)
-com.example.androidapptemplate.data.di.ApiModule_ProvideMoshi$data_releaseFactory$InstanceHolder
-com.example.androidapptemplate.data.di.ApiModule_ProvideMoshi$data_releaseFactory:
-    public void <init>()
-    public static com.example.androidapptemplate.data.di.ApiModule_ProvideMoshi$data_releaseFactory create()
-    public com.squareup.moshi.Moshi get()
-    public synthetic bridge java.lang.Object get()
-com.example.androidapptemplate.data.di.ApiModule_ProvideOkHttpClientBuilder$data_releaseFactory$InstanceHolder
-com.example.androidapptemplate.data.di.ApiModule_ProvideOkHttpClientBuilder$data_releaseFactory:
-    public void <init>()
-    public static com.example.androidapptemplate.data.di.ApiModule_ProvideOkHttpClientBuilder$data_releaseFactory create()
-    public synthetic bridge java.lang.Object get()
-    public okhttp3.OkHttpClient$Builder get()
-com.example.androidapptemplate.data.di.ApiModule_ProvideTriviaService$data_releaseFactory:
-    private final javax.inject.Provider okHttpClientBuilderProvider
-    public void <init>(javax.inject.Provider)
-    public static com.example.androidapptemplate.data.di.ApiModule_ProvideTriviaService$data_releaseFactory create(javax.inject.Provider)
-    public com.example.androidapptemplate.data.features.webapi.trivia.api.TriviaService get()
-    public synthetic bridge java.lang.Object get()
-com.example.androidapptemplate.data.di.ApiModule_ProvideUnsplashService$data_releaseFactory:
-    private final javax.inject.Provider moshiProvider
-    private final javax.inject.Provider okHttpClientBuilderProvider
-    public void <init>(javax.inject.Provider,javax.inject.Provider)
-    public static com.example.androidapptemplate.data.di.ApiModule_ProvideUnsplashService$data_releaseFactory create(javax.inject.Provider,javax.inject.Provider)
-    public com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService get()
-    public synthetic bridge java.lang.Object get()
-com.example.androidapptemplate.data.di.DatabaseModule_ProvideTriviaDao$data_releaseFactory:
-    private final javax.inject.Provider databaseProvider
-    public void <init>(javax.inject.Provider)
-    public static com.example.androidapptemplate.data.di.DatabaseModule_ProvideTriviaDao$data_releaseFactory create(javax.inject.Provider)
-    public com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao get()
-    public synthetic bridge java.lang.Object get()
-com.example.androidapptemplate.data.di.DatabaseModule_ProvideTriviaDatabase$data_releaseFactory:
-    private final javax.inject.Provider contextProvider
-    public void <init>(javax.inject.Provider)
-    public static com.example.androidapptemplate.data.di.DatabaseModule_ProvideTriviaDatabase$data_releaseFactory create(javax.inject.Provider)
-    public com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase get()
-    public synthetic bridge java.lang.Object get()
-com.example.androidapptemplate.data.di.RepositoryModule
-com.example.androidapptemplate.data.features.auth.api.response.LoginResponse:
+com.example.androidapptemplate.data.auth.BuildConfig
+com.example.androidapptemplate.data.auth.R$anim
+com.example.androidapptemplate.data.auth.R$animator
+com.example.androidapptemplate.data.auth.R$attr
+com.example.androidapptemplate.data.auth.R$color
+com.example.androidapptemplate.data.auth.R$dimen
+com.example.androidapptemplate.data.auth.R$drawable
+com.example.androidapptemplate.data.auth.R$id
+com.example.androidapptemplate.data.auth.R$integer
+com.example.androidapptemplate.data.auth.R$layout
+com.example.androidapptemplate.data.auth.R$string
+com.example.androidapptemplate.data.auth.R$style
+com.example.androidapptemplate.data.auth.R$styleable
+com.example.androidapptemplate.data.auth.R
+com.example.androidapptemplate.data.auth.datasource.AuthRemoteDataSource_Factory$InstanceHolder
+com.example.androidapptemplate.data.auth.datasource.AuthRemoteDataSource_Factory
+com.example.androidapptemplate.data.auth.di.RepositoryModule
+com.example.androidapptemplate.data.auth.repository.AuthRepositoryImpl_Factory
+com.example.androidapptemplate.data.auth.response.LoginResponse:
     public final java.lang.String component1()
     public final java.lang.String component2()
     public final int component3()
     public final java.lang.String component4()
-    public final com.example.androidapptemplate.data.features.auth.api.response.LoginResponse copy(java.lang.String,java.lang.String,int,java.lang.String)
-    public static synthetic com.example.androidapptemplate.data.features.auth.api.response.LoginResponse copy$default(com.example.androidapptemplate.data.features.auth.api.response.LoginResponse,java.lang.String,java.lang.String,int,java.lang.String,int,java.lang.Object)
+    public final com.example.androidapptemplate.data.auth.response.LoginResponse copy(java.lang.String,java.lang.String,int,java.lang.String)
+    public static synthetic com.example.androidapptemplate.data.auth.response.LoginResponse copy$default(com.example.androidapptemplate.data.auth.response.LoginResponse,java.lang.String,java.lang.String,int,java.lang.String,int,java.lang.Object)
     public final int getAge()
     public final java.lang.String getEmailAddress()
-com.example.androidapptemplate.data.features.auth.remote.AuthRemoteDataSource_Factory$InstanceHolder
-com.example.androidapptemplate.data.features.auth.remote.AuthRemoteDataSource_Factory
-com.example.androidapptemplate.data.features.auth.repository.AuthRepositoryImpl_Factory
-com.example.androidapptemplate.data.features.webapi.trivia.api.TriviaHeaderInterceptorKt
-com.example.androidapptemplate.data.features.webapi.trivia.db.entity.TriviaEntity:
+com.example.androidapptemplate.data.webapi.trivia.BuildConfig
+com.example.androidapptemplate.data.webapi.trivia.R$anim
+com.example.androidapptemplate.data.webapi.trivia.R$animator
+com.example.androidapptemplate.data.webapi.trivia.R$attr
+com.example.androidapptemplate.data.webapi.trivia.R$color
+com.example.androidapptemplate.data.webapi.trivia.R$dimen
+com.example.androidapptemplate.data.webapi.trivia.R$drawable
+com.example.androidapptemplate.data.webapi.trivia.R$id
+com.example.androidapptemplate.data.webapi.trivia.R$integer
+com.example.androidapptemplate.data.webapi.trivia.R$layout
+com.example.androidapptemplate.data.webapi.trivia.R$string
+com.example.androidapptemplate.data.webapi.trivia.R$style
+com.example.androidapptemplate.data.webapi.trivia.R$styleable
+com.example.androidapptemplate.data.webapi.trivia.R
+com.example.androidapptemplate.data.webapi.trivia.api.TriviaHeaderInterceptorKt
+com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaLocalDatasource_Factory
+com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaRemoteDatasource_Factory
+com.example.androidapptemplate.data.webapi.trivia.db.entity.TriviaEntity:
     public final int component1()
     public final java.lang.String component2()
-    public final com.example.androidapptemplate.data.features.webapi.trivia.db.entity.TriviaEntity copy(int,java.lang.String)
-    public static synthetic com.example.androidapptemplate.data.features.webapi.trivia.db.entity.TriviaEntity copy$default(com.example.androidapptemplate.data.features.webapi.trivia.db.entity.TriviaEntity,int,java.lang.String,int,java.lang.Object)
+    public final com.example.androidapptemplate.data.webapi.trivia.db.entity.TriviaEntity copy(int,java.lang.String)
+    public static synthetic com.example.androidapptemplate.data.webapi.trivia.db.entity.TriviaEntity copy$default(com.example.androidapptemplate.data.webapi.trivia.db.entity.TriviaEntity,int,java.lang.String,int,java.lang.Object)
     public final void setId(int)
-com.example.androidapptemplate.data.features.webapi.trivia.local.TriviaLocalDatasource_Factory
-com.example.androidapptemplate.data.features.webapi.trivia.remote.TriviaRemoteDatasource_Factory
-com.example.androidapptemplate.data.features.webapi.trivia.repository.TriviaRepositoryImpl_Factory
-com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService$Companion
-com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService:
+com.example.androidapptemplate.data.webapi.trivia.di.ApiModule_ProvideTriviaService$trivia_releaseFactory$InstanceHolder
+com.example.androidapptemplate.data.webapi.trivia.di.ApiModule_ProvideTriviaService$trivia_releaseFactory:
+    public void <init>()
+    public static com.example.androidapptemplate.data.webapi.trivia.di.ApiModule_ProvideTriviaService$trivia_releaseFactory create()
+    public com.example.androidapptemplate.data.webapi.trivia.api.TriviaService get()
+    public synthetic bridge java.lang.Object get()
+com.example.androidapptemplate.data.webapi.trivia.di.DatabaseModule_ProvideTriviaDao$trivia_releaseFactory:
+    private final javax.inject.Provider databaseProvider
+    public void <init>(javax.inject.Provider)
+    public static com.example.androidapptemplate.data.webapi.trivia.di.DatabaseModule_ProvideTriviaDao$trivia_releaseFactory create(javax.inject.Provider)
+    public com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao get()
+    public synthetic bridge java.lang.Object get()
+com.example.androidapptemplate.data.webapi.trivia.di.DatabaseModule_ProvideTriviaDatabase$trivia_releaseFactory:
+    private final javax.inject.Provider contextProvider
+    public void <init>(javax.inject.Provider)
+    public static com.example.androidapptemplate.data.webapi.trivia.di.DatabaseModule_ProvideTriviaDatabase$trivia_releaseFactory create(javax.inject.Provider)
+    public com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase get()
+    public synthetic bridge java.lang.Object get()
+com.example.androidapptemplate.data.webapi.trivia.di.RepositoryModule
+com.example.androidapptemplate.data.webapi.trivia.repository.TriviaRepositoryImpl_Factory
+com.example.androidapptemplate.data.webapi.unsplash.BuildConfig
+com.example.androidapptemplate.data.webapi.unsplash.R$anim
+com.example.androidapptemplate.data.webapi.unsplash.R$animator
+com.example.androidapptemplate.data.webapi.unsplash.R$attr
+com.example.androidapptemplate.data.webapi.unsplash.R$color
+com.example.androidapptemplate.data.webapi.unsplash.R$dimen
+com.example.androidapptemplate.data.webapi.unsplash.R$drawable
+com.example.androidapptemplate.data.webapi.unsplash.R$id
+com.example.androidapptemplate.data.webapi.unsplash.R$integer
+com.example.androidapptemplate.data.webapi.unsplash.R$layout
+com.example.androidapptemplate.data.webapi.unsplash.R$string
+com.example.androidapptemplate.data.webapi.unsplash.R$style
+com.example.androidapptemplate.data.webapi.unsplash.R$styleable
+com.example.androidapptemplate.data.webapi.unsplash.R
+com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService$Companion
+com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService:
     public static final java.lang.String CLIENT_ID
-    public static final com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService$Companion Companion
+    public static final com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService$Companion Companion
     static void <clinit>()
-com.example.androidapptemplate.data.features.webapi.unsplash.remote.UnsplashPagingSourceKt:
+com.example.androidapptemplate.data.webapi.unsplash.datasource.UnsplashPagingSourceKt:
     private static final int UNSPLASH_LAST_PAGE_INDEX
     private static final int UNSPLASH_STARTING_PAGE_INDEX
-com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepositoryImpl_Factory
+com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory$InstanceHolder
+com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory:
+    public void <init>()
+    public static com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory create()
+    public com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService get()
+    public synthetic bridge java.lang.Object get()
+com.example.androidapptemplate.data.webapi.unsplash.di.RepositoryModule
+com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl_Factory
 com.example.androidapptemplate.databinding.AlgorithmTopFragmentBinding:
     public static com.example.androidapptemplate.databinding.AlgorithmTopFragmentBinding inflate(android.view.LayoutInflater)
     public static com.example.androidapptemplate.databinding.AlgorithmTopFragmentBinding inflate(android.view.LayoutInflater,android.view.ViewGroup,boolean)
@@ -1333,7 +1359,6 @@ com.example.androidapptemplate.features.webapi.trivia.Hilt_TriviaTopFragment:
     public synthetic bridge dagger.hilt.internal.GeneratedComponentManager componentManager()
 com.example.androidapptemplate.features.webapi.trivia.TriviaExceptionHandler:
     public boolean handleNetworkConnectionError(com.example.androidapptemplate.core.dialog.OnRetryConnectionListener,androidx.fragment.app.Fragment,java.lang.Throwable)
-    public boolean handleUnAuthorizedError(androidx.fragment.app.Fragment,java.lang.Throwable)
 com.example.androidapptemplate.features.webapi.trivia.TriviaTopFragment$special$$inlined$viewBindings$1:
     public boolean isInitialized()
 com.example.androidapptemplate.features.webapi.trivia.history.Hilt_TriviaHistoryFragment:
@@ -1463,6 +1488,8 @@ com.example.androidapptemplate.util.ViewBindingDelegatesKt$viewBindings$1:
     public boolean isInitialized()
 com.example.androidapptemplate.util.ViewBindingDelegatesKt$viewBindings$2
 com.example.androidapptemplate.util.ViewBindingDelegatesKt
+com.example.androidtemplate.core.Network:
+    private static final long TIMEOUT_SEC
 com.google.android.material.R$anim
 com.google.android.material.R$animator:
     public static final int design_appbar_state_list_animator
@@ -7254,9 +7281,12 @@ hilt_aggregated_deps._androidx_hilt_lifecycle_ViewModelFactoryModules_ActivityMo
 hilt_aggregated_deps._androidx_hilt_lifecycle_ViewModelFactoryModules_FragmentModuleModuleDeps
 hilt_aggregated_deps._com_example_androidapptemplate_MainActivity_GeneratedInjector
 hilt_aggregated_deps._com_example_androidapptemplate_MyApp_GeneratedInjector
-hilt_aggregated_deps._com_example_androidapptemplate_data_di_ApiModule
-hilt_aggregated_deps._com_example_androidapptemplate_data_di_DatabaseModule
-hilt_aggregated_deps._com_example_androidapptemplate_data_di_RepositoryModule
+hilt_aggregated_deps._com_example_androidapptemplate_data_auth_di_RepositoryModule
+hilt_aggregated_deps._com_example_androidapptemplate_data_webapi_trivia_di_ApiModule
+hilt_aggregated_deps._com_example_androidapptemplate_data_webapi_trivia_di_DatabaseModule
+hilt_aggregated_deps._com_example_androidapptemplate_data_webapi_trivia_di_RepositoryModule
+hilt_aggregated_deps._com_example_androidapptemplate_data_webapi_unsplash_di_ApiModule
+hilt_aggregated_deps._com_example_androidapptemplate_data_webapi_unsplash_di_RepositoryModule
 hilt_aggregated_deps._com_example_androidapptemplate_di_UseCaseModule
 hilt_aggregated_deps._com_example_androidapptemplate_features_algorithm_AlgorithmTopFragment_GeneratedInjector
 hilt_aggregated_deps._com_example_androidapptemplate_features_algorithm_euclidean_EuclideanAlgorithmFragment_GeneratedInjector
@@ -14993,12 +15023,10 @@ com.bumptech.glide.R$id:
     public static java.lang.String provide3()
     public static java.lang.String provide4()
     public static java.lang.String provide5()
-    public static com.squareup.moshi.Moshi provideMoshi$data_release()
-    public static okhttp3.OkHttpClient$Builder provideOkHttpClientBuilder$data_release()
-    public static com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao provideTriviaDao$data_release(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase)
-    public static com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase provideTriviaDatabase$data_release(android.content.Context)
-    public static final com.example.androidapptemplate.domain.features.login.model.LoginUser toModel(com.example.androidapptemplate.data.features.auth.api.response.LoginResponse)
-    public static final com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult toModel(com.example.androidapptemplate.data.features.webapi.trivia.db.entity.TriviaEntity)
+    public static com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao provideTriviaDao$trivia_release(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase)
+    public static com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase provideTriviaDatabase$trivia_release(android.content.Context)
+    public static final com.example.androidapptemplate.domain.features.login.model.LoginUser toModel(com.example.androidapptemplate.data.auth.response.LoginResponse)
+    public static final com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult toModel(com.example.androidapptemplate.data.webapi.trivia.db.entity.TriviaEntity)
 com.bumptech.glide.Registry:
     public com.bumptech.glide.Registry append(java.lang.Class,java.lang.Class,com.bumptech.glide.load.ResourceDecoder)
     public final java.util.List getDecodePaths(java.lang.Class,java.lang.Class,java.lang.Class)
@@ -16198,21 +16226,21 @@ com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$ActivityRet
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder
 com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC:
     public void <init>(dagger.hilt.android.internal.modules.ApplicationContextModule)
-    public static com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepositoryImpl access$1600(com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC)
+    public static com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl access$1600(com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC)
     public static com.example.androidapptemplate.domain.features.login.usecase.LoginUseCaseImpl access$1700(com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC)
     public static synthetic dagger.hilt.android.internal.modules.ApplicationContextModule access$700(com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC)
-    public final com.example.androidapptemplate.data.features.auth.repository.AuthRepositoryImpl authRepositoryImpl()
+    public final com.example.androidapptemplate.data.auth.repository.AuthRepositoryImpl authRepositoryImpl()
     public static com.example.androidapptemplate.DaggerMyApp_HiltComponents_SingletonC$Builder builder()
     public final com.example.androidapptemplate.domain.features.login.usecase.LoginUseCaseImpl loginUseCaseImpl()
-    public final com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao triviaDao()
-    public final com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase triviaDatabase()
-    public final com.example.androidapptemplate.data.features.webapi.trivia.local.TriviaLocalDatasource triviaLocalDatasource()
-    public final com.example.androidapptemplate.data.features.webapi.trivia.remote.TriviaRemoteDatasource triviaRemoteDatasource()
-    public final com.example.androidapptemplate.data.features.webapi.trivia.repository.TriviaRepositoryImpl triviaRepositoryImpl()
-    public final com.example.androidapptemplate.data.features.webapi.trivia.api.TriviaService triviaService()
+    public final com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao triviaDao()
+    public final com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase triviaDatabase()
+    public final com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaLocalDatasource triviaLocalDatasource()
+    public final com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaRemoteDatasource triviaRemoteDatasource()
+    public final com.example.androidapptemplate.data.webapi.trivia.repository.TriviaRepositoryImpl triviaRepositoryImpl()
+    public final com.example.androidapptemplate.data.webapi.trivia.api.TriviaService triviaService()
     public final com.example.androidapptemplate.domain.features.webapi.trivia.usecase.TriviaUseCaseImpl triviaUseCaseImpl()
-    public final com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepositoryImpl unsplashRepositoryImpl()
-    public final com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService unsplashService()
+    public final com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl unsplashRepositoryImpl()
+    public final com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService unsplashService()
 com.example.androidapptemplate.Hilt_MainActivity:
     public final void _initHiltInternal()
     public final dagger.hilt.android.internal.managers.ActivityComponentManager componentManager()
@@ -16233,9 +16261,15 @@ com.example.androidapptemplate.MainActivity:
     public final void observeDestination()
     public static final void observeDestination$lambda-0(com.example.androidapptemplate.MainActivity,androidx.navigation.NavController,androidx.navigation.NavDestination,android.os.Bundle)
     public final void updateContent(int)
+com.example.androidapptemplate.core.CoroutinesUtilsKt$apiCall$2:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.example.androidapptemplate.core.CoroutinesUtilsKt$dbCall$2:
+    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
+com.example.androidapptemplate.core.CoroutinesUtilsKt
 com.example.androidapptemplate.core.DropDownUtilsKt
 com.example.androidapptemplate.core.dialog.AppExceptionUtilsKt
 com.example.androidapptemplate.core.dialog.NetworkConnectionErrorHandleable$DefaultImpls:
+    public static boolean handleUnAuthorizedError(com.example.androidapptemplate.core.dialog.UnAuthorizedErrorHandleable,androidx.fragment.app.Fragment,java.lang.Throwable)
     public static boolean handleUnAuthorizedError(com.example.androidapptemplate.core.dialog.UnSplashUnAuthorizedErrorHandleable,androidx.fragment.app.Fragment,java.lang.Throwable)
 com.example.androidapptemplate.core.dialog.NetworkConnectionErrorHandleable$handleNetworkConnectionError$1:
     public final void invoke()
@@ -16265,103 +16299,92 @@ com.example.androidapptemplate.core.widget.SimpleListAdapter:
     public static final synthetic kotlin.jvm.functions.Function1 access$getOnItemClicked$p(com.example.androidapptemplate.core.widget.SimpleListAdapter)
     public void onBindViewHolder(com.example.androidapptemplate.core.widget.SimpleListAdapter$MyVH,int)
     public com.example.androidapptemplate.core.widget.SimpleListAdapter$MyVH onCreateViewHolder(android.view.ViewGroup)
-com.example.androidapptemplate.data.core.util.CoroutinesUtilsKt$apiCall$2:
-    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.core.util.CoroutinesUtilsKt$dbCall$2:
-    public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.core.util.CoroutinesUtilsKt
-com.example.androidapptemplate.data.di.ApiModule:
-    public static final okhttp3.MediaType CONTENT_TYPE
-    public static okhttp3.Call lambda$jesY0MD5P1_EEI22zWrWpJ260Nc(okhttp3.OkHttpClient$Builder,okhttp3.Request)
-    public static okhttp3.Call lambda$lK-AJA6PHcoKsar5D7P2Yuq4Ulc(okhttp3.OkHttpClient$Builder,okhttp3.Request)
-    public static final com.squareup.moshi.Moshi provideMoshi$data_release()
-    public static final okhttp3.OkHttpClient$Builder provideOkHttpClientBuilder$data_release()
-    public static final com.example.androidapptemplate.data.features.webapi.trivia.api.TriviaService provideTriviaService$data_release(okhttp3.OkHttpClient$Builder)
-    public static final okhttp3.Call provideTriviaService$lambda-0(okhttp3.OkHttpClient$Builder,okhttp3.Request)
-    public static final com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService provideUnsplashService$data_release(okhttp3.OkHttpClient$Builder,com.squareup.moshi.Moshi)
-    public static final okhttp3.Call provideUnsplashService$lambda-1(okhttp3.OkHttpClient$Builder,okhttp3.Request)
-com.example.androidapptemplate.data.di.ApiModule_ProvideMoshi$data_releaseFactory
-com.example.androidapptemplate.data.di.ApiModule_ProvideOkHttpClientBuilder$data_releaseFactory
-com.example.androidapptemplate.data.di.ApiModule_ProvideTriviaService$data_releaseFactory
-com.example.androidapptemplate.data.di.ApiModule_ProvideUnsplashService$data_releaseFactory
-com.example.androidapptemplate.data.di.DatabaseModule
-com.example.androidapptemplate.data.di.DatabaseModule_ProvideTriviaDao$data_releaseFactory
-com.example.androidapptemplate.data.di.DatabaseModule_ProvideTriviaDatabase$data_releaseFactory
-com.example.androidapptemplate.data.features.auth.api.response.LoginResponse
-com.example.androidapptemplate.data.features.auth.api.response.LoginResponseKt
-com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase$Companion:
-    public void <init>()
-    public final com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase getInstance(android.content.Context)
-com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase:
-    public static final synthetic com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase access$getINSTANCE$cp()
-    public static final synthetic void access$setINSTANCE$cp(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase)
-com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl:
-    public static synthetic java.util.List access$000(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl)
-    public static synthetic java.util.List access$100(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl)
-    public static synthetic java.util.List access$1000(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl)
-    public static synthetic java.util.List access$200(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl)
-    public static synthetic java.util.List access$300(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl)
-    public static synthetic java.util.List access$400(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl)
-    public static synthetic java.util.List access$500(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl)
-    public static synthetic androidx.sqlite.db.SupportSQLiteDatabase access$602(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl,androidx.sqlite.db.SupportSQLiteDatabase)
-    public static synthetic void access$700(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl,androidx.sqlite.db.SupportSQLiteDatabase)
-    public static synthetic java.util.List access$800(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl)
-    public static synthetic java.util.List access$900(com.example.androidapptemplate.data.features.webapi.trivia.db.TriviaDatabase_Impl)
-com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao_Impl$1:
-    public final synthetic com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao_Impl this$0
-    public void bind(androidx.sqlite.db.SupportSQLiteStatement,com.example.androidapptemplate.data.features.webapi.trivia.db.entity.TriviaEntity)
-com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao_Impl$2:
-    public kotlin.Unit call()
-com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao_Impl$3:
-    public java.util.List call()
-com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao_Impl:
-    public static synthetic androidx.room.RoomDatabase access$000(com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao_Impl)
-    public static synthetic androidx.room.EntityInsertionAdapter access$100(com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao_Impl)
-    public static java.util.List getRequiredConverters()
-com.example.androidapptemplate.data.features.webapi.trivia.db.entity.TriviaEntity:
-    public final int getId()
-    public final java.lang.String getText()
-com.example.androidapptemplate.data.features.webapi.trivia.db.entity.TriviaEntityKt
-com.example.androidapptemplate.data.features.webapi.trivia.local.TriviaLocalDatasource$insertTriviaHistory$2:
+com.example.androidapptemplate.data.auth.response.LoginResponse
+com.example.androidapptemplate.data.auth.response.LoginResponseKt
+com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaLocalDatasource$insertTriviaHistory$2:
     public final java.lang.Object invoke(kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.features.webapi.trivia.local.TriviaLocalDatasource:
-    public static final synthetic com.example.androidapptemplate.data.features.webapi.trivia.db.dao.TriviaDao access$getDao$p(com.example.androidapptemplate.data.features.webapi.trivia.local.TriviaLocalDatasource)
+com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaLocalDatasource:
+    public static final synthetic com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao access$getDao$p(com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaLocalDatasource)
     public final kotlinx.coroutines.flow.Flow getAllTriviaList()
     public final java.lang.Object insertTriviaHistory(java.lang.String,kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.features.webapi.trivia.remote.TriviaRemoteDatasource$getRandomDate$2:
+com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaRemoteDatasource$getRandomDate$2:
     public final java.lang.Object invoke(kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.features.webapi.trivia.remote.TriviaRemoteDatasource$getRandomMath$2:
+com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaRemoteDatasource$getRandomMath$2:
     public final java.lang.Object invoke(kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.features.webapi.trivia.remote.TriviaRemoteDatasource$getRandomTrivia$2:
+com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaRemoteDatasource$getRandomTrivia$2:
     public final java.lang.Object invoke(kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.features.webapi.trivia.remote.TriviaRemoteDatasource$getRandomYear$2:
+com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaRemoteDatasource$getRandomYear$2:
     public final java.lang.Object invoke(kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.features.webapi.trivia.remote.TriviaRemoteDatasource:
-    public static final synthetic com.example.androidapptemplate.data.features.webapi.trivia.api.TriviaService access$getTriviaService$p(com.example.androidapptemplate.data.features.webapi.trivia.remote.TriviaRemoteDatasource)
+com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaRemoteDatasource:
+    public static final synthetic com.example.androidapptemplate.data.webapi.trivia.api.TriviaService access$getTriviaService$p(com.example.androidapptemplate.data.webapi.trivia.datasource.TriviaRemoteDatasource)
     public final java.lang.Object getRandomDate(kotlin.coroutines.Continuation)
     public final java.lang.Object getRandomMath(kotlin.coroutines.Continuation)
     public final java.lang.Object getRandomTrivia(kotlin.coroutines.Continuation)
     public final java.lang.Object getRandomYear(kotlin.coroutines.Continuation)
     public final java.lang.Object getTrivia(java.lang.String,java.lang.String,kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.features.webapi.trivia.repository.TriviaRepositoryImpl$getAllTriviaList$$inlined$map$1$2:
-    public final synthetic com.example.androidapptemplate.data.features.webapi.trivia.repository.TriviaRepositoryImpl$getAllTriviaList$$inlined$map$1 this$0
-com.example.androidapptemplate.data.features.webapi.trivia.repository.TriviaRepositoryImpl:
+com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase$Companion:
+    public void <init>()
+    public final com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase getInstance(android.content.Context)
+com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase:
+    public static final synthetic com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase access$getINSTANCE$cp()
+    public static final synthetic void access$setINSTANCE$cp(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase)
+com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl:
+    public static synthetic java.util.List access$000(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl)
+    public static synthetic java.util.List access$100(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl)
+    public static synthetic java.util.List access$1000(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl)
+    public static synthetic java.util.List access$200(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl)
+    public static synthetic java.util.List access$300(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl)
+    public static synthetic java.util.List access$400(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl)
+    public static synthetic java.util.List access$500(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl)
+    public static synthetic androidx.sqlite.db.SupportSQLiteDatabase access$602(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl,androidx.sqlite.db.SupportSQLiteDatabase)
+    public static synthetic void access$700(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl,androidx.sqlite.db.SupportSQLiteDatabase)
+    public static synthetic java.util.List access$800(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl)
+    public static synthetic java.util.List access$900(com.example.androidapptemplate.data.webapi.trivia.db.TriviaDatabase_Impl)
+com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao_Impl$1:
+    public final synthetic com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao_Impl this$0
+    public void bind(androidx.sqlite.db.SupportSQLiteStatement,com.example.androidapptemplate.data.webapi.trivia.db.entity.TriviaEntity)
+com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao_Impl$2:
+    public kotlin.Unit call()
+com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao_Impl$3:
+    public java.util.List call()
+com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao_Impl:
+    public static synthetic androidx.room.RoomDatabase access$000(com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao_Impl)
+    public static synthetic androidx.room.EntityInsertionAdapter access$100(com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao_Impl)
+    public static java.util.List getRequiredConverters()
+com.example.androidapptemplate.data.webapi.trivia.db.entity.TriviaEntity:
+    public final int getId()
+    public final java.lang.String getText()
+com.example.androidapptemplate.data.webapi.trivia.db.entity.TriviaEntityKt
+com.example.androidapptemplate.data.webapi.trivia.di.ApiModule
+com.example.androidapptemplate.data.webapi.trivia.di.ApiModule_ProvideTriviaService$trivia_releaseFactory
+com.example.androidapptemplate.data.webapi.trivia.di.DatabaseModule
+com.example.androidapptemplate.data.webapi.trivia.di.DatabaseModule_ProvideTriviaDao$trivia_releaseFactory
+com.example.androidapptemplate.data.webapi.trivia.di.DatabaseModule_ProvideTriviaDatabase$trivia_releaseFactory
+com.example.androidapptemplate.data.webapi.trivia.repository.TriviaRepositoryImpl$getAllTriviaList$$inlined$map$1$2:
+    public final synthetic com.example.androidapptemplate.data.webapi.trivia.repository.TriviaRepositoryImpl$getAllTriviaList$$inlined$map$1 this$0
+com.example.androidapptemplate.data.webapi.trivia.repository.TriviaRepositoryImpl:
     public kotlinx.coroutines.flow.Flow getAllTriviaList()
     public java.lang.Object getRandomDate(kotlin.coroutines.Continuation)
     public java.lang.Object getRandomMath(kotlin.coroutines.Continuation)
     public java.lang.Object getRandomTrivia(kotlin.coroutines.Continuation)
     public java.lang.Object getRandomYear(kotlin.coroutines.Continuation)
     public java.lang.Object getTrivia(java.lang.String,java.lang.String,kotlin.coroutines.Continuation)
-com.example.androidapptemplate.data.features.webapi.unsplash.remote.UnsplashPagingSource:
+com.example.androidapptemplate.data.webapi.unsplash.datasource.UnsplashPagingSource:
     public java.lang.Integer getRefreshKey(androidx.paging.PagingState)
-com.example.androidapptemplate.data.features.webapi.unsplash.remote.UnsplashPagingSourceKt:
+com.example.androidapptemplate.data.webapi.unsplash.datasource.UnsplashPagingSourceKt:
     public static final synthetic java.lang.String access$getTAG$p()
-com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepository:
+com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule:
+    public static final okhttp3.MediaType CONTENT_TYPE
+    public static okhttp3.Call lambda$QQ4tV9vYlD6Qj7VNiBcFnkW1wbw(okhttp3.OkHttpClient$Builder,okhttp3.Request)
+    public static final okhttp3.Call provideUnsplashService$lambda-1(okhttp3.OkHttpClient$Builder,okhttp3.Request)
+    public static final com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService provideUnsplashService$unsplash_release()
+com.example.androidapptemplate.data.webapi.unsplash.di.ApiModule_ProvideUnsplashService$unsplash_releaseFactory
+com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepository:
     public abstract kotlinx.coroutines.flow.Flow getSearchResults(java.lang.String)
-com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepositoryImpl$getSearchResults$1:
+com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl$getSearchResults$1:
     public final androidx.paging.PagingSource invoke()
-com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepositoryImpl:
-    public static final synthetic com.example.androidapptemplate.data.features.webapi.unsplash.api.UnsplashService access$getApi$p(com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepositoryImpl)
+com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl:
+    public static final synthetic com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService access$getApi$p(com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepositoryImpl)
     public kotlinx.coroutines.flow.Flow getSearchResults(java.lang.String)
 com.example.androidapptemplate.databinding.ActivityMainBinding:
     public final androidx.fragment.app.FragmentContainerView navHostFragment
@@ -16694,8 +16717,6 @@ com.example.androidapptemplate.features.webapi.trivia.random.Hilt_TriviaRandomFr
     public dagger.hilt.android.internal.managers.FragmentComponentManager createComponentManager()
 com.example.androidapptemplate.features.webapi.trivia.random.TriviaRandomFragment$doAction$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
-com.example.androidapptemplate.features.webapi.trivia.random.TriviaRandomFragment$exceptionHandler$1:
-    public final void invoke()
 com.example.androidapptemplate.features.webapi.trivia.random.TriviaRandomFragment$onViewCreated$1$1$1:
     public final java.lang.Object invoke(kotlin.coroutines.Continuation)
 com.example.androidapptemplate.features.webapi.trivia.random.TriviaRandomFragment$onViewCreated$1$2$1:
@@ -16737,8 +16758,6 @@ com.example.androidapptemplate.features.webapi.trivia.random.TriviaRandomViewMod
 com.example.androidapptemplate.features.webapi.trivia.select.Hilt_TriviaSelectFragment:
     public final dagger.hilt.android.internal.managers.FragmentComponentManager componentManager()
     public dagger.hilt.android.internal.managers.FragmentComponentManager createComponentManager()
-com.example.androidapptemplate.features.webapi.trivia.select.TriviaSelectFragment$exceptionHandler$1:
-    public final void invoke()
 com.example.androidapptemplate.features.webapi.trivia.select.TriviaSelectFragment$onViewCreated$1$1$1:
     public final java.lang.Object invoke(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.Continuation)
 com.example.androidapptemplate.features.webapi.trivia.select.TriviaSelectFragment$onViewCreated$2$onRetry$1:
@@ -16834,7 +16853,7 @@ com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalle
 com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalleryViewModel:
     public static final com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalleryViewModel$Companion Companion
     public static void <clinit>()
-    public static final synthetic com.example.androidapptemplate.data.features.webapi.unsplash.repository.UnsplashRepository access$getRepository$p(com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalleryViewModel)
+    public static final synthetic com.example.androidapptemplate.data.webapi.unsplash.repository.UnsplashRepository access$getRepository$p(com.example.androidapptemplate.features.webapi.unsplash.gallery.ImageSearchGalleryViewModel)
     public final void clearList()
     public final kotlinx.coroutines.flow.Flow getPhotos()
     public final void searchPhotos(java.lang.String)
@@ -16867,6 +16886,7 @@ com.example.androidapptemplate.features.webapi.unsplash.gallery.UnsplashPhotoLoa
 com.example.androidapptemplate.util.ViewBindingDelegatesKt$viewBindings$1$observer$1:
     public final synthetic com.example.androidapptemplate.util.ViewBindingDelegatesKt$viewBindings$1 this$0
 com.example.androidapptemplate.util.ViewBindingDelegatesKt$viewBindings$1
+com.example.androidtemplate.core.Network
 com.google.android.material.R$animator
 com.google.android.material.R$attr
 com.google.android.material.R$color
