@@ -1,0 +1,12 @@
+apply from: "$rootDir/common-kotlin-library.gradle"
+
+dependencies {
+    implementation project(":domain")
+    //Network
+    implementation Libs.retrofit
+    implementation Libs.okhttp
+    implementation Libs.logging_interceptor
+    implementation Libs.moshi_kotlin
+    // Kotlin Coroutines
+    implementation Libs.kotlinx_coroutines_core_jvm
+}
