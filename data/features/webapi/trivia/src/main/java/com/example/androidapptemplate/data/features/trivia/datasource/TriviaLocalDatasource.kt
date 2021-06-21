@@ -1,8 +1,8 @@
-package com.example.androidapptemplate.data.webapi.trivia.datasource
+package com.example.androidapptemplate.data.features.trivia.datasource
 
 import com.example.androidapptemplate.core.dbCall
-import com.example.androidapptemplate.data.webapi.trivia.db.dao.TriviaDao
-import com.example.androidapptemplate.data.webapi.trivia.db.entity.TriviaEntity
+import com.example.androidapptemplate.data.features.trivia.db.dao.TriviaDao
+import com.example.androidapptemplate.data.features.trivia.db.entity.TriviaEntity
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

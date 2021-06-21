@@ -1,6 +1,6 @@
-package com.example.androidapptemplate.data.webapi.trivia.api
+package com.example.androidapptemplate.data.features.trivia.api
 
-import com.example.androidapptemplate.data.webapi.trivia.BuildConfig
+import com.example.androidapptemplate.data.features.webapi.trivia.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 

@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.data.webapi.trivia.db.entity
+package com.example.androidapptemplate.data.features.trivia.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

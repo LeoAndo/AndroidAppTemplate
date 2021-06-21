@@ -1,9 +1,9 @@
-package com.example.androidapptemplate.data.webapi.trivia.di
+package com.example.androidapptemplate.data.features.trivia.di
 
 import com.example.androidapptemplate.data.core.Network
-import com.example.androidapptemplate.data.webapi.trivia.BuildConfig
-import com.example.androidapptemplate.data.webapi.trivia.api.TriviaHeaderInterceptor
-import com.example.androidapptemplate.data.webapi.trivia.api.TriviaService
+import com.example.androidapptemplate.data.features.trivia.api.TriviaHeaderInterceptor
+import com.example.androidapptemplate.data.features.trivia.api.TriviaService
+import com.example.androidapptemplate.data.features.webapi.trivia.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

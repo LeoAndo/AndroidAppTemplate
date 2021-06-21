@@ -1,6 +1,6 @@
-package com.example.androidapptemplate.data.webapi.trivia.di
+package com.example.androidapptemplate.data.features.trivia.di
 
-import com.example.androidapptemplate.data.webapi.trivia.repository.TriviaRepositoryImpl
+import com.example.androidapptemplate.data.features.trivia.repository.TriviaRepositoryImpl
 import com.example.androidapptemplate.domain.features.webapi.trivia.repository.TriviaRepository
 import dagger.Binds
 import dagger.Module
