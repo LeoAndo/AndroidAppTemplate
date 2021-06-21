@@ -7,7 +7,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.FragmentImageDetailsBinding
-import com.example.androidapptemplate.util.viewBindings
+import com.example.androidapptemplate.core.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

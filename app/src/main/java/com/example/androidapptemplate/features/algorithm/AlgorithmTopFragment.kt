@@ -9,7 +9,7 @@ import com.example.androidapptemplate.R
 import com.example.androidapptemplate.core.widget.SimpleListAdapter
 import com.example.androidapptemplate.databinding.AlgorithmTopFragmentBinding
 import com.example.androidapptemplate.core.util.ToastHelper
-import com.example.androidapptemplate.util.viewBindings
+import com.example.androidapptemplate.core.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

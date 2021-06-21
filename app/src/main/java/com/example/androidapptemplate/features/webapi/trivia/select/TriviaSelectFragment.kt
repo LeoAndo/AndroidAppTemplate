@@ -8,11 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.androidapptemplate.R
-import com.example.androidapptemplate.core.dialog.OnRetryConnectionListener
+import com.example.androidapptemplate.core.util.OnRetryConnectionListener
 import com.example.androidapptemplate.core.util.ToastHelper
 import com.example.androidapptemplate.databinding.FragmentTriviaSelectBinding
 import com.example.androidapptemplate.features.webapi.trivia.TriviaExceptionHandler
-import com.example.androidapptemplate.util.viewBindings
+import com.example.androidapptemplate.core.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject

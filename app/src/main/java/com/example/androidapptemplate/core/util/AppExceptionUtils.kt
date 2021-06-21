@@ -1,4 +1,4 @@
-package com.example.androidapptemplate.core.dialog
+package com.example.androidapptemplate.core.util
 
 import android.widget.Toast
 import androidx.fragment.app.Fragment
