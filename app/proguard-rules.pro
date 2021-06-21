@@ -20,7 +20,7 @@
 -keep class com.example.androidapptemplate.domain.features.login.model.** { *; }
 -keep class com.example.androidapptemplate.domain.features.webapi.trivia.model.** { *; }
 -keep class com.example.androidapptemplate.domain.features.webapi.unsplash.model.** { *; }
--keep class com.example.androidapptemplate.data.webapi.unsplash.api.response.** { *; }
+-keep class com.example.androidapptemplate.data.features.unsplash.api.response.** { *; }
 
 # enum
 # https://stackoverflow.com/questions/46102906/kotlin-proguard-rule-for-enum

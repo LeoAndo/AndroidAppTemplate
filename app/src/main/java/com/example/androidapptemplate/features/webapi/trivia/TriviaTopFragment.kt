@@ -5,7 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.FragmentTriviaTopBinding
-import com.example.androidapptemplate.util.viewBindings
+import com.example.androidapptemplate.core.util.viewBindings
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint

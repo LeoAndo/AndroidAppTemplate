@@ -2,8 +2,8 @@ package com.example.androidapptemplate.features.webapi.trivia.select
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
-import com.example.androidapptemplate.core.getDateValue
-import com.example.androidapptemplate.core.getMonthValue
+import com.example.androidapptemplate.core.util.getDateValue
+import com.example.androidapptemplate.core.util.getMonthValue
 import com.example.androidapptemplate.domain.features.webapi.trivia.usecase.TriviaUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

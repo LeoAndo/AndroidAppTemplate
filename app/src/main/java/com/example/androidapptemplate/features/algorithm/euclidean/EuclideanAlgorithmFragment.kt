@@ -8,7 +8,7 @@ import com.example.androidapptemplate.R
 import com.example.androidapptemplate.databinding.FragmentEuclideanAlgorithmBinding
 import com.example.androidapptemplate.domain.features.algorithm.model.AlgorithmDetailsMessage
 import com.example.androidapptemplate.core.util.ToastHelper
-import com.example.androidapptemplate.util.viewBindings
+import com.example.androidapptemplate.core.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

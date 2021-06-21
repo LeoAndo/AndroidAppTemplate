@@ -9,7 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.androidapptemplate.databinding.ActivityMainBinding
-import com.example.androidapptemplate.util.viewBindings
+import com.example.androidapptemplate.core.util.viewBindings
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
