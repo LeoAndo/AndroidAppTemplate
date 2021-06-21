@@ -28,11 +28,11 @@ MVVM + SingleActivity + Multi Module<br>
 - Proguard / R8
   - [Use only stable libraries](https://github.com/LeoAndo/AndroidAppTemplate/issues/40#issue-925121453)
 # Library
-[see this file](https://github.com/LeoAndo/AndroidAppTemplate/blob/main/app/release/outputs/sdk-dependencies/release/sdkDependencies.txt)
+[see this file](https://github.com/LeoAndo/AndroidAppTemplate/blob/main/outputs/sdk-dependencies/release/sdkDependencies.txt)
 
 # Usage
 It is necessary to set the API KEY of each service to operate as an application.<br>
-https://github.com/LeoAndo/AndroidAppTemplate/blob/main/data/build.gradle#L5:L10<br>
+https://github.com/LeoAndo/AndroidAppTemplate/blob/main/data/features/webapi/unsplash/build.gradle#L4:L8<br>
 
 # reference
 [hilt-multi-module](https://developer.android.com/training/dependency-injection/hilt-multi-module?hl=ja)<br>
