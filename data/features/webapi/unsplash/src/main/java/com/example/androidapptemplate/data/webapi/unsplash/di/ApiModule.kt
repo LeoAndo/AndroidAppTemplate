@@ -1,9 +1,9 @@
 package com.example.androidapptemplate.data.webapi.unsplash.di
 
+import com.example.androidapptemplate.data.core.Network
 import com.example.androidapptemplate.data.webapi.unsplash.BuildConfig
 import com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashHeaderInterceptor
 import com.example.androidapptemplate.data.webapi.unsplash.api.UnsplashService
-import com.example.androidtemplate.core.Network
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
