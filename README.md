@@ -9,7 +9,7 @@ gradle version 4.2.1<br>
 
 # Architecture
 MVVM + SingleActivity + Multi Module<br>
-<img width="1029" alt="スクリーンショット 2021-06-21 15 31 02" src="https://user-images.githubusercontent.com/16476224/122716875-c9ae1d00-d2a5-11eb-8ddb-0e7e00c2e032.png">
+<img width="1029" alt="スクリーンショット 2021-06-21 15 43 26" src="https://user-images.githubusercontent.com/16476224/122718200-9d939b80-d2a7-11eb-8f02-69c1d16a0390.png">
 
 # implementation Rules
 - Presentation layer
