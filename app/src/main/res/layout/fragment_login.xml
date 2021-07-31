@@ -71,6 +71,7 @@
                 android:layout_marginHorizontal="24dp"
                 android:enabled="@{viewModel.isEnableLoginButton}"
                 android:text="@string/action_sign_in"
+                android:backgroundTint="@color/app_btn_bg_color_selector"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
