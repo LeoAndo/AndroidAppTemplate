@@ -3,7 +3,7 @@ This project is "Android Template Project" for small-scale development.<br>
 
 # Development environment
 
-<img width="646" alt="スクリーンショット 2021-06-14 13 38 53" src="https://user-images.githubusercontent.com/16476224/121839875-f8604c80-cd15-11eb-99be-d3d2829a3f07.png">
+<img width="646" alt="スクリーンショット 2021-06-14 13 38 53" src="https://user-images.githubusercontent.com/16476224/127751156-0638bd97-e532-43e9-be12-e758a7118141.png">
 
 gradle version 4.2.1<br>
 
