@@ -5,7 +5,7 @@ This project is "Android Template Project" for small-scale development.<br>
 
 <img width="646" alt="スクリーンショット 2021-06-14 13 38 53" src="https://user-images.githubusercontent.com/16476224/127751156-0638bd97-e532-43e9-be12-e758a7118141.png">
 
-gradle version 7.0.0<br>
+[gradle version](https://github.com/LeoAndo/AndroidAppTemplate/blob/main/gradle/wrapper/gradle-wrapper.properties)<br>
 
 # Architecture
 MVVM + SingleActivity + Multi Module<br>
