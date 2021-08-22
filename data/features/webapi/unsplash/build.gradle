@@ -1,10 +1,20 @@
 apply from: "$rootDir/common-android-library.gradle"
 
+def localProperties = new Properties()
+try {
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+} catch (Exception e) {
+    logger.warn("No Local Properties File Found!")
+}
+
 android {
     defaultConfig {
-        buildConfigField("String", "INVALID_API_KEY", "\"invalid api key\"")
+        if (!localProperties['unsplashAccessKey']) {
+            logger.warn('You can add it to local.properties once you have gotten it from Play. ' +
+                    'Example: unsplashAccessKey=[key value]')
+        }
+        buildConfigField("String", "UNSPLASH_ACCESS_KEY", "\"" + localProperties['unsplashAccessKey'] + "\"")
         buildConfigField "String", "UNSPLASH_API_DOMAIN", "\"https://api.unsplash.com/\""
-        buildConfigField("String", "UNSPLASH_ACCESS_KEY", "INVALID_API_KEY")  // TODO 設定すること!
     }
 }
 dependencies {
