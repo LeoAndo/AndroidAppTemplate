@@ -63,7 +63,6 @@
                 android:layout_marginStart="@dimen/base_layout_margin"
                 android:layout_marginTop="@dimen/base_layout_margin"
                 android:layout_marginEnd="@dimen/base_layout_margin"
-                android:text="@{viewModel.resultTrivia}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button_get_trivia"

@@ -36,5 +36,5 @@ object Network {
         return httpLoggingInterceptor
     }
 
-    private const val TIMEOUT_SEC: Long = 15
+    private const val TIMEOUT_SEC: Long = 1
 }

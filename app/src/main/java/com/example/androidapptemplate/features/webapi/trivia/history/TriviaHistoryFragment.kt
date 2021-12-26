@@ -5,9 +5,9 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.androidapptemplate.R
-import com.example.androidapptemplate.databinding.FragmentTriviaHistoryBinding
 import com.example.androidapptemplate.core.util.ToastHelper
 import com.example.androidapptemplate.core.util.viewBindings
+import com.example.androidapptemplate.databinding.FragmentTriviaHistoryBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -15,7 +15,6 @@ import javax.inject.Inject
 internal class TriviaHistoryFragment : Fragment(R.layout.fragment_trivia_history) {
     private val binding by viewBindings(FragmentTriviaHistoryBinding::bind)
     private val viewModel by viewModels<TriviaHistoryViewModel>()
-    private val exceptionHandler = TriviaHistoryExceptionHandler(fragment = this)
     private val adapter = TriviaHistoryListAdapter()
 
     @Inject
@@ -31,7 +30,15 @@ internal class TriviaHistoryFragment : Fragment(R.layout.fragment_trivia_history
     }
 
     private fun observeLiveData() {
-        viewModel.resultTrivia.observe(viewLifecycleOwner, { adapter.submitList(it) })
-        viewModel.failure.observe(viewLifecycleOwner, { toastHelper.showToast(it) })
+        viewModel.uistate.observe(viewLifecycleOwner, {
+            when (it) {
+                is UiState.Error -> {
+                    toastHelper.showToast(it.throwable.localizedMessage ?: "error")
+                }
+                is UiState.Success -> {
+                    adapter.submitList(it.data)
+                }
+            }
+        })
     }
 }
