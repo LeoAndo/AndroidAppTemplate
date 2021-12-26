@@ -3,12 +3,9 @@ package com.example.androidapptemplate.data.features.unsplash.datasource
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.example.androidapptemplate.data.core.ErrorResult
 import com.example.androidapptemplate.data.features.unsplash.api.UnsplashService
 import com.example.androidapptemplate.data.features.unsplash.api.response.toModel
-import com.example.androidapptemplate.domain.exception.BadRequestException
-import com.example.androidapptemplate.domain.exception.NetworkException
-import com.example.androidapptemplate.domain.exception.NotFoundException
-import com.example.androidapptemplate.domain.exception.UnAuthorizedException
 import com.example.androidapptemplate.domain.features.webapi.unsplash.model.UnSplashPhoto
 import retrofit2.HttpException
 import java.net.ConnectException
@@ -44,26 +41,22 @@ internal class UnsplashPagingSource(
             when (e) {
                 is HttpException -> {
                     when (e.code()) {
-                        HttpURLConnection.HTTP_UNAUTHORIZED -> LoadResult.Error(
-                            UnAuthorizedException()
-                        )
-                        HttpURLConnection.HTTP_BAD_REQUEST -> LoadResult.Error(
-                            BadRequestException(
-                                e.localizedMessage ?: "unknown error"
-                            )
-                        )
-                        HttpURLConnection.HTTP_NOT_FOUND -> LoadResult.Error(
-                            NotFoundException(
-                                e.localizedMessage ?: "unknown error"
-                            )
-                        )
+                        HttpURLConnection.HTTP_UNAUTHORIZED -> {
+                            LoadResult.Error(ErrorResult.UnAuthorizedError(e.localizedMessage))
+                        }
+                        HttpURLConnection.HTTP_BAD_REQUEST -> {
+                            LoadResult.Error(ErrorResult.BadRequestError(e.localizedMessage))
+                        }
+                        HttpURLConnection.HTTP_NOT_FOUND -> {
+                            LoadResult.Error(ErrorResult.NotFoundError(e.localizedMessage))
+                        }
                         else -> LoadResult.Error(e)
                     }
                 }
-                is UnknownHostException, is ConnectException, is SocketTimeoutException -> LoadResult.Error(
-                    NetworkException()
-                )
-                else -> LoadResult.Error(e)
+                is UnknownHostException, is ConnectException, is SocketTimeoutException -> {
+                    LoadResult.Error(ErrorResult.NetworkError(e.localizedMessage))
+                }
+                else -> LoadResult.Error(ErrorResult.OtherError(e.localizedMessage))
             }
         }
     }

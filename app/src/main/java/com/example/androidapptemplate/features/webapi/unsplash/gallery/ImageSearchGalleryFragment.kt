@@ -12,7 +12,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.example.androidapptemplate.R
-import com.example.androidapptemplate.core.util.OnRetryConnectionListener
+import com.example.androidapptemplate.core.util.handleNetworkConnectionError
+import com.example.androidapptemplate.core.util.handleUnSplashUnAuthorizedError
 import com.example.androidapptemplate.core.util.viewBindings
 import com.example.androidapptemplate.databinding.FragmentImageSearchGalleryBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,8 +28,6 @@ import kotlinx.coroutines.launch
 internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_search_gallery) {
     private val viewModel by viewModels<ImageSearchGalleryViewModel>()
     private val binding by viewBindings(FragmentImageSearchGalleryBinding::bind)
-    private val exceptionHandler =
-        UnsplashGalleryExceptionHandler(fragment = this, onUnAuthorizedAction = {})
     private val adapter = UnsplashPhotoAdapter {
         val action = ImageSearchGalleryFragmentDirections.goToDetailsDest(it)
         findNavController().navigate(action)
@@ -55,7 +54,8 @@ internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_sea
                 else -> null
             }
             errorState?.let { it ->
-                exceptionHandler.handleError(throwable = it.error)
+                handleUnSplashUnAuthorizedError(throwable = it.error, onUnAuthorizedAction = {})
+                handleNetworkConnectionError(throwable = it.error, onRetry = { adapter.refresh() })
             }
         }
 
@@ -91,12 +91,6 @@ internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_sea
         }
 
         binding.swipeRefresh.setOnRefreshListener { adapter.refresh() }
-
-        exceptionHandler.setOnRetryConnectionListener(object : OnRetryConnectionListener {
-            override fun onRetry() {
-                adapter.refresh()
-            }
-        })
         setHasOptionsMenu(true)
     }
 

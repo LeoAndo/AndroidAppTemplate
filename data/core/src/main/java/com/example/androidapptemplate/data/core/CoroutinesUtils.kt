@@ -1,9 +1,5 @@
 package com.example.androidapptemplate.data.core
 
-import com.example.androidapptemplate.domain.exception.BadRequestException
-import com.example.androidapptemplate.domain.exception.NetworkException
-import com.example.androidapptemplate.domain.exception.NotFoundException
-import com.example.androidapptemplate.domain.exception.UnAuthorizedException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -111,18 +107,16 @@ suspend fun <T> apiCall(
             when (e) {
                 is HttpException -> {
                     when (e.code()) {
-                        HttpURLConnection.HTTP_UNAUTHORIZED -> throw UnAuthorizedException()
-                        HttpURLConnection.HTTP_BAD_REQUEST -> throw BadRequestException(
-                            e.localizedMessage ?: "unknown error"
-                        )
-                        HttpURLConnection.HTTP_NOT_FOUND -> throw NotFoundException(
-                            e.localizedMessage ?: "unknown error"
-                        )
-                        else -> throw e
+                        HttpURLConnection.HTTP_UNAUTHORIZED -> throw ErrorResult.UnAuthorizedError(e.localizedMessage)
+                        HttpURLConnection.HTTP_BAD_REQUEST -> throw ErrorResult.BadRequestError(e.localizedMessage)
+                        HttpURLConnection.HTTP_NOT_FOUND -> throw ErrorResult.NotFoundError(e.localizedMessage)
+                        else -> throw ErrorResult.OtherError(e.localizedMessage)
                     }
                 }
-                is UnknownHostException, is ConnectException, is SocketTimeoutException -> throw NetworkException()
-                else -> throw e
+                is UnknownHostException, is ConnectException, is SocketTimeoutException -> {
+                    throw ErrorResult.NetworkError(e.localizedMessage)
+                }
+                else -> throw ErrorResult.OtherError(e.localizedMessage)
             }
         }
     }
@@ -137,7 +131,7 @@ suspend fun <T> dbCall(
         try {
             apiCall.invoke()
         } catch (e: Throwable) {
-            throw e
+            throw ErrorResult.OtherError(e.localizedMessage)
         }
     }
 }
