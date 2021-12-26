@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.core.util.ToastHelper
+import com.example.androidapptemplate.core.util.handleNetworkConnectionError
 import com.example.androidapptemplate.core.util.viewBindings
 import com.example.androidapptemplate.databinding.FragmentTriviaSelectBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,8 +34,8 @@ internal class TriviaSelectFragment : Fragment(R.layout.fragment_trivia_select) 
         viewModel.uistate.observe(viewLifecycleOwner) {
             when (it) {
                 is UiState.Error -> {
-                    toastHelper.showToast(it.throwable.localizedMessage ?: "")
                     binding.progressIndicatorLayout.hide()
+                    handleNetworkConnectionError(it.throwable, onRetry = {})
                 }
                 UiState.Loading -> {
                     binding.progressIndicatorLayout.show()
