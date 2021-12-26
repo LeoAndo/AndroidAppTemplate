@@ -13,8 +13,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.example.androidapptemplate.R
 import com.example.androidapptemplate.core.util.OnRetryConnectionListener
-import com.example.androidapptemplate.databinding.FragmentImageSearchGalleryBinding
 import com.example.androidapptemplate.core.util.viewBindings
+import com.example.androidapptemplate.databinding.FragmentImageSearchGalleryBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect
@@ -55,7 +55,7 @@ internal class ImageSearchGalleryFragment : Fragment(R.layout.fragment_image_sea
                 else -> null
             }
             errorState?.let { it ->
-                exceptionHandler.handleError(it.error)
+                exceptionHandler.handleError(throwable = it.error)
             }
         }
 

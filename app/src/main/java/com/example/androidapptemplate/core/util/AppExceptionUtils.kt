@@ -1,21 +1,17 @@
 package com.example.androidapptemplate.core.util
 
+import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.androidapptemplate.R
+import com.example.androidapptemplate.data.core.ErrorResult
 import com.example.androidapptemplate.domain.exception.BadRequestException
 import com.example.androidapptemplate.domain.exception.NetworkException
 import com.example.androidapptemplate.domain.exception.NotFoundException
 import com.example.androidapptemplate.domain.exception.UnAuthorizedException
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-internal sealed interface RetryState
-object RetryStateNone : RetryState
-object RetryState1 : RetryState
-object RetryState2 : RetryState
-object RetryState3 : RetryState
-object RetryState4 : RetryState
-
+@Deprecated("messae")
 internal interface OnRetryConnectionListener {
     fun onRetry()
 }
@@ -41,15 +37,27 @@ internal interface NetworkConnectionErrorHandleable {
     }
 }
 
-internal interface UnAuthorizedErrorHandleable {
-    val onUnAuthorizedAction: () -> Unit
-    fun handleUnAuthorizedError(fragment: Fragment, throwable: Throwable): Boolean {
-        return when (throwable) {
-            is UnAuthorizedException -> {
-                fragment.openUnAuthorizedErrorDialog { onUnAuthorizedAction() }
-                true
-            }
-            else -> false
+fun Fragment.handleNetworkConnectionError(throwable: Throwable, onRetry: () -> Unit) {
+    when (throwable) {
+        is ErrorResult.BadRequestError, is ErrorResult.NotFoundError -> {
+            Toast.makeText(requireContext(), throwable.message, Toast.LENGTH_SHORT).show()
+        }
+        is ErrorResult.NetworkError -> {
+            openNetworkErrorDialog { onRetry() }
+        }
+        else -> {
+            Log.w("handleNetworkConnectionError", "error: ${throwable.localizedMessage}")
+        }
+    }
+}
+
+fun Fragment.handleUnAuthorizedError(throwable: Throwable, onUnAuthorizedAction: () -> Unit) {
+    when (throwable) {
+        is ErrorResult.UnAuthorizedError -> {
+            openUnAuthorizedErrorDialog { onUnAuthorizedAction() }
+        }
+        else -> {
+            Log.w("handleNetworkConnectionError", "error: ${throwable.localizedMessage}")
         }
     }
 }
