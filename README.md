@@ -14,17 +14,19 @@ MVVM + SingleActivity + Multi Module<br>
 # implementation Rules
 - API KEY is managed as confidential information (`local.properties`)
 - Presentation layer
-  - Error handling is done by Activity or Fragment.
+  - try catch is done in ViewModel.
+  - ViewModel returns the processing result as Livedata.
+  - It has the value of UiState (Loadinng, Throwable, Success) defined in the sealed interface as Livedata.
+  - Monitor one Livedata with Activity / Fragment and update the screen according to the processing result.
   - Fragment does not have Toolbar.
   - If simple logic, Call Repository (Interface) directly from ViewModel.
-  - Since strings.xml is faster to grow, separate files by features.
 - domain layer
   - Pure Kotlin.
   - hold Model(Serialize).
+  - It should be a mechanism that can be safely called even from the main thread.
 - data layer
-  - Specify the Dispatcher.
-  - One shot processing throws an Exception individually.
-  - Coroutines Flow etc. return the processing result in the form of Sealed interface. (Reference: Paging3)
+  - Specify the Dispatcher IO.
+  - If processing fails, throw a custom Exception according to the processing result.
   - Module division to make it easier to understand the library used for each features.
 - Proguard / R8
   - [Use only stable libraries](https://github.com/LeoAndo/AndroidAppTemplate/issues/40#issue-925121453)
