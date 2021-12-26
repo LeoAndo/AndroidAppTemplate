@@ -5,7 +5,9 @@ import com.example.androidapptemplate.data.features.trivia.datasource.TriviaRemo
 import com.example.androidapptemplate.data.features.trivia.db.entity.toModel
 import com.example.androidapptemplate.domain.features.webapi.trivia.model.TriviaResult
 import com.example.androidapptemplate.domain.features.webapi.trivia.repository.TriviaRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
@@ -19,7 +21,7 @@ internal class TriviaRepositoryImpl @Inject constructor(
     override fun getAllTriviaList(): Flow<List<TriviaResult>> {
         return localDatasource.getAllTriviaList().map { list ->
             list.map { it.toModel() }
-        }
+        }.flowOn(Dispatchers.IO)
     }
 
     override suspend fun getTrivia(month: String, date: String): String =

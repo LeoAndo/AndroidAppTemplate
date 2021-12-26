@@ -1,6 +1,6 @@
 package com.example.androidapptemplate.data.features.trivia.datasource
 
-import com.example.androidapptemplate.core.apiCall
+import com.example.androidapptemplate.data.core.apiCall
 import com.example.androidapptemplate.data.features.trivia.api.TriviaService
 import javax.inject.Inject
 

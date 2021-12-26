@@ -44,6 +44,7 @@ android {
 
 dependencies {
     implementation project(Modules.domain)
+    implementation project(Modules.data_core)
     implementation project(Modules.data_features_auth)
     implementation project(Modules.data_features_webapi_trivia)
     implementation project(Modules.data_features_webapi_unsplash)

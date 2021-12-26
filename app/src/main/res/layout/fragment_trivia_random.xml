@@ -1,84 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.example.androidapptemplate.features.webapi.trivia.random.TriviaRandomViewModel" />
-    </data>
-
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_get_random_trivia"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_layout_margin"
+            android:layout_marginTop="@dimen/base_layout_margin"
+            android:layout_marginEnd="@dimen/base_layout_margin"
+            android:text="@string/button_get_random_trivia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_get_random_trivia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/base_layout_margin"
-                android:layout_marginTop="@dimen/base_layout_margin"
-                android:layout_marginEnd="@dimen/base_layout_margin"
-                android:text="@string/button_get_random_trivia"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_get_random_year_trivia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/base_layout_margin"
-                android:layout_marginTop="@dimen/base_layout_margin"
-                android:layout_marginEnd="@dimen/base_layout_margin"
-                android:text="@string/button_get_random_year_trivia"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_get_random_trivia" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_get_random_month_trivia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/base_layout_margin"
-                android:layout_marginTop="@dimen/base_layout_margin"
-                android:layout_marginEnd="@dimen/base_layout_margin"
-                android:text="@string/button_get_random_month_trivia"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_get_random_year_trivia" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_get_random_date_trivia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/base_layout_margin"
-                android:layout_marginTop="@dimen/base_layout_margin"
-                android:layout_marginEnd="@dimen/base_layout_margin"
-                android:text="@string/button_get_random_date_trivia"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_get_random_month_trivia" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/text_result_trivia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/base_layout_margin"
-                android:layout_marginTop="@dimen/base_layout_margin"
-                android:layout_marginEnd="@dimen/base_layout_margin"
-                android:text="@{viewModel.resultTrivia}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_get_random_date_trivia"
-                tools:text="174 is the number of miles the Columbia University Library System collection, with over 9.3 million volumes, would stretch end-to-end." />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.example.androidapptemplate.core.widget.ProgressIndicatorLayout
-            android:id="@+id/progress_indicator_layout"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_get_random_year_trivia"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </FrameLayout>
-</layout>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_layout_margin"
+            android:layout_marginTop="@dimen/base_layout_margin"
+            android:layout_marginEnd="@dimen/base_layout_margin"
+            android:text="@string/button_get_random_year_trivia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_get_random_trivia" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_get_random_month_trivia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_layout_margin"
+            android:layout_marginTop="@dimen/base_layout_margin"
+            android:layout_marginEnd="@dimen/base_layout_margin"
+            android:text="@string/button_get_random_month_trivia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_get_random_year_trivia" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_get_random_date_trivia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_layout_margin"
+            android:layout_marginTop="@dimen/base_layout_margin"
+            android:layout_marginEnd="@dimen/base_layout_margin"
+            android:text="@string/button_get_random_date_trivia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_get_random_month_trivia" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_result_trivia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_layout_margin"
+            android:layout_marginTop="@dimen/base_layout_margin"
+            android:layout_marginEnd="@dimen/base_layout_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_get_random_date_trivia"
+            tools:text="174 is the number of miles the Columbia University Library System collection, with over 9.3 million volumes, would stretch end-to-end." />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.example.androidapptemplate.core.widget.ProgressIndicatorLayout
+        android:id="@+id/progress_indicator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

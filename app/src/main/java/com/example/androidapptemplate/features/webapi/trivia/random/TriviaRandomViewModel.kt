@@ -1,37 +1,46 @@
 package com.example.androidapptemplate.features.webapi.trivia.random
 
-import androidx.databinding.ObservableField
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.androidapptemplate.core.util.*
+import androidx.lifecycle.viewModelScope
 import com.example.androidapptemplate.domain.features.webapi.trivia.usecase.TriviaUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 internal class TriviaRandomViewModel @Inject constructor(
     private val usecase: TriviaUseCase
 ) : ViewModel() {
-    val resultTrivia = ObservableField<String>()
-    var retryState: RetryState = RetryStateNone
-        private set
+    private val _uistate = MutableLiveData<UiState>()
+    val uistate: LiveData<UiState> = _uistate
 
-    internal suspend fun getRandomMonthTrivia() {
-        retryState = RetryState1
-        resultTrivia.set(usecase.getRandomMath())
+    fun getRandomMonthTrivia() {
+        doAction { usecase.getRandomMath() }
     }
 
-    internal suspend fun getRandomTrivia() {
-        retryState = RetryState2
-        resultTrivia.set(usecase.getRandomTrivia())
+    fun getRandomTrivia() {
+        doAction { usecase.getRandomTrivia() }
     }
 
-    internal suspend fun getRandomYearTrivia() {
-        retryState = RetryState3
-        resultTrivia.set(usecase.getRandomYear())
+    fun getRandomYearTrivia() {
+        doAction { usecase.getRandomYear() }
     }
 
-    internal suspend fun getRandomDateTrivia() {
-        retryState = RetryState4
-        resultTrivia.set(usecase.getRandomDate())
+    fun getRandomDateTrivia() {
+        doAction { usecase.getRandomDate() }
+    }
+
+    private fun doAction(action: suspend () -> String) {
+        // 特定のスコープの全てのジョブを明示的にキャンセルする場合は、以下で良さそう.
+        // viewModelScope.coroutineContext.cancelChildren()
+        viewModelScope.launch(CoroutineExceptionHandler { _, throwable ->
+            _uistate.value = UiState.Error(throwable)
+        }) {
+            _uistate.value = UiState.Loading
+            UiState.Success(action.invoke())
+        }
     }
 }

@@ -1,6 +1,6 @@
 package com.example.androidapptemplate.data.features.trivia.datasource
 
-import com.example.androidapptemplate.core.dbCall
+import com.example.androidapptemplate.data.core.dbCall
 import com.example.androidapptemplate.data.features.trivia.db.dao.TriviaDao
 import com.example.androidapptemplate.data.features.trivia.db.entity.TriviaEntity
 import kotlinx.coroutines.flow.Flow

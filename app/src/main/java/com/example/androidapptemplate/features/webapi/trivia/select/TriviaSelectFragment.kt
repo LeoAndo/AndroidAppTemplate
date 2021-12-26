@@ -6,22 +6,17 @@ import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import com.example.androidapptemplate.R
-import com.example.androidapptemplate.core.util.OnRetryConnectionListener
 import com.example.androidapptemplate.core.util.ToastHelper
-import com.example.androidapptemplate.databinding.FragmentTriviaSelectBinding
-import com.example.androidapptemplate.features.webapi.trivia.TriviaExceptionHandler
 import com.example.androidapptemplate.core.util.viewBindings
+import com.example.androidapptemplate.databinding.FragmentTriviaSelectBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
 internal class TriviaSelectFragment : Fragment(R.layout.fragment_trivia_select) {
     private val binding by viewBindings(FragmentTriviaSelectBinding::bind)
     private val viewModel by viewModels<TriviaSelectViewModel>()
-    private val exceptionHandler = TriviaExceptionHandler(fragment = this)
 
     @Inject
     lateinit var toastHelper: ToastHelper
@@ -31,23 +26,28 @@ internal class TriviaSelectFragment : Fragment(R.layout.fragment_trivia_select) 
         binding.let {
             it.viewModel = viewModel
             it.buttonGetTrivia.setOnClickListener {
-                viewLifecycleOwner.lifecycleScope.launch(exceptionHandler.coroutineExceptionHandler) {
-                    getTrivia()
-                }
+                getTrivia()
             }
-
         }
-        exceptionHandler.setOnRetryConnectionListener(object : OnRetryConnectionListener {
-            override fun onRetry() {
-                viewLifecycleOwner.lifecycleScope.launch(exceptionHandler.coroutineExceptionHandler) {
-                    getTrivia()
+
+        viewModel.uistate.observe(viewLifecycleOwner) {
+            when (it) {
+                is UiState.Error -> {
+                    toastHelper.showToast(it.throwable.localizedMessage ?: "")
+                    binding.progressIndicatorLayout.hide()
+                }
+                UiState.Loading -> {
+                    binding.progressIndicatorLayout.show()
+                }
+                is UiState.Success -> {
+                    binding.progressIndicatorLayout.hide()
+                    binding.textResultTrivia.text = it.data
                 }
             }
-        })
+        }
     }
 
-    private suspend fun getTrivia() {
-        binding.progressIndicatorLayout.show()
+    private fun getTrivia() {
         if (validate()) {
             viewModel.getTrivia()
         } else {
@@ -57,7 +57,6 @@ internal class TriviaSelectFragment : Fragment(R.layout.fragment_trivia_select) 
                 Toast.LENGTH_SHORT
             ).show()
         }
-        binding.progressIndicatorLayout.hide()
     }
 
     private fun validate(): Boolean {
