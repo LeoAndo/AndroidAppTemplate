@@ -1,6 +1,13 @@
 # Overview
 This project is "Android Template Project" for small-scale development.<br>
 
+# MAD Score
+
+![summary](https://user-images.githubusercontent.com/16476224/150648011-24a3ea3d-c0ed-42e4-add9-11d8d1b8854a.png)
+![jetpack](https://user-images.githubusercontent.com/16476224/150648006-0923a917-0276-4ad6-8872-192b4cf09a29.png)
+![kotlin](https://user-images.githubusercontent.com/16476224/150648007-f0c1bca1-6b1f-49b9-b951-4c9305232225.png)
+![studio](https://user-images.githubusercontent.com/16476224/150648009-dac660f0-ebe6-4c2f-8aac-abefec69d0b1.png)
+
 # Development environment
 
 <img width="646" alt="スクリーンショット 2021-06-14 13 38 53" src="https://user-images.githubusercontent.com/16476224/127751156-0638bd97-e532-43e9-be12-e758a7118141.png">
