@@ -11,17 +11,17 @@ try {
     logger.warn("Not Found local.properties: ${e.localizedMessage}")
 }
 android {
-    namespace 'com.leoleo.androidgithubsearch'
+    namespace 'com.leoleo.androidapptemplate'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.leoleo.androidgithubsearch"
+        applicationId "com.leoleo.androidapptemplate"
         minSdk 29
         targetSdk 33
         versionCode 100
         versionName "1.0.0"
 
-        testInstrumentationRunner "com.leoleo.androidgithubsearch.CustomTestRunner"
+        testInstrumentationRunner "com.leoleo.androidapptemplate.CustomTestRunner"
         vectorDrawables {
             useSupportLibrary true
         }

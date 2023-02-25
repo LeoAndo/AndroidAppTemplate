@@ -12,7 +12,7 @@ try {
     logger.warn("Not Found local.properties: ${e.localizedMessage}")
 }
 android {
-    namespace 'com.leoleo.androidgithubsearch.data'
+    namespace 'com.leoleo.androidapptemplate.data'
     compileSdk 33
 
     defaultConfig {
@@ -34,19 +34,19 @@ android {
     productFlavors {
         development {
             dimension "version"
-            buildConfigField "String", "GITHUB_API_DOMAIN", "\"https://api.github.com\""
+            buildConfigField "String", "API_DOMAIN", "\"https://api.github.com\""
         }
         stub {
             dimension "version"
-            buildConfigField "String", "GITHUB_API_DOMAIN", "\"https://api.github.com\""
+            buildConfigField "String", "API_DOMAIN", "\"https://api.github.com\""
         }
         staging {
             dimension "version"
-            buildConfigField "String", "GITHUB_API_DOMAIN", "\"https://api.github.com\""
+            buildConfigField "String", "API_DOMAIN", "\"https://api.github.com\""
         }
         production {
             dimension "version"
-            buildConfigField "String", "GITHUB_API_DOMAIN", "\"https://api.github.com\""
+            buildConfigField "String", "API_DOMAIN", "\"https://api.github.com\""
         }
     }
 }
