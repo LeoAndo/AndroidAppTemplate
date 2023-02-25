@@ -5,6 +5,13 @@ Minimalist template for personal app development<br>
 - IDE: Android Studio Electric Eel 2022.1.1
 - Support OS version: 10.0 later
 
+# features
+- M3 (Custom)
+- added basic library (network / DI etc.)
+- added basic R8 settings
+- product flavor
+- multi module
+
 # capture: Android Resizable Emulator API 33
 
 <img src="https://user-images.githubusercontent.com/16476224/221370788-e7929893-7519-4f6c-ae0c-6a311291492c.png" width=320 />

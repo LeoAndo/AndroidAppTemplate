@@ -18,8 +18,8 @@ android {
         applicationId "com.leoleo.androidapptemplate"
         minSdk 29
         targetSdk 33
-        versionCode 100
-        versionName "1.0.0"
+        versionCode 101
+        versionName "1.0.1"
 
         testInstrumentationRunner "com.leoleo.androidapptemplate.CustomTestRunner"
         vectorDrawables {
