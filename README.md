@@ -7,4 +7,4 @@
 
 # capture: Android Resizable Emulator API 33
 
-<img src="" width=420 />
+<img src="https://user-images.githubusercontent.com/16476224/221370600-f565fb36-1425-4e0d-8834-4ed114329736.png" width=320 />
