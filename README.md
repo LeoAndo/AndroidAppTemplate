@@ -1,10 +1,20 @@
-# 概要
-個人アプリ開発のためのミニマムなテンプレート<br>
+# Overview
+Minimalist template for personal app development<br>
 
-# 開発環境
+# env
 - IDE: Android Studio Electric Eel 2022.1.1
-- 動作OSバージョン: OS10.0以上
+- Support OS version: 10.0 later
+
+# features
+- M3 (Custom)
+- added basic library (network / DI etc.)
+- added basic R8 settings
+- product flavor
+- multi module
 
 # capture: Android Resizable Emulator API 33
 
-<img src="" width=420 />
+<img src="https://user-images.githubusercontent.com/16476224/221370788-e7929893-7519-4f6c-ae0c-6a311291492c.png" width=320 />
+
+# refs
+https://github.com/LeoAndo/AndroidGithubSearch<br>
