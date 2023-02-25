@@ -1,15 +1,8 @@
 <resources>
-    <!-- common -->
     <string name="app_name">AndroidAppTemplate</string>
-    <string name="home">home</string>
-    <string name="play_ground">Play Ground</string>
-    <string name="algorithm">algorithm</string>
-    <string name="web_api">webAPI</string>
-    <string name="search">Search</string>
-    <string name="un_authorized_dialog_title">Authentication error</string>
-    <string name="un_authorized_dialog_message">Delete in-app data and force logout</string>
-    <string name="network_error_dialog_title">network error</string>
-    <string name="network_error_dialog_message">Retry to network communicate again?</string>
-    <string name="month">month</string>
-    <string name="date">date</string>
+    <string name="reload">reload</string>
+    <string name="no_content_description">No contentDescription</string>
+    <string name="test_tag_compact_main_screen">test_tag_compact_main_screen</string>
+    <string name="test_tag_medium_main_screen">test_tag_compact_medium_screen</string>
+    <string name="test_tag_expanded_main_screen">test_tag_expanded_main_screen</string>
 </resources>
