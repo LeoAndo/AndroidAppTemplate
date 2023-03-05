@@ -1,4 +1,4 @@
 package com.leoleo.androidapptemplate.domain.exception
 /*
-Domain Model is placed here.
+アプリ固有Exception定義はここに配置する
  */

@@ -23,17 +23,23 @@ fun MediumMainScreen() {
     MediumMainScreenStateless(modifier, count, onClick = { count++ })
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun MediumMainScreenStateless(modifier: Modifier, count: Int, onClick: () -> Unit) {
-    Column(
-        modifier = modifier,
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Button(onClick = { onClick() }) {
-            Text(text = "MediumMainScreen: $count")
-        }
-    }
+    Scaffold(
+        floatingActionButton = {
+            FloatingActionButton(onClick = { onClick() }) {
+                Text(text = "+")
+            }
+        }, content = { padding ->
+            Column(
+                modifier = modifier.padding(padding),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(text = "MediumMainScreenStateless: $count")
+            }
+        })
 }
 
 @PreviewFoldableDevice
