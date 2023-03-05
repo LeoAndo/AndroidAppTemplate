@@ -4,8 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -18,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.leoleo.androidapptemplate.R
 import com.leoleo.androidapptemplate.ui.component.AppSurface
-import com.leoleo.androidapptemplate.ui.preview.PreviewFoldableDevice
+import com.leoleo.androidapptemplate.ui.preview.PreviewPhoneDevice
 
 @Composable
 fun CompactMainScreen() {
@@ -30,20 +29,26 @@ fun CompactMainScreen() {
     CompactMainScreenStateless(modifier, count, onClick = { count++ })
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CompactMainScreenStateless(modifier: Modifier, count: Int, onClick: () -> Unit) {
-    Column(
-        modifier = modifier,
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Button(onClick = { onClick() }) {
-            Text(text = "CompactMainScreen: $count")
-        }
-    }
+    Scaffold(
+        floatingActionButton = {
+            FloatingActionButton(onClick = { onClick() }) {
+                Text(text = "+")
+            }
+        }, content = { padding ->
+            Column(
+                modifier = modifier.padding(padding),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(text = "CompactMainScreen: $count")
+            }
+        })
 }
 
-@PreviewFoldableDevice
+@PreviewPhoneDevice
 @Composable
 private fun Prev_CompactMainScreen() {
     val modifier = Modifier
