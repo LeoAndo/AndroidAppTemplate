@@ -5,12 +5,12 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 dependencies {
-    implementation("androidx.paging:paging-common:$paging_common_version")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4")
+    implementation("androidx.paging:paging-common-ktx:$paging_common_version")
+    implementation('org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3')
 
     // DI
     implementation "com.google.dagger:dagger:$dagger_hilt_version"
