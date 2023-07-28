@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val windowSizeClass = calculateWindowSizeClass(this)
-            MainScreen(windowSizeClass.widthSizeClass)
+            MainScreen(windowWidthSizeClass = windowSizeClass.widthSizeClass)
         }
     }
 }
