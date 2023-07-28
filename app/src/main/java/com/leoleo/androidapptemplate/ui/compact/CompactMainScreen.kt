@@ -2,6 +2,7 @@ package com.leoleo.androidapptemplate.ui.compact
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
@@ -14,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.leoleo.androidapptemplate.R
 import com.leoleo.androidapptemplate.ui.component.AppSurface
@@ -24,22 +26,33 @@ fun CompactMainScreen(
     modifier: Modifier = Modifier,
 ) {
     var count by rememberSaveable { mutableStateOf(1) }
-    modifier.testTag(stringResource(id = R.string.test_tag_compact_main_screen))
     CompactMainScreenStateless(modifier, count, onClick = { count++ })
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun CompactMainScreenStateless(modifier: Modifier, count: Int, onClick: () -> Unit) {
-    AppSurface {
+private fun CompactMainScreenStateless(
+    modifier: Modifier = Modifier,
+    count: Int,
+    onClick: () -> Unit
+) {
+    AppSurface(modifier) {
         Scaffold(
             floatingActionButton = {
                 FloatingActionButton(onClick = { onClick() }) {
                     Text(text = "+")
                 }
             }, content = { padding ->
+                val pv = PaddingValues(
+                    start = padding.calculateLeftPadding(LayoutDirection.Ltr) + 16.dp,
+                    top = padding.calculateTopPadding() + 16.dp,
+                    bottom = padding.calculateBottomPadding() + 16.dp,
+                    end = padding.calculateRightPadding(LayoutDirection.Ltr) + 16.dp,
+                )
                 Column(
-                    modifier = modifier.padding(padding),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(pv)
+                        .testTag(stringResource(id = R.string.test_tag_compact_main_screen)),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -52,8 +65,5 @@ private fun CompactMainScreenStateless(modifier: Modifier, count: Int, onClick: 
 @PreviewPhoneDevice
 @Composable
 private fun Prev_CompactMainScreen() {
-    val modifier = Modifier
-        .fillMaxSize()
-        .padding(16.dp)
-    CompactMainScreenStateless(modifier, 10) {}
+    CompactMainScreenStateless(count = 10) {}
 }

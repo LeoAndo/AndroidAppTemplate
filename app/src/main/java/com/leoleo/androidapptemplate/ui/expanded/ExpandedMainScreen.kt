@@ -8,6 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.leoleo.androidapptemplate.R
 import com.leoleo.androidapptemplate.ui.component.AppSurface
@@ -18,22 +19,33 @@ fun ExpandedMainScreen(
     modifier: Modifier = Modifier,
 ) {
     var count by rememberSaveable { mutableStateOf(1) }
-    modifier.testTag(stringResource(id = R.string.test_tag_expanded_main_screen))
     ExpandedMainScreenStateless(modifier, count, onClick = { count++ })
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ExpandedMainScreenStateless(modifier: Modifier, count: Int, onClick: () -> Unit) {
-    AppSurface {
+private fun ExpandedMainScreenStateless(
+    modifier: Modifier = Modifier,
+    count: Int,
+    onClick: () -> Unit
+) {
+    AppSurface(modifier) {
         Scaffold(
             floatingActionButton = {
                 FloatingActionButton(onClick = { onClick() }) {
                     Text(text = "+")
                 }
             }, content = { padding ->
+                val pv = PaddingValues(
+                    start = padding.calculateLeftPadding(LayoutDirection.Ltr) + 16.dp,
+                    top = padding.calculateTopPadding() + 16.dp,
+                    bottom = padding.calculateBottomPadding() + 16.dp,
+                    end = padding.calculateRightPadding(LayoutDirection.Ltr) + 16.dp,
+                )
                 Column(
-                    modifier = modifier.padding(padding),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(pv)
+                        .testTag(stringResource(id = R.string.test_tag_expanded_main_screen)),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -46,8 +58,5 @@ private fun ExpandedMainScreenStateless(modifier: Modifier, count: Int, onClick:
 @PreviewFoldableDevice
 @Composable
 private fun Prev_ExpandedMainScreen() {
-    val modifier = Modifier
-        .fillMaxSize()
-        .padding(16.dp)
-    ExpandedMainScreenStateless(modifier, 10) {}
+    ExpandedMainScreenStateless(count = 10) {}
 }
