@@ -45,7 +45,7 @@ class MainScreenTest {
 
     @Test
     fun show_compact_main_screen() {
-        composeTestRule.activity.setContent { MainScreen(WindowWidthSizeClass.Compact) }
+        composeTestRule.activity.setContent { MainScreen(windowWidthSizeClass = WindowWidthSizeClass.Compact) }
         with(composeTestRule) {
             onNodeWithTag(tagCompactMainScreen).assertIsDisplayed()
         }
@@ -53,7 +53,7 @@ class MainScreenTest {
 
     @Test
     fun show_medium_main_screen() {
-        composeTestRule.activity.setContent { MainScreen(WindowWidthSizeClass.Medium) }
+        composeTestRule.activity.setContent { MainScreen(windowWidthSizeClass = WindowWidthSizeClass.Medium) }
         with(composeTestRule) {
             onNodeWithTag(tagMediumMainScreen).assertIsDisplayed()
         }
@@ -61,7 +61,7 @@ class MainScreenTest {
 
     @Test
     fun show_expanded_main_screen() {
-        composeTestRule.activity.setContent { MainScreen(WindowWidthSizeClass.Expanded) }
+        composeTestRule.activity.setContent { MainScreen(windowWidthSizeClass = WindowWidthSizeClass.Expanded) }
         with(composeTestRule) {
             onNodeWithTag(tagExpandedMainScreen).assertIsDisplayed()
         }

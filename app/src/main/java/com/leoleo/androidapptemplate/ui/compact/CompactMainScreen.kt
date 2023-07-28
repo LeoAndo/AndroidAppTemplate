@@ -20,32 +20,33 @@ import com.leoleo.androidapptemplate.ui.component.AppSurface
 import com.leoleo.androidapptemplate.ui.preview.PreviewPhoneDevice
 
 @Composable
-fun CompactMainScreen() {
+fun CompactMainScreen(
+    modifier: Modifier = Modifier,
+) {
     var count by rememberSaveable { mutableStateOf(1) }
-    val modifier = Modifier
-        .fillMaxSize()
-        .padding(16.dp)
-        .testTag(stringResource(id = R.string.test_tag_compact_main_screen))
+    modifier.testTag(stringResource(id = R.string.test_tag_compact_main_screen))
     CompactMainScreenStateless(modifier, count, onClick = { count++ })
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CompactMainScreenStateless(modifier: Modifier, count: Int, onClick: () -> Unit) {
-    Scaffold(
-        floatingActionButton = {
-            FloatingActionButton(onClick = { onClick() }) {
-                Text(text = "+")
-            }
-        }, content = { padding ->
-            Column(
-                modifier = modifier.padding(padding),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(text = "CompactMainScreen: $count")
-            }
-        })
+    AppSurface {
+        Scaffold(
+            floatingActionButton = {
+                FloatingActionButton(onClick = { onClick() }) {
+                    Text(text = "+")
+                }
+            }, content = { padding ->
+                Column(
+                    modifier = modifier.padding(padding),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(text = "CompactMainScreen: $count")
+                }
+            })
+    }
 }
 
 @PreviewPhoneDevice
@@ -54,7 +55,5 @@ private fun Prev_CompactMainScreen() {
     val modifier = Modifier
         .fillMaxSize()
         .padding(16.dp)
-    AppSurface {
-        CompactMainScreenStateless(modifier, 10) {}
-    }
+    CompactMainScreenStateless(modifier, 10) {}
 }
