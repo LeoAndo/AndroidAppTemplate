@@ -15,7 +15,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.leoleo.androidapptemplate"
+        applicationId "com.leoleo2.androidapptemplate" // TODO please change id...
         minSdk 29
         targetSdk 34
         versionCode 100
